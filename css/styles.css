@@ -1,3 +1,8 @@
+/** NOTE: esse arquivo contem apenas as partes padrao para pagina index.html ela n faz a modelagem dos estilos individual de cada slide
+ * para isso altear cada slide individual consute o readme e a pasta css->slides-> arquivo do respequitivo slide que quer alterar 
+ * junto de seu mad e sua documentacao
+*/
+
 /* RESET */
 * {
   margin: 0;
