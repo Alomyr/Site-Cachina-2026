@@ -846,6 +846,8 @@ function createOptimizedImage(src, alt, className = "", lazy = true) {
  * @notes precisa direcionar para o styles_slide01.css nao para somente para o styles paradao do sistema
  * @returns retorna a capa inicial da apresentaçao
  */
+
+document.getElementById("slide-content").innerHTML = coverSlide();
 function coverSlide() {
   return `
        <div class="slide-content slide-01 active">
