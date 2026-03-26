@@ -850,7 +850,6 @@ function createOptimizedImage(src, alt, className = "", lazy = true) {
 document.getElementById("slide-content").innerHTML = coverSlide();
 function coverSlide() {
   return `
-       <div class="slide-content slide-01 active">
   <div class="slide-01-container">
 
     <!-- Lado esquerdo -->
@@ -902,7 +901,7 @@ function coverSlide() {
     <span>PITCH DECK PRESENTATION TEMPLATE</span>
     <span>BUSINESS_20XX</span>
   </div>
-</div>
+
     `;
 }
 
