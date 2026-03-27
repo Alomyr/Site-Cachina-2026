@@ -841,40 +841,61 @@ function createOptimizedImage(src, alt, className = "", lazy = true) {
 
 function coverSlide() {
   return `
-  <div class="slide-01-container">
-                <div class="slide-01-left">
-                    <h1 class="title">HELLO & <br /><span>WELCOME</span></h1>
-                    <p class="subtitle">Our Presentation Template</p>
-                    <div class="year-box"><span>Year</span><strong>36</strong></div>
-                    <div class="experience">Experience.</div>
-                </div>
-                
-                <div class="slide-01-center">
-                    <img src="./icons/igor.png" alt="Profile" />
-                    <div class="person-info">
-                        <p class="role">Plan B</p>
-                        <h3>John Hallward</h3>
-                        <span>CEO & Founder</span>
-                    </div>
-                </div>
-
-                <div class="slide-01-right">
-                    <div class="quote">
-                        <p>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="signature">
-                        <p>Best Hallward</p>
-                        <span>SIGNATURE HERE</span>
-                    </div>
-                </div>
-            </div>
-            <div class="slide-01-footer">
-                <span>PAGE : 2</span>
-                <span>PITCH DECK PRESENTATION TEMPLATE</span>
-                <span>BUSINESS_20XX</span>
-            </div>
+<div class="slide-01-container">
+    
+    <div class="slide-01-left">
+        <h1 class="title">
+            INSPIRE<br>
+            O FUTURO<br>
+            DA SUA<br>
+            <span>EMPRESA</span>
+        </h1>
+        <p class="subtitle">Cachina - Soluções em Tecnologia</p>
+        
+        <div class="experience-box">
+            <span class="year">20+</span>
+            <span class="label">ANOS<br>DE EXPERIÊNCIA</span>
         </div>
-    `;
+    </div>
+    
+    <div class="slide-01-center">
+        <div class="avatar-gradient-border">
+            <img src="./icons/igor.png" alt="Foto do CEO">
+        </div>
+        
+        <div class="person-info">
+            <p class="role"></p>
+            <h3>Igor</h3>
+            <span>CEO & Founder - Cachina</span>
+        </div>
+    </div>
+<div class="slide-01-right">
+
+  <!-- LOGO -->
+  <img src="./icons/cachina-logoo.png" class="company-logo" />
+
+  <!-- QUOTE -->
+  <div class="quote-box">
+    <img class="quote-bg" src="./icons/fundo.png" alt="">
+
+    <p>
+      "A tecnologia não deve apenas resolver problemas, ela deve inspirar novas formas de pensar o futuro dos negócios."
+    </p>
+  </div>
+
+</div>
+
+</div>
+    
+    <div class="slide-01-footer">
+        <span>PAGE : 1</span>
+        <span>CACHINA PRESENTATION TEMPLATE</span>
+        <span>BUSINESS_20XX</span>
+    </div>
+
+</div>
+
+ `;
 }
 
 // Values Slide
@@ -884,124 +905,59 @@ function coverSlide() {
 
 function valuesSlide() {
   return `
-        <div class="h-full w-full bg-gradient-cachina-mix flex items-center relative values-slide">
-            <!-- Logo Original -->
-            <div class="absolute top-6 left-6 values-logo">
-                <img src="./icons/cachina-logoo.png" alt="Cachina Logo" class="w-30 h-10 opacity-80" loading="lazy">
-            </div>
-
-            <div class="container mx-auto px-6 values-container">
-                <!-- Title com animação melhorada -->
-                <div class="text-center mb-12 values-header">
-                    <h1 class="text-5xl font-bold animate-slide-up values-title">
-                        O que nos <span class="text-sky-400">move</span>
-                    </h1>
-                    <div class="w-20 h-1 bg-sky-400 mx-auto mt-4 rounded-full opacity-0 animate-fade-in values-underline" style="animation-delay: 0.5s; animation-fill-mode: forwards;"></div>
-                    <p class="text-lg text-gray-300 mt-6 max-w-2xl mx-auto opacity-0 animate-fade-in values-subtitle" style="animation-delay: 0.7s; animation-fill-mode: forwards;">
-                        Nascemos para simplificar a TI, oferecendo soluções inovadoras e
-                        suporte especializado.
-                    </p>
-                </div>
-
-                <!-- Cards Grid com melhorias -->
-                <div class="grid lg:grid-cols-3 gap-8 values-cards-grid">
-                    <!-- MISSÃO -->
-                    <div class="text-center space-y-4 animate-slide-up group values-card" style="animation-delay: 200ms;">
-                        <!-- Icon com hover effect -->
-                        <div class="bg-sky-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl values-icon">
-                            <svg class="w-8 h-8 text-white transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polygon points="10,8 16,12 10,16 10,8"></polygon>
-                            </svg>
-                        </div>
-                        <!-- Title -->
-                        <h2 class="text-2xl font-bold text-sky-400 tracking-wide transition-all duration-300 group-hover:scale-105">
-                            MISSÃO
-                        </h2>
-                        <!-- Content -->
-                        <p class="text-gray-300 leading-relaxed transition-colors duration-300 group-hover:text-white">
-                            Ajudar empresas a crescerem na era digital com eficiência e inovação.
-                        </p>
-                    </div>
-
-                    <!-- VISÃO -->
-                    <div class="text-center space-y-4 animate-slide-up group" style="animation-delay: 300ms;">
-                        <!-- Icon com hover effect -->
-                        <div class="bg-emerald-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
-                            <svg class="w-8 h-8 text-white transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path d="M4.5 17L4 19l2-1.5L4.5 17z"></path>
-                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                                <path d="M2 17l10 5 10-5"></path>
-                                <path d="M2 12l10 5 10-5"></path>
-                            </svg>
-                        </div>
-                        <!-- Title -->
-                        <h2 class="text-2xl font-bold text-emerald-400 tracking-wide transition-all duration-300 group-hover:scale-105">
-                            VISÃO
-                        </h2>
-                        <!-- Content -->
-                        <p class="text-gray-300 leading-relaxed transition-colors duration-300 group-hover:text-white">
-                            Ser referência em soluções tecnológicas confiáveis e inovadoras.
-                        </p>
-                    </div>
-
-                    <!-- VALORES -->
-                    <div class="text-center space-y-4 animate-slide-up group" style="animation-delay: 400ms;">
-                        <!-- Icon com hover effect -->
-                        <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
-                            <svg class="w-8 h-8 text-white transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"></polygon>
-                            </svg>
-                        </div>
-                        <!-- Title -->
-                        <h2 class="text-2xl font-bold text-orange-400 tracking-wide transition-all duration-300 group-hover:scale-105">
-                            VALORES
-                        </h2>
-                        <!-- Content -->
-                        <div class="space-y-2 text-sm">
-                            <div class="flex items-center gap-2 justify-center text-gray-300 hover:text-white transition-all duration-300 hover:scale-105 cursor-pointer group/item">
-                                <div class="transition-all duration-300 group-hover/item:scale-125">
-                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                        <circle cx="12" cy="7" r="4"></circle>
-                                    </svg>
-                                </div>
-                                <span class="transition-all duration-300 group-hover/item:font-medium">
-                                    Ética e transparência empresarial
-                                </span>
-                            </div>
-                            <div class="flex items-center gap-2 justify-center text-gray-300 hover:text-white transition-all duration-300 hover:scale-105 cursor-pointer group/item">
-                                <div class="transition-all duration-300 group-hover/item:scale-125">
-                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
-                                    </svg>
-                                </div>
-                                <span class="transition-all duration-300 group-hover/item:font-medium">
-                                    Simplicidade que gera eficiência
-                                </span>
-                            </div>
-                            <div class="flex items-center gap-2 justify-center text-gray-300 hover:text-white transition-all duration-300 hover:scale-105 cursor-pointer group/item">
-                                <div class="transition-all duration-300 group-hover/item:scale-125">
-                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
-                                    </svg>
-                                </div>
-                                <span class="transition-all duration-300 group-hover/item:font-medium">
-                                    Compromisso com resultados reais
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Indicadores na parte inferior -->
-                <div class="flex justify-center mt-12 space-x-2">
-                    <div class="w-2 h-2 bg-sky-400 rounded-full animate-pulse"></div>
-                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" style="animation-delay: 0.2s;"></div>
-                    <div class="w-2 h-2 bg-orange-400 rounded-full animate-pulse" style="animation-delay: 0.4s;"></div>
-                </div>
-            </div>
+        <div class="slide-01-container">
+    
+    <div class="slide-01-left">
+        <h1 class="title">
+            INSPIRE<br>
+            O FUTURO<br>
+            DA SUA<br>
+            <span>EMPRESA</span>
+        </h1>
+        <p class="subtitle">Cachina - Soluções em Tecnologia</p>
+        
+        <div class="experience-box">
+            <span class="year">20+</span>
+            <span class="label">ANOS<br>DE EXPERIÊNCIA</span>
         </div>
+    </div>
+    
+    <div class="slide-01-center">
+        <div class="avatar-gradient-border">
+            <img src="./icons/igor.png" alt="Foto do CEO">
+        </div>
+        
+        <div class="person-info">
+            <p class="role"></p>
+            <h3>Igor</h3>
+            <span>CEO & Founder - Cachina</span>
+        </div>
+    </div>
+<div class="slide-01-right">
+
+  <!-- LOGO -->
+  <img src="./icons/cachina-logoo.png" class="company-logo" />
+
+  <!-- QUOTE -->
+  <div class="quote-box">
+    <img class="quote-bg" src="./icons/fundo.png" alt="">
+
+    <p>
+      "A tecnologia não deve apenas resolver problemas, ela deve inspirar novas formas de pensar o futuro dos negócios."
+    </p>
+  </div>
+
+</div>
+
+</div>
+    
+    <div class="slide-01-footer">
+        <span>PAGE : 1</span>
+        <span>CACHINA PRESENTATION TEMPLATE</span>
+        <span>BUSINESS_20XX</span>
+    </div>
+
+</div> 
     `;
 }
 
