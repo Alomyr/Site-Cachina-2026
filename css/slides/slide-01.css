@@ -302,3 +302,39 @@
     transform: translateY(0);
   }
 }
+/* --- LAYOUT DESKTOP (Padrão) --- */
+.slide-01-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 colunas */
+  align-items: center;
+  gap: 30px;
+  padding: 60px;
+  height: 100vh;
+}
+
+/* --- AJUSTE PARA CELULAR (Media Query) --- */
+@media (max-width: 768px) {
+  .slide-01-container {
+    display: flex; /* Muda de Grid para Flex */
+    flex-direction: column; /* Empilha os elementos */
+    height: auto; /* Deixa o slide crescer se o texto for longo */
+    padding: 40px 20px; /* Reduz o espaço lateral */
+    gap: 40px;
+    justify-content: flex-start;
+  }
+
+  .slide-01-left .title {
+    font-size: 2.5rem; /* Diminui o título no celular */
+    text-align: center;
+  }
+
+  .avatar-gradient-border {
+    width: 200px; /* Diminui a foto no celular para sobrar espaço */
+    height: 200px;
+  }
+
+  .slide-01-quote {
+    padding: 20px;
+    background-attachment: scroll; /* Melhora performance no mobile */
+  }
+}
