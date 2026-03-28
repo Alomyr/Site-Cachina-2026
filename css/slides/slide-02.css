@@ -1,304 +1,188 @@
-/* ================= BASE ================= */
-.slide-01-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 30px;
+/* =============================================================
+   PÁGINA 02: VALORES (ESTILO CACHINA)
+   ============================================================= */
+
+.slide-02-container.values-page {
+  display: flex !important;
+  flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
   padding: 60px;
-  height: 100%;
-  position: relative;
+  height: 100vh;
+  height: 100dvh; /* Altura dinâmica para iOS */
+  width: 100vw;
   background-color: #0a1128;
-  color: #ffffff;
-  font-family:
-    "Inter",
-    system-ui,
-    -apple-system,
-    sans-serif;
-}
-
-/* ================= LEFT ================= */
-.slide-01-left .title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  line-height: 1.1;
-  color: #e2e8f0;
-  margin-bottom: 15px;
-}
-
-.slide-01-left .title span {
-  color: #0ea5e9;
-}
-
-.slide-01-left .subtitle {
-  font-size: 1.2rem;
-  color: #94a3b8;
-}
-
-.slide-01-left .experience-box {
-  margin-top: 50px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.slide-01-left .year {
-  font-size: 4rem;
-  font-weight: 800;
-  color: #e2e8f0;
-}
-
-.slide-01-left .label {
-  font-size: 1.1rem;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  line-height: 1.3;
-}
-
-/* ================= CENTER ================= */
-.slide-01-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.avatar-gradient-border {
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  padding: 6px;
-  background: linear-gradient(135deg, #0ea5e9, #6366f1, #0a1128);
-  box-shadow: 0 0 35px rgba(99, 102, 241, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.avatar-gradient-border img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.slide-01-center .person-info {
-  margin-top: 60px;
-  text-align: center;
-}
-
-.slide-01-center h3 {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.slide-01-center .person-info span {
-  font-size: 1.15rem;
-  color: #94a3b8;
-}
-
-/* ================= RIGHT ================= */
-.slide-01-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  height: 100%;
-}
-
-/* ================= QUOTE BOX (COM IMAGEM HTML) ================= */
-.slide-01-right .quote-box {
   position: relative;
-  padding: 30px;
-  border-radius: 15px;
   overflow: hidden;
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow:
-    0 0 40px rgba(14, 165, 233, 0.15),
-    inset 0 0 60px rgba(0, 0, 0, 0.4);
-
-  width: 100%;
-  max-width: 420px;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
-/* IMAGEM VIA HTML */
-.quote-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-/* GRADIENTE UNIFICADO */
-.slide-01-right .quote-box::before {
+/* 1. FUNDO DE GRADE (IDÊNTICO AO SLIDE 01) */
+.slide-02-container.values-page::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 1;
-
-  background: linear-gradient(
-    135deg,
-    rgba(10, 17, 40, 0.95) 0%,
-    rgba(15, 23, 42, 0.9) 30%,
-    rgba(30, 58, 138, 0.75) 60%,
-    rgba(36, 69, 111, 0.6) 100%
-  );
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* TEXTO */
-.slide-01-right .quote-box p {
-  position: relative;
-  z-index: 2;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #cbd5e1;
-  font-style: italic;
-}
-
-/* ================= SIGNATURE ================= */
-.slide-01-right .signature-box {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.slide-01-right .sig-name {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.slide-01-right .sig-label {
-  font-size: 1rem;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* ================= FOOTER ================= */
-.slide-01-footer {
-  position: absolute;
-  bottom: 25px;
-  left: 60px;
-  right: 60px;
-  display: flex;
-  justify-content: space-between;
-  color: #475569;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding-top: 15px;
-}
-
-.slide-01-container::before {
+/* 2. BRILHO RADIAL AZUL (IDÊNTICO AO SLIDE 01) */
+.slide-02-container.values-page::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-20%, -50%);
-
   width: 700px;
   height: 700px;
-
   background: radial-gradient(
     circle,
     rgba(14, 165, 233, 0.15) 0%,
     rgba(99, 102, 241, 0.12) 40%,
     transparent 70%
   );
-
   filter: blur(80px);
   z-index: 0;
 }
 
-.avatar-gradient-border {
-  animation: float 6s ease-in-out infinite;
+/* ELEMENTOS DA SIDEBAR */
+.sidebar-identity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 300px;
+  padding-right: 50px;
+  border-right: 1px solid rgba(14, 165, 233, 0.2);
+  z-index: 2;
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.sidebar-identity .mini-logo {
+  width: 160px;
+  margin-top: 25px;
+  filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.3));
 }
 
-.slide-01-right .quote-box {
-  border-left: 3px solid #0ea5e9;
+/* CONTEÚDO E CARDS */
+.values-content {
+  flex: 1;
+  padding-left: 60px;
+  z-index: 2;
 }
 
-.slide-01-right .quote-box p {
-  color: #e2e8f0;
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 40px;
 }
 
-.slide-01-container::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-
-  background-size: 60px 60px;
-  pointer-events: none;
-}
-.slide-01-left .title span {
+.section-title span {
   color: #0ea5e9;
   text-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
 }
 
-.slide-01-center::after {
-  content: "";
-  position: absolute;
-  right: -80px;
-  top: 50%;
-  width: 80px;
-  height: 1px;
-  background: linear-gradient(to right, #0ea5e9, transparent);
+.cards-wrapper {
+  display: flex;
+  gap: 25px;
+  width: 100%;
 }
 
-.avatar-gradient-border {
-  box-shadow:
-    0 0 35px rgba(99, 102, 241, 0.3),
-    0 0 80px rgba(14, 165, 233, 0.2);
+.value-card {
+  flex: 1;
+  padding: 40px 25px;
+  background: rgba(10, 17, 40, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #0ea5e9;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
 }
 
-/* LOGO ACIMA DA FRASE */
-.company-logo {
-  width: 400px;
-  margin-bottom: 10px;
-
-  /* alinhamento com a box */
-  margin-left: 10px;
-
-  opacity: 0.9;
+.value-card:hover {
+  transform: translateY(-15px);
+  background: #0ea5e9;
+  box-shadow: 0 15px 40px rgba(14, 165, 233, 0.4);
 }
 
-/* efeito leve (opcional, mas bonito) */
-.company-logo {
-  filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.3));
-}
-.company-logo {
-  animation: fadeUp 1s ease;
+.value-card:hover h3, 
+.value-card:hover p {
+  color: #fff !important;
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+.card-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
+.value-card h3 { font-size: 1.5rem; color: #fff; margin-bottom: 10px; }
+.value-card p { font-size: 0.95rem; color: #94a3b8; line-height: 1.6; }
+
+/* =============================================================
+   RESPONSIVIDADE BLINDADA (iOS & ANDROID)
+   ============================================================= */
+
+@media (max-width: 768px) {
+  /* Container Flexível para Mobile */
+  .slide-01-container, 
+  .slide-02-container.values-page {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 100dvh !important;
+    padding: 60px 20px !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start !important;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  /* Foto e Logo no Topo */
+  .sidebar-identity, .slide-01-center {
+    order: -1;
+    min-width: 100% !important;
+    padding-right: 0 !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(14, 165, 233, 0.2);
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+  }
+
+  .avatar-gradient-border {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  /* Cards em Coluna */
+  .values-content {
+    padding-left: 0 !important;
+    width: 100%;
+  }
+
+  .cards-wrapper {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .value-card {
+    width: 100%;
+    border-left: 4px solid #0ea5e9;
+    padding: 30px 20px !important;
+  }
+
+  .section-title {
+    font-size: 2.2rem !important;
+    text-align: center;
+  }
+
+  /* Footer Fixo no Fundo do Scroll */
+  .slide-01-footer {
+    position: relative !important;
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding-bottom: 20px;
   }
 }

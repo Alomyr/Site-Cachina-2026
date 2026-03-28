@@ -897,59 +897,49 @@ function coverSlide() {
 
 function valuesSlide() {
   return `
-        <div class="slide-01-container">
+<div class="slide-02-container values-page">
     
-    <div class="slide-01-left">
-        <h1 class="title">
-            INSPIRE<br>
-            O FUTURO<br>
-            DA SUA<br>
-            <span>EMPRESA</span>
-        </h1>
-        <p class="subtitle">Cachina - Soluções em Tecnologia</p>
-        
-        <div class="experience-box">
-            <span class="year">20+</span>
-            <span class="label">ANOS<br>DE EXPERIÊNCIA</span>
-        </div>
-    </div>
-    
-    <div class="slide-01-center">
+    <div class="slide-01-center sidebar-identity">
         <div class="avatar-gradient-border">
             <img src="./icons/igor.png" alt="Foto do CEO">
         </div>
-        
         <div class="person-info">
-            <p class="role"></p>
-            <h3>Igor</h3>
-            <span>CEO & Founder - Cachina</span>
+            <img src="./icons/cachina-logoo.png" class="mini-logo" />
         </div>
     </div>
-<div class="slide-01-right">
 
-  <!-- LOGO -->
-  <img src="./icons/cachina-logoo.png" class="company-logo" />
+    <div class="values-content">
+        <h2 class="section-title">NOSSOS <span>VALORES</span></h2>
+        
+        <div class="cards-wrapper">
+            <div class="value-card">
+                <div class="card-icon">🚀</div>
+                <h3> MISSÃO</h3>
+                <p>Ajudar empresas a crescerem na era digital com eficiência e inovação.</p>
+            </div>
 
-  <!-- QUOTE -->
-  <div class="quote-box">
-    <img class="quote-bg" src="./icons/fundo.png" alt="">
+            <div class="value-card">
+                <div class="card-icon">🤝</div>
+                <h3> VISÃO</h3>
+                <p>Ser referência em soluções tecnológicas confiáveis e inovadoras.</p>
+            </div>
 
-    <p>
-      "A tecnologia não deve apenas resolver problemas, ela deve inspirar novas formas de pensar o futuro dos negócios."
-    </p>
-  </div>
-
-</div>
-
-</div>
-    
-    <div class="slide-01-footer">
-        <span>PAGE : 1</span>
-        <span>CACHINA PRESENTATION TEMPLATE</span>
-        <span>BUSINESS_20XX</span>
+            <div class="value-card">
+                <div class="card-icon">🎯</div>
+                <h3> VALORES</h3>
+                <p>Ética e transparência empresarial.</p>
+                <p>Simplicidade que gera eficiência.</p>
+                <p>Compromisso com resultados reais</p>
+            </div>
+        </div>
     </div>
 
-</div> 
+    <div class="slide-01-footer">
+        <span>PAGE : 2</span>
+        <span>CACHINA PRESENTATION TEMPLATE</span>
+        <span>VALORES_2026</span>
+    </div>
+</div>
     `;
 }
 
