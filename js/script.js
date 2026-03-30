@@ -14,7 +14,7 @@ const slides = [
   { id: 9, title: "Agente de IA", component: "aiAgentSlide" },
   { id: 10, title: "Emissor Fácil", component: "emissorFacilSlide" },
   { id: 11, title: "CloudBox/VDI", component: "cloudBoxSlide" },
-  { id: 12, title: "Gestão de TI", component: "itManagementSlide" },
+  { id: 12, title: "Gestão de TI", component: "" }, //repetido mudar aqui
   { id: 13, title: "Software Personalizado", component: "customSoftwareSlide" },
   { id: 14, title: "Clientes", component: "clientsSlide" },
   { id: 15, title: "Diferenciais", component: "differentialsSlide" },
@@ -1094,7 +1094,68 @@ function contactSlide() {
 // Clients Slide
 function clientsSlide() {
   return `
+<div class="slide-13-container">
+  <div class="slide-13-left">
+    <h1 class="title">Alguns de nossos <span>Clientes</span></h1>
+    <p class="subtitle">
+      Empresas que confiam na nossa expertise para evoluir digitalmente.
+    </p>
 
+    <div class="experience-box">
+      <div class="year">100+</div>
+      <p class="desc-text">
+        Projetos entregues com sucesso em diversos setores.
+      </p>
+    </div>
+  </div>
+
+  <div class="slide-13-center">
+    <div class="clients-grid">
+      <div class="client-card">
+        <img src="icons/logos/Dropped Image (12).png" alt="Cliente 1" />
+      </div>
+      <div class="client-card">
+        <img src="icons/logos/Dropped Image (2).png" alt="Cliente 2" />
+      </div>
+      <div class="client-card">
+        <img src="icons/logos/Dropped Image (3).png" alt="Cliente 3" />
+      </div>
+      <div class="client-card">
+        <img src="./icons/logos/Dropped Image.png" alt="Cliente 4" />
+      </div>
+      <div class="client-card">
+        <img
+          src="./icons/logos/WhatsApp_Image_2026-03-24_at_7.55.22_AM-removebg-preview.png"
+          alt="Cliente 5"
+        />
+      </div>
+      <div class="client-card">
+        <img src="./icons/logos/Dropped Image (5).png" alt="Cliente 6" />
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-13-right">
+    <img
+      src="./icons/cachina-logoo.png"
+      class="company-logo"
+      alt="Cachina Logo"
+    />
+
+    <div class="quote-box">
+      <p>
+        "Parcerias sólidas são construídas com transparência, tecnologia de
+        ponta e foco total no resultado do cliente."
+      </p>
+    </div>
+  </div>
+
+  <div class="slide-01-footer">
+    <span>PAGE : 13</span>
+    <span>CACHINA PRESENTATION TEMPLATE</span>
+    <span>CUSTOMERS_2026</span>
+  </div>
+</div>
 
     `;
 }
@@ -1456,6 +1517,70 @@ function customSoftwareSlide() {
 // Differentials Slide
 function differentialsSlide() {
   return `
+  <div class="slide-14-container">
+  <div class="slide-14-left">
+    <div class="award-icon">🏆</div>
+    <h1 class="title">Nossos <span>Diferenciais</span></h1>
+    <p class="subtitle">O que nos torna o parceiro ideal para sua jornada digital.</p>
+    
+    <div class="highlights-mini">
+      <div class="mini-item"><span>👥</span> Qualidade</div>
+      <div class="mini-item"><span>⚡</span> Agilidade</div>
+      <div class="mini-item"><span>🛡️</span> Segurança</div>
+      <div class="mini-item"><span>🌐</span> Suporte</div>
+    </div>
+  </div>
+
+  <div class="slide-14-center">
+    <div class="feature-stack">
+      
+      <div class="feature-card">
+        <div class="card-icon blue">📄</div>
+        <div class="card-content">
+          <h3>Ecossistema Completo</h3>
+          <p>Estratégia + Operação + Produtos com soluções integradas end-to-end.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-icon green">📍</div>
+        <div class="card-content">
+          <h3>Atendimento Consultivo</h3>
+          <p>Análise personalizada por setor com acompanhamento contínuo.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-icon orange">⚖️</div>
+        <div class="card-content">
+          <h3>Soluções Escaláveis</h3>
+          <p>Arquitetura modular com investimento proporcional ao tamanho da empresa.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="slide-14-right">
+    <img src="./icons/cachina-logoo.png" class="company-logo" alt="Cachina Logo" />
+    
+    <div class="quote-box check-list-box">
+      <h4 class="list-title">DIFERENCIAIS CACHINA</h4>
+      <ul class="check-list">
+        <li>✓ Equipe especializada em múltiplas tecnologias</li>
+        <li>✓ Metodologia própria validada</li>
+        <li>✓ Acompanhamento pós-implementação</li>
+        <li>✓ ROI comprovado em todos os projetos</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="slide-01-footer">
+    <span>PAGE : 14</span>
+    <span>CACHINA PRESENTATION TEMPLATE</span>
+    <span>DIFFERENTIALS_2026</span>
+  </div>
+</div>
          `;
 }
 
@@ -1466,5 +1591,73 @@ function differentialsSlide() {
 
 function processSlide() {
   return `
+  <div class="slide-15-container">
+  <div class="slide-15-left">
+    <div class="journey-icon">⚡</div>
+    <h1 class="title">Sua <span>Jornada</span> Conosco</h1>
+    <p class="subtitle">Um processo transparente e estruturado para transformar sua TI.</p>
+    
+    <div class="support-badge">
+      <span class="badge-icon">♾️</span>
+      <div class="badge-text">
+        <strong>Suporte Contínuo</strong>
+        <p>Parceria de longo prazo com monitoramento 24/7.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-15-center">
+    <div class="timeline-wrapper">
+      <div class="timeline-line"></div>
+      
+      <div class="timeline-grid">
+        <div class="step-card">
+          <div class="step-number step-1">1</div>
+          <div class="step-time">15 min</div>
+          <div class="step-icon">📞</div>
+          <h3>Primeiro Contato</h3>
+          <p>Conversa inicial para entendimento de dores.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number step-2">2</div>
+          <div class="step-time">2-3 dias</div>
+          <div class="step-icon">🔍</div>
+          <h3>Diagnóstico</h3>
+          <p>Assessment completo da sua TI atual.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number step-3">3</div>
+          <div class="step-time">1-2 dias</div>
+          <div class="step-icon">📄</div>
+          <h3>Proposta</h3>
+          <p>Solução sob medida para o seu negócio.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number step-4">4</div>
+          <div class="step-time">2-8 sem</div>
+          <div class="step-icon">🚀</div>
+          <h3>Implementação</h3>
+          <p>Metodologia ágil e transparente.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-15-right">
+    <img src="./icons/cachina-logoo.png" class="company-logo" alt="Cachina Logo" />
+    <div class="quote-box">
+      <p>"Nosso objetivo é garantir que sua tecnologia esteja pronta para o futuro, enquanto você foca no agora."</p>
+    </div>
+  </div>
+
+  <div class="slide-01-footer">
+    <span>PAGE : 15</span>
+    <span>CACHINA PRESENTATION TEMPLATE</span>
+    <span>JOURNEY_2026</span>
+  </div>
+</div>
            `;
 }

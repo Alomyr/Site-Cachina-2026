@@ -1,0 +1,96 @@
+/* ================= 1. BASE & LAYOUT ================= */
+.slide-13-container {
+  display: grid;
+  grid-template-columns: 0.8fr 1.4fr 0.8fr; /* Central maior para os logos */
+  gap: 30px;
+  align-items: center;
+  padding: 60px;
+  height: 100dvh;
+  width: 100vw;
+  position: relative;
+  background-color: #0a1128;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+/* Background effects (conforme o modelo 01) */
+.slide-13-container::after {
+  content: ""; position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), 
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px; z-index: 1; pointer-events: none;
+}
+
+.slide-13-container::before {
+  content: ""; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+  filter: blur(80px); z-index: 0;
+}
+
+/* ================= 2. COLUNA CENTRAL (GRADE DE LOGOS) ================= */
+.slide-13-center { z-index: 2; }
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.client-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.client-card:hover {
+  background: rgba(14, 165, 233, 0.1);
+  border-color: #0ea5e9;
+  transform: translateY(-5px);
+}
+
+.client-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(1.5); /* Logos em cinza que ganham cor no hover */
+  transition: filter 0.3s ease;
+}
+
+.client-card:hover img {
+  filter: grayscale(0%) brightness(1);
+}
+
+/* ================= 3. AJUSTES ESQUERDA/DIREITA ================= */
+.slide-13-left .title { font-size: 3rem; font-weight: 800; line-height: 1.1; margin-bottom: 15px; z-index: 2;}
+.slide-13-left .title span { color: #0ea5e9; text-shadow: 0 0 20px rgba(14, 165, 233, 0.4); }
+.slide-13-left .year { color: #0ea5e9; font-size: 3.5rem; font-weight: 800; }
+.slide-13-right { z-index: 2; align-items: flex-end !important; text-align: right; }
+
+/* ================= 4. RESPONSIVIDADE (MOBILE/SAFARI) ================= */
+@media (max-width: 768px) {
+  .slide-13-container {
+    display: flex !important; flex-direction: column !important;
+    height: auto !important; min-height: 100dvh !important;
+    padding: 60px 20px !important; gap: 40px; overflow-y: auto;
+    justify-content: flex-start !important; align-items: center;
+  }
+  
+  .clients-grid { grid-template-columns: repeat(2, 1fr); }
+  
+  .slide-13-left, .slide-13-right { text-align: center; align-items: center !important; }
+  
+  .slide-13-left .title { font-size: 2.2rem; }
+  
+  .slide-01-footer { position: relative; margin-top: 40px; flex-direction: column; text-align: center; }
+}

@@ -1,0 +1,90 @@
+/* ================= 1. BASE & LAYOUT ================= */
+.slide-14-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 30px;
+  align-items: center;
+  padding: 60px;
+  height: 100dvh;
+  width: 100vw;
+  position: relative;
+  background-color: #0a1128;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+/* Efeito de Fundo Padrão Cachina */
+.slide-14-container::after {
+  content: ""; position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), 
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px; pointer-events: none; z-index: 1;
+}
+
+/* ================= 2. ESTILOS ESPECÍFICOS ================= */
+.award-icon { font-size: 2.5rem; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.4)); }
+
+.highlights-mini {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.mini-item {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Cards da Coluna Central */
+.feature-stack { display: flex; flex-direction: column; gap: 20px; z-index: 2; }
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover { transform: scale(1.02); background: rgba(14, 165, 233, 0.05); }
+
+.card-icon {
+  width: 50px; height: 50px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+}
+.card-icon.blue { background: rgba(14, 165, 233, 0.2); color: #0ea5e9; }
+.card-icon.green { background: rgba(34, 197, 94, 0.2); color: #22c55e; }
+.card-icon.orange { background: rgba(249, 115, 22, 0.2); color: #f97316; }
+
+.feature-card h3 { font-size: 1.1rem; margin-bottom: 5px; color: #fff; }
+.feature-card p { font-size: 0.85rem; color: #94a3b8; line-height: 1.4; }
+
+/* Lista de Check na Direita */
+.check-list-box { border-left: 3px solid #22c55e !important; }
+.list-title { color: #22c55e; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 20px; }
+.check-list { list-style: none; padding: 0; }
+.check-list li {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  display: flex;
+  gap: 10px;
+}
+
+/* ================= 3. RESPONSIVIDADE ================= */
+@media (max-width: 768px) {
+  .slide-14-container {
+    display: flex !important; flex-direction: column !important;
+    height: auto !important; padding: 60px 20px !important;
+  }
+  .feature-card { flex-direction: column; text-align: center; }
+  .slide-14-right { width: 100%; align-items: center; }
+}
