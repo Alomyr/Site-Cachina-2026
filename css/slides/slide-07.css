@@ -1,0 +1,186 @@
+/* ================= 1. BASE & LAYOUT (DESKTOP) ================= */
+.slide-07-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr; /* Central um pouco mais larga */
+  gap: 30px;
+  align-items: center;
+  padding: 60px;
+  height: 100vh;
+  height: 100dvh;
+  width: 100vw;
+  position: relative;
+  background-color: #0a1128;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+/* Fundo de Grade e Brilho (Mesmo do Slide 01) */
+.slide-07-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.slide-07-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle,
+    rgba(14, 165, 233, 0.1) 0%,
+    transparent 70%
+  );
+  filter: blur(80px);
+  z-index: 0;
+}
+
+/* ================= 2. COLUNA ESQUERDA ================= */
+.slide-07-left {
+  z-index: 2;
+}
+.pulse-icon {
+  width: 40px;
+  height: 40px;
+  background: #6366f1;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+}
+.slide-07-left .title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.slide-07-left .title span {
+  color: #0ea5e9;
+  text-shadow: 0 0 15px rgba(14, 165, 233, 0.3);
+}
+.slide-07-left .subtitle {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  font-style: italic;
+}
+.desc-text {
+  margin-top: 30px;
+  color: #e2e8f0;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+/* ================= 3. COLUNA CENTRAL (METODOLOGIA) ================= */
+.slide-07-center {
+  z-index: 2;
+}
+.methodology-card {
+  background: rgba(10, 17, 40, 0.8);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+}
+.card-title {
+  text-align: center;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+  color: #0ea5e9;
+}
+
+.step-item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+  align-items: flex-start;
+}
+.step-number {
+  width: 45px;
+  height: 45px;
+  background: #6366f1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+}
+.step-info h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #fff;
+}
+.step-info p {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* ================= 4. COLUNA DIREITA ================= */
+.slide-07-right {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.business-box {
+  border-left: 3px solid #6366f1 !important;
+}
+.business-item {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.business-item span {
+  font-size: 1.5rem;
+}
+.business-item p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ================= 5. RESPONSIVIDADE (MOBILE BLINDADA) ================= */
+@media (max-width: 768px) {
+  .slide-07-container {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 100dvh !important;
+    padding: 50px 20px !important;
+    gap: 40px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    align-items: center;
+  }
+  .slide-07-left,
+  .slide-07-center,
+  .slide-07-right {
+    width: 100%;
+    text-align: center;
+  }
+  .step-item {
+    text-align: left;
+  }
+  .slide-07-left .title {
+    font-size: 2.2rem;
+  }
+  .slide-01-footer {
+    position: relative;
+    margin-top: 30px;
+    flex-direction: column;
+  }
+}

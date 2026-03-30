@@ -1533,782 +1533,95 @@ function howWeHelpSlide() {
 // ==========================================
 
 function consultoriaTecnologiaSlide() {
-  return `
-        <style>
-            /* Image optimization styles */
-            .lazy-load {
-                opacity: 0;
-                transition: opacity 0.3s ease-in-out;
-            }
-            
-            .lazy-load.loaded {
-                opacity: 1;
-            }
-            
-            .lazy-load.loading {
-                opacity: 0.5;
-                background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
-                background-size: 200% 100%;
-                animation: loading 1.5s infinite;
-            }
-            
-            .lazy-load.error {
-                opacity: 0.3;
-                background-color: #fee2e2;
-            }
-            
-            @keyframes loading {
-                0% { background-position: 200% 0; }
-                100% { background-position: -200% 0; }
-            }
-            
-            /* Optimize image rendering */
-            img {
-                image-rendering: -webkit-optimize-contrast;
-                image-rendering: crisp-edges;
-                will-change: transform;
-            }
-            
-            .cachina-consultoria-slide {
-                height: 100%;
-                width: 100%;
-                background: linear-gradient(135deg, #2c5282 0%, #3b6fa8 25%, #4a8bc2 50%, #3b6fa8 75%, #2c5282 100%);
-                display: flex;
-                align-items: center;
-                position: relative;
-                color: white;
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-                padding: 60px 40px 80px 40px;
-                box-sizing: border-box;
-                overflow: hidden;
-            }
-
-            /* Decorative Background Elements */
-            .cachina-consultoria-bg-decoration {
-                position: absolute;
-                inset: 0;
-                opacity: 0.08;
-                pointer-events: none;
-            }
-
-            .cachina-consultoria-bg-circle-1 {
-                position: absolute;
-                top: -100px;
-                right: -100px;
-                width: 400px;
-                height: 400px;
-                background: radial-gradient(circle, #8b5cf6, transparent);
-                border-radius: 50%;
-                filter: blur(80px);
-            }
-
-            .cachina-consultoria-bg-circle-2 {
-                position: absolute;
-                bottom: -80px;
-                left: -80px;
-                width: 350px;
-                height: 350px;
-                background: radial-gradient(circle, #06b6d4, transparent);
-                border-radius: 50%;
-                filter: blur(80px);
-            }
-
-            .cachina-consultoria-bg-grid {
-                position: absolute;
-                inset: 0;
-                background-image: 
-                    linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
-                background-size: 50px 50px;
-            }
-
-            .cachina-consultoria-logo {
-                position: absolute;
-                bottom: 24px;
-                right: 32px;
-                height: 48px;
-                opacity: 0.9;
-                z-index: 20;
-            }
-
-            .cachina-consultoria-container {
-                max-width: 1400px;
-                margin: 0 auto;
-                width: 100%;
-                position: relative;
-                z-index: 10;
-            }
-
-            .cachina-consultoria-grid {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 32px;
-            }
-
-            /* Left Column Styles */
-            .cachina-consultoria-left {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .cachina-consultoria-header {
-                display: flex;
-                align-items: flex-start;
-                gap: 12px;
-                margin-bottom: 8px;
-            }
-
-            .cachina-consultoria-icon-main {
-                width: 48px;
-                height: 48px;
-                background: linear-gradient(135deg, #8b5cf6, #6366f1);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
-                box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
-                position: relative;
-            }
-
-            .cachina-consultoria-icon-main::before {
-                content: '';
-                position: absolute;
-                inset: 4px;
-                border: 2px solid white;
-                border-radius: 50%;
-            }
-
-            .cachina-consultoria-title-wrapper h1 {
-                font-size: 26px;
-                font-weight: 700;
-                margin: 0 0 4px 0;
-                color: white;
-                line-height: 1.2;
-            }
-
-            .cachina-consultoria-subtitle {
-                font-size: 13px;
-                color: #c4b5fd;
-                font-style: italic;
-                margin: 0;
-            }
-
-            .cachina-consultoria-main-title {
-                font-size: 22px;
-                font-weight: 700;
-                color: white;
-                margin: 0 0 16px 0;
-                text-align: center;
-                background: linear-gradient(90deg, #fff, #e0e7ff, #fff);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-
-            .cachina-consultoria-services {
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-            }
-
-            .cachina-consultoria-service-item {
-                display: flex;
-                align-items: flex-start;
-                gap: 12px;
-                background: rgba(255, 255, 255, 0.03);
-                padding: 14px;
-                border-radius: 10px;
-                border: 1px solid rgba(255, 255, 255, 0.08);
-                transition: all 0.3s ease;
-            }
-
-            .cachina-consultoria-service-item:hover {
-                background: rgba(255, 255, 255, 0.06);
-                border-color: rgba(139, 92, 246, 0.3);
-                transform: translateX(4px);
-            }
-
-            .cachina-consultoria-service-icon {
-                width: 32px;
-                height: 32px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
-                font-size: 16px;
-                font-weight: 700;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            }
-
-            .cachina-consultoria-service-icon.emerald {
-                background: linear-gradient(135deg, #10b981, #14b8a6);
-                color: white;
-            }
-
-            .cachina-consultoria-service-icon.sky {
-                background: linear-gradient(135deg, #0ea5e9, #06b6d4);
-                color: white;
-            }
-
-            .cachina-consultoria-service-icon.purple {
-                background: linear-gradient(135deg, #a855f7, #8b5cf6);
-                color: white;
-            }
-
-            .cachina-consultoria-service-content h3 {
-                font-size: 14px;
-                font-weight: 600;
-                margin: 0 0 6px 0;
-                line-height: 1.3;
-            }
-
-            .cachina-consultoria-service-content h3 .highlight {
-                color:rgb(105, 226, 186);
-            }
-
-            .cachina-consultoria-service-content h3 .highlight.sky {
-                color:rgb(114, 199, 236);
-            }
-
-            .cachina-consultoria-service-content h3 .highlight.purple {
-                color:rgb(200, 162, 238);
-            }
-
-            .cachina-consultoria-service-content h3 .arrow {
-                color: white;
-                font-weight: 400;
-            }
-
-            .cachina-consultoria-service-tags {
-                font-size: 11px;
-                color: #d1d5db;
-                margin: 0;
-                line-height: 1.4;
-            }
-
-            .cachina-consultoria-business-box {
-                background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
-                border: 1px solid rgba(192, 173, 235, 0.92);
-                padding: 18px;
-                border-radius: 12px;
-                backdrop-filter: blur(10px);
-            }
-
-            .cachina-consultoria-business-box h3 {
-                font-size: 18px;
-                font-weight: 700;
-                color: #c4b5fd;
-                margin: 0 0 12px 0;
-                text-align: center;
-            }
-
-            .cachina-consultoria-business-items {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .cachina-consultoria-business-item {
-                display: flex;
-                align-items: flex-start;
-                gap: 10px;
-            }
-
-            .cachina-consultoria-business-item span {
-                font-size: 18px;
-                flex-shrink: 0;
-            }
-
-            .cachina-consultoria-business-item p {
-                font-size: 12px;
-                color: #e5e7eb;
-                margin: 0;
-                line-height: 1.4;
-            }
-
-            .cachina-consultoria-business-item strong {
-                color: white;
-                font-weight: 600;
-            }
-
-            /* Right Column Styles */
-            .cachina-consultoria-right {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .cachina-consultoria-methodology-box {
-                background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(6, 182, 212, 0.15));
-                border: 1px solid rgba(56, 189, 248, 0.3);
-                padding: 20px;
-                border-radius: 12px;
-                backdrop-filter: blur(10px);
-            }
-
-            .cachina-consultoria-methodology-box h2 {
-                font-size: 20px;
-                font-weight: 700;
-                color: white;
-                text-align: center;
-                margin: 0 0 20px 0;
-                letter-spacing: 1px;
-            }
-
-            .cachina-consultoria-steps {
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .cachina-consultoria-step {
-                display: flex;
-                align-items: flex-start;
-                gap: 12px;
-                position: relative;
-            }
-
-            .cachina-consultoria-step:not(:last-child)::after {
-                content: '';
-                position: absolute;
-                left: 19px;
-                top: 40px;
-                width: 2px;
-                height: 20px;
-                background: linear-gradient(to bottom, rgba(139, 92, 246, 0.5), transparent);
-            }
-
-            .cachina-consultoria-step-number {
-                width: 40px;
-                height: 40px;
-                background: linear-gradient(135deg, #8b5cf6, #6366f1);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-weight: 700;
-                font-size: 16px;
-                color: white;
-                flex-shrink: 0;
-                box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
-            }
-
-            .cachina-consultoria-step-content h3 {
-                font-size: 14px;
-                font-weight: 700;
-                color: white;
-                margin: 0 0 4px 0;
-            }
-
-            .cachina-consultoria-step-content p {
-                font-size: 12px;
-                color: #d1d5db;
-                margin: 0;
-            }
-
-            .cachina-consultoria-differentials-box {
-                background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(20, 184, 166, 0.15));
-                border: 1px solid rgba(16, 185, 129, 0.3);
-                padding: 20px;
-                border-radius: 12px;
-                backdrop-filter: blur(10px);
-            }
-
-            .cachina-consultoria-differentials-box h2 {
-                font-size: 20px;
-                font-weight: 700;
-                color: #6ee7b7;
-                text-align: center;
-                margin: 0 0 16px 0;
-                letter-spacing: 1px;
-            }
-
-            .cachina-consultoria-differentials-list {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .cachina-consultoria-differential-item {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
-
-            .cachina-consultoria-differential-item span {
-                font-size: 18px;
-                color: #10b981;
-                flex-shrink: 0;
-            }
-
-            .cachina-consultoria-differential-item p {
-                font-size: 12px;
-                color: #e5e7eb;
-                margin: 0;
-            }
-
-            /* Mobile Optimizations */
-            @media (max-width: 1024px) {
-                .cachina-consultoria-grid {
-                    grid-template-columns: 1fr;
-                    gap: 20px;
-                }
-                
-                .cachina-consultoria-slide {
-                    padding: 20px 16px 80px 16px;
-                    overflow-y: auto;
-                    height: 100vh;
-                }
-
-                .cachina-consultoria-container {
-                    max-width: 100%;
-                }
-
-                /* Hide background decorations on mobile for performance */
-                .cachina-consultoria-bg-decoration {
-                    opacity: 0.03;
-                }
-
-                /* Logo adjustments */
-                .cachina-consultoria-logo {
-                    height: 36px;
-                    bottom: 16px;
-                    right: 16px;
-                }
-
-                /* Header adjustments */
-                .cachina-consultoria-header {
-                    flex-direction: row;
-                    gap: 10px;
-                }
-
-                .cachina-consultoria-icon-main {
-                    width: 40px;
-                    height: 40px;
-                }
-
-                .cachina-consultoria-title-wrapper h1 {
-                    font-size: 18px;
-                    line-height: 1.3;
-                }
-
-                .cachina-consultoria-subtitle {
-                    font-size: 11px;
-                }
-
-                /* Main title */
-                .cachina-consultoria-main-title {
-                    font-size: 16px;
-                    margin-bottom: 12px;
-                }
-
-                /* Services */
-                .cachina-consultoria-services {
-                    gap: 12px;
-                }
-
-                .cachina-consultoria-service-item {
-                    padding: 10px;
-                    gap: 10px;
-                }
-
-                .cachina-consultoria-service-item:hover {
-                    transform: none;
-                }
-
-                .cachina-consultoria-service-icon {
-                    width: 28px;
-                    height: 28px;
-                    font-size: 14px;
-                }
-
-                .cachina-consultoria-service-content h3 {
-                    font-size: 12px;
-                    line-height: 1.4;
-                }
-
-                .cachina-consultoria-service-content h3 .arrow {
-                    display: block;
-                    margin-top: 2px;
-                    font-size: 11px;
-                }
-
-                .cachina-consultoria-service-tags {
-                    font-size: 10px;
-                    line-height: 1.3;
-                }
-
-                /* Business box */
-                .cachina-consultoria-business-box {
-                    padding: 14px;
-                }
-
-                .cachina-consultoria-business-box h3 {
-                    font-size: 15px;
-                    margin-bottom: 10px;
-                }
-
-                .cachina-consultoria-business-items {
-                    gap: 8px;
-                }
-
-                .cachina-consultoria-business-item {
-                    gap: 8px;
-                }
-
-                .cachina-consultoria-business-item span {
-                    font-size: 16px;
-                }
-
-                .cachina-consultoria-business-item p {
-                    font-size: 11px;
-                }
-
-                /* Methodology box */
-                .cachina-consultoria-methodology-box {
-                    padding: 14px;
-                }
-
-                .cachina-consultoria-methodology-box h2 {
-                    font-size: 16px;
-                    margin-bottom: 14px;
-                }
-
-                .cachina-consultoria-steps {
-                    gap: 10px;
-                }
-
-                .cachina-consultoria-step:not(:last-child)::after {
-                    left: 17px;
-                    top: 36px;
-                    height: 16px;
-                }
-
-                .cachina-consultoria-step-number {
-                    width: 36px;
-                    height: 36px;
-                    font-size: 14px;
-                }
-
-                .cachina-consultoria-step-content h3 {
-                    font-size: 12px;
-                }
-
-                .cachina-consultoria-step-content p {
-                    font-size: 11px;
-                }
-
-                /* Differentials box */
-                .cachina-consultoria-differentials-box {
-                    padding: 14px;
-                }
-
-                .cachina-consultoria-differentials-box h2 {
-                    font-size: 16px;
-                    margin-bottom: 12px;
-                }
-
-                .cachina-consultoria-differentials-list {
-                    gap: 8px;
-                }
-
-                .cachina-consultoria-differential-item span {
-                    font-size: 16px;
-                }
-
-                .cachina-consultoria-differential-item p {
-                    font-size: 11px;
-                }
-
-                /* Left and Right columns */
-                .cachina-consultoria-left,
-                .cachina-consultoria-right {
-                    gap: 16px;
-                }
-            }
-
-            /* Extra small mobile devices */
-            @media (max-width: 480px) {
-                .cachina-consultoria-slide {
-                    padding: 16px 12px 80px 12px;
-                }
-
-                .cachina-consultoria-title-wrapper h1 {
-                    font-size: 16px;
-                }
-
-                .cachina-consultoria-main-title {
-                    font-size: 14px;
-                }
-
-                .cachina-consultoria-service-content h3 {
-                    font-size: 11px;
-                }
-
-                .cachina-consultoria-service-tags {
-                    font-size: 9px;
-                }
-
-                .cachina-consultoria-business-item p,
-                .cachina-consultoria-step-content p,
-                .cachina-consultoria-differential-item p {
-                    font-size: 10px;
-                }
-            }
-        </style>
-
-        <div class="cachina-consultoria-slide consultoria-tecnologia-slide">
-            <!-- Background Decorations -->
-            <div class="cachina-consultoria-bg-decoration">
-                <div class="cachina-consultoria-bg-grid"></div>
-                <div class="cachina-consultoria-bg-circle-1"></div>
-                <div class="cachina-consultoria-bg-circle-2"></div>
-            </div>
-
-            <!-- Logo -->
-            <img src="./icons/cachina-logoo.png" alt="Cachina Logo" class="cachina-consultoria-logo">
-
-            <div class="cachina-consultoria-container">
-                <div class="cachina-consultoria-grid">
-                    <!-- Left Column -->
-                    <div class="cachina-consultoria-left">
-                        <!-- Header -->
-                        <div class="cachina-consultoria-header">
-                            <div class="cachina-consultoria-icon-main"></div>
-                            <div class="cachina-consultoria-title-wrapper">
-                                <h1>Consultoria de Tecnologia & Inovação</h1>
-                                <p class="cachina-consultoria-subtitle">"Assessment & Estratégia Digital"</p>
-                            </div>
-                        </div>
-
-                        <!-- Main Title -->
-                        <h2 class="cachina-consultoria-main-title">Transformamos Sua Empresa com Inteligência Tecnológica</h2>
-
-                        <!-- Services -->
-                        <div class="cachina-consultoria-services">
-                            <!-- Service 1 -->
-                            <div class="cachina-consultoria-service-item">
-                                <div class="cachina-consultoria-service-icon emerald">⊙</div>
-                                <div class="cachina-consultoria-service-content">
-                                    <h3>
-                                        <span class="highlight">Projetos / Auditorias / Assessments</span>
-                                        <span class="arrow"> → Análise completa de sistemas e processos</span>
-                                    </h3>
-                                    <p class="cachina-consultoria-service-tags">Auditoria de TI • Assessment de segurança • Análise de performance • Revisão de arquitetura</p>
-                                </div>
-                            </div>
-
-                            <!-- Service 2 -->
-                            <div class="cachina-consultoria-service-item">
-                                <div class="cachina-consultoria-service-icon sky">○</div>
-                                <div class="cachina-consultoria-service-content">
-                                    <h3>
-                                        <span class="highlight sky">Governança & Segurança</span>
-                                        <span class="arrow"> → Estruturação e proteção de dados</span>
-                                    </h3>
-                                    <p class="cachina-consultoria-service-tags">LGPD compliance • Políticas de segurança • Controle de acesso • Monitoramento 24/7</p>
-                                </div>
-                            </div>
-
-                            <!-- Service 3 -->
-                            <div class="cachina-consultoria-service-item">
-                                <div class="cachina-consultoria-service-icon purple">☆</div>
-                                <div class="cachina-consultoria-service-content">
-                                    <h3>
-                                        <span class="highlight purple">Planos Diretores & Mentoria C-Level</span>
-                                        <span class="arrow"> → Estratégia executiva e transformação digital</span>
-                                    </h3>
-                                    <p class="cachina-consultoria-service-tags">Roadmap tecnológico • Mentoria para executivos • Transformação digital • Estratégia de inovação</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Business Consultancy Box -->
-                        <div class="cachina-consultoria-business-box">
-                            <h3>Consultoria de Negócios</h3>
-                            <div class="cachina-consultoria-business-items">
-                                <div class="cachina-consultoria-business-item">
-                                    <span>📊</span>
-                                    <p><strong>Consultoria de Negócios</strong> - Otimização de processos e operações</p>
-                                </div>
-                                <div class="cachina-consultoria-business-item">
-                                    <span>💡</span>
-                                    <p><strong>Inovação Estratégica</strong> - Identificação de oportunidades de crescimento</p>
-                                </div>
-                                <div class="cachina-consultoria-business-item">
-                                    <span>🚀</span>
-                                    <p><strong>Transformação Digital</strong> - Modernização completa da empresa</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Column -->
-                    <div class="cachina-consultoria-right">
-                        <!-- Methodology Section -->
-                        <div class="cachina-consultoria-methodology-box">
-                            <h2>NOSSA METODOLOGIA</h2>
-                            <div class="cachina-consultoria-steps">
-                                <div class="cachina-consultoria-step">
-                                    <div class="cachina-consultoria-step-number">1</div>
-                                    <div class="cachina-consultoria-step-content">
-                                        <h3>ANÁLISE</h3>
-                                        <p>Diagnóstico completo do cenário atual</p>
-                                    </div>
-                                </div>
-                                <div class="cachina-consultoria-step">
-                                    <div class="cachina-consultoria-step-number">2</div>
-                                    <div class="cachina-consultoria-step-content">
-                                        <h3>ESTRATÉGIA</h3>
-                                        <p>Definição do plano de ação</p>
-                                    </div>
-                                </div>
-                                <div class="cachina-consultoria-step">
-                                    <div class="cachina-consultoria-step-number">3</div>
-                                    <div class="cachina-consultoria-step-content">
-                                        <h3>IMPLEMENTAÇÃO</h3>
-                                        <p>Execução com acompanhamento</p>
-                                    </div>
-                                </div>
-                                <div class="cachina-consultoria-step">
-                                    <div class="cachina-consultoria-step-number">4</div>
-                                    <div class="cachina-consultoria-step-content">
-                                        <h3>MONITORAMENTO</h3>
-                                        <p>Avaliação contínua de resultados</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Differentials Section -->
-                        <div class="cachina-consultoria-differentials-box">
-                            <h2>DIFERENCIAIS CACHINA</h2>
-                            <div class="cachina-consultoria-differentials-list">
-                                <div class="cachina-consultoria-differential-item">
-                                    <span>✓</span>
-                                    <p>Equipe especializada em múltiplas tecnologias</p>
-                                </div>
-                                <div class="cachina-consultoria-differential-item">
-                                    <span>✓</span>
-                                    <p>Metodologia própria validada</p>
-                                </div>
-                                <div class="cachina-consultoria-differential-item">
-                                    <span>✓</span>
-                                    <p>Acompanhamento pós-implementação</p>
-                                </div>
-                                <div class="cachina-consultoria-differential-item">
-                                    <span>✓</span>
-                                    <p>ROI comprovado em todos os projetos</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  return `<div class="slide-07-container">
+  <div class="slide-07-left">
+    <div class="header-box">
+      <div class="pulse-icon"></div>
+      <img
+        src="./icons/cachina-logoo.png"
+        class="company-logo"
+        alt="Cachina Logo"
+      />
+      <h1 class="title">Consultoria de <span>Tecnologia & Inovação</span></h1>
+    </div>
+    <p class="subtitle">"Assessment & Estratégia Digital"</p>
+
+    <div class="experience-box">
+      <p class="desc-text">
+        Transformamos sua empresa com inteligência tecnológica aplicada ao
+        negócio.
+      </p>
+    </div>
+  </div>
+
+  <div class="slide-07-center">
+    <div class="methodology-card">
+      <h2 class="card-title">NOSSA METODOLOGIA</h2>
+
+      <div class="step-item">
+        <span class="step-number">1</span>
+        <div class="step-info">
+          <h3>ANÁLISE</h3>
+          <p>Diagnóstico completo do cenário atual.</p>
         </div>
+      </div>
+
+      <div class="step-item">
+        <span class="step-number">2</span>
+        <div class="step-info">
+          <h3>ESTRATÉGIA</h3>
+          <p>Definição do plano de ação personalizado.</p>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <span class="step-number">3</span>
+        <div class="step-info">
+          <h3>IMPLEMENTAÇÃO</h3>
+          <p>Execução com acompanhamento técnico.</p>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <span class="step-number">4</span>
+        <div class="step-info">
+          <h3>MONITORAMENTO</h3>
+          <p>Avaliação contínua de resultados e ROI.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-07-right">
+    <div class="quote-box business-box">
+      <div class="business-item">
+        <span>📊</span>
+        <p>
+          <strong>Consultoria de Negócios:</strong> Otimização de processos e
+          operações.
+        </p>
+      </div>
+      <div class="business-item">
+        <span>💡</span>
+        <p>
+          <strong>Inovação Estratégica:</strong> Identificação de oportunidades.
+        </p>
+      </div>
+      <div class="business-item">
+        <span>🚀</span>
+        <p><strong>Transformação Digital:</strong> Modernização completa.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-01-footer">
+    <span>PAGE : 7</span>
+    <span>CACHINA PRESENTATION TEMPLATE</span>
+    <span>METHODOLOGY_2026</span>
+  </div>
+</div>
+
+
     `;
 }
 
