@@ -880,7 +880,12 @@ function coverSlide() {
             </p>
         </div>
     </div>
-
+<div class="test-area">
+    <a href="linknabio.html" class="btn-test-link" target="_blank">
+        <i class="fas fa-external-link-alt"></i>
+        Link da Bio
+    </a>
+</div>
     <div class="slide-01-footer">
         <span>PAGE : 1</span>
         <span>CACHINA PRESENTATION TEMPLATE</span>
