@@ -1,0 +1,293 @@
+/* ================= PAGINA DE CONTATO (MANTENDO O FUNDO ORIGINAL) ================= */
+.slide-contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  height: 100vh;
+  height: 100dvh; /* Altura dinâmica para Safari Mobile */
+  width: 100vw;
+  position: relative;
+  background-color: #0a1128; /* Cor base do seu projeto */
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+/* === REUTILIZANDO SEUS EFEITOS DE FUNDO === */
+/* Efeito de Malha (Grid) */
+.slide-contact-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Brilho Radial Centralizado (Original do slide 01) */
+.slide-contact-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centralizado */
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle,
+    rgba(14, 165, 233, 0.15) 0%,
+    rgba(99, 102, 241, 0.12) 40%,
+    transparent 70%
+  );
+  filter: blur(80px);
+  z-index: 0;
+}
+
+/* === ESTRUTURA DE CONTEÚDO === */
+.slide-contact-content {
+  z-index: 2;
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.contact-header {
+  text-align: left;
+}
+
+.company-logo-small {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+.contact-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.contact-title span {
+  color: #0ea5e9;
+  text-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+}
+
+.contact-subtitle {
+  color: #94a3b8;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  max-width: 600px;
+}
+
+/* Grid de Informações */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.contact-left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* === NOVA ESTILIZAÇÃO DA FOTO DO IGOR === */
+.contact-avatar-block {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-avatar-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(14, 165, 233, 0.2);
+  background-color: #000; /* Fundo para P&B */
+}
+
+.contact-avatar-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%); /* Foto em P&B por padrão */
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Efeito ao passar o mouse na coluna de info */
+.contact-left-column:hover .contact-avatar-image img {
+  filter: grayscale(0%); /* Foto colorida ao passar o mouse */
+  transform: scale(1.05);
+}
+
+.contact-avatar-text h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.contact-avatar-text p {
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* === ITENS DE CONTATO === */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(14, 165, 233, 0.05);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.info-item:hover {
+  transform: translateX(8px);
+  border-color: rgba(14, 165, 233, 0.3);
+  background-color: rgba(14, 165, 233, 0.03);
+}
+
+.info-icon {
+  font-size: 1.5rem;
+  color: #0ea5e9;
+  width: 40px;
+  text-align: center;
+}
+
+.info-text label {
+  display: block;
+  font-size: 0.75rem;
+  color: #0ea5e9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.info-text span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #e2e8f0;
+}
+
+/* === ESTILIZAÇÃO DO QR CODE === */
+.qr-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 17, 40, 0.6);
+  padding: 40px;
+  border-radius: 20px;
+  border: 2px dashed rgba(14, 165, 233, 0.2);
+  backdrop-filter: blur(10px); /* Efeito de vidro */
+}
+
+.qr-wrapper {
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(14, 165, 233, 0.15);
+}
+
+.qr-wrapper img {
+  width: 170px;
+  height: 170px;
+  display: block;
+}
+
+.qr-label {
+  margin-top: 18px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  text-align: center;
+}
+
+/* === RODAPÉ (Original) === */
+.slide-01-footer {
+  position: absolute;
+  bottom: 25px;
+  left: 60px;
+  right: 60px;
+  display: flex;
+  justify-content: space-between;
+  color: #475569;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 15px;
+  z-index: 2;
+}
+
+/* === RESPONSIVIDADE MOBILE (Blindada para Safari) === */
+@media (max-width: 768px) {
+  .slide-contact-container {
+    height: auto;
+    min-height: 100dvh;
+    padding: 40px 20px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .slide-contact-content {
+    gap: 30px;
+  }
+
+  .contact-title {
+    font-size: 2.5rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .qr-section {
+    order: -1; /* QR Code aparece antes das infos no mobile */
+    padding: 30px;
+  }
+
+  .contact-avatar-block {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .slide-01-footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: 30px;
+    padding-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+  }
+}

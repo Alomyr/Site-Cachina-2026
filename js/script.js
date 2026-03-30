@@ -1099,107 +1099,78 @@ function aiAgentSlide() {
 function contactSlide() {
   return `
   
-          <div class="h-full w-full bg-gradient-cachina-mix flex items-center relative contact-slide py-20">
-    
-    <div class="absolute top-6 left-6 animate-fade-in animate-delay-600 contact-icon-1">
-        <img src="./icons/cachina-icon.png" alt="Cachina Icon" class="w-9 h-9 opacity-25" loading="lazy">
+<div class="slide-contact-container">
+  <div class="slide-contact-content">
+    <div class="contact-header">
+      <img
+        src="./icons/cachina-logoo.png"
+        class="company-logo-small"
+        alt="Cachina Logo"
+      />
+      <h1 class="contact-title">Vamos <span>Conectar</span>?</h1>
+      <p class="contact-subtitle">
+        Estamos prontos para transformar sua visão em realidade tecnológica.
+      </p>
     </div>
 
-    <div class="container mx-auto px-6 contact-container relative z-10">
-        <div class="grid lg:grid-cols-2 gap-12 items-center contact-grid">
-            
-            <div class="space-y-8 contact-left">
-                <div class="flex items-center gap-3 animate-slide-left">
-                    <svg class="w-12 h-12 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                    <h1 class="text-5xl font-bold">
-                        Vamos <span class="text-sky-400">Conversar</span>?
-                    </h1>
-                </div>
-
-                <div class="space-y-6">
-                    <div class="animate-slide-left animate-delay-200">
-                        <h3 class="text-xl font-semibold mb-4 text-sky-400">CONTATO DIRETO:</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-center gap-3">
-                                <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                </svg>
-                                <span>84 99155-1968</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg>
-                                <span>comercial@cachina.com.br</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="animate-slide-left animate-delay-300">
-                        <h3 class="text-xl font-semibold mb-4 text-sky-400">DIGITAL:</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-center gap-3">
-                                <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                                </svg>
-                                <span>www.cachina.com.br</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                    <rect x="2" y="9" width="4" height="12"></rect>
-                                    <circle cx="4" cy="4" r="2"></circle>
-                                </svg>
-                                <span>/empresa/grupo-cachina</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="animate-slide-left animate-delay-400">
-                        <h3 class="text-xl font-semibold mb-4 text-sky-400">ENDEREÇO:</h3>
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-emerald-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                            <div>
-                                <p>R. Jequitinhonha, 2929 - Neópolis</p>
-                                <p>Natal - RN, 59088-210, sala 26</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center space-y-12 contact-right">
-                <div class="bg-white/5 p-8 rounded-2xl backdrop-blur-sm border border-white/10">
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold text-sky-400 mb-2">Escaneie o QR Code</h3>
-                        <p class="text-gray-300 text-sm">Acesse todos os nossos contatos</p>
-                    </div>
-                    <div class="flex flex-col items-center gap-4">
-                        <img src="./icons/qr-code.png" alt="QR Code" class="w-40 h-40 bg-white p-2 rounded-lg">
-                        <p class="text-xs text-gray-400">WhatsApp • Instagram • Email • Localização</p>
-                    </div>
-                </div>
-
-                <div class="animate-slide-right animate-delay-400">
-                    <h2 class="text-3xl font-bold text-sky-400 mb-4 italic">
-                        "Tecnologia que Simplifica, Resultados que Transformam"
-                    </h2>
-                    <p class="text-2xl font-semibold">Obrigado pela atenção!</p>
-                </div>
-            </div>
-
+    <div class="contact-grid">
+      <div class="contact-left-column">
+        <div class="contact-avatar-block">
+          <div class="contact-avatar-image">
+            <img src="icons/igor.png" alt="Igor - CEO & Founder" />
+          </div>
+          <div class="contact-avatar-text">
+            <h3>Igor</h3>
+            <p>CEO & Founder, Cachina</p>
+          </div>
         </div>
+
+        <div class="contact-info">
+          <div class="info-item">
+            <div class="info-icon">📧</div>
+            <div class="info-text">
+              <label>E-mail</label>
+              <span>contato@cachina.com.br</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">📍</div>
+            <div class="info-text">
+              <label>Localização</label>
+              <span>Natal, RN - Brasil</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">🌐</div>
+            <div class="info-text">
+              <label>Website</label>
+              <span>www.cachina.com.br</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qr-section">
+        <div class="qr-wrapper">
+          <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.cachina.com.br"
+            alt="QR Code Contato"
+          />
+        </div>
+        <p class="qr-label">Escaneie para salvar o contato</p>
+      </div>
     </div>
+  </div>
+
+  <div class="slide-01-footer">
+    <span>PAGE : 05</span>
+    <span>CACHINA PRESENTATION TEMPLATE</span>
+    <span>BUSINESS_2026</span>
+  </div>
 </div>
+
     `;
 }
 
@@ -1406,187 +1377,65 @@ function aboutUsSlide() {
 
 function businessFlowSlide() {
   return `
+<div class="slide-04-container">
+  <div class="slide-ecosystem-content">
+    <div class="ecosystem-header">
+      <img src="./icons/cachina-logoo.png" class="company-logo-small" alt="Cachina Logo" />
+      <h1 class="ecosystem-title">Nosso <span>Ecossistema</span></h1>
+      <p class="ecosystem-subtitle">
+        Uma estrutura completa de soluções que se potencializam para gerar valor escalável.
+      </p>
+    </div>
 
-      <div class="h-full w-full bg-gradient-cachina-mix flex items-center justify-center relative overflow-hidden bfs-slide business-flow-slide">
-        <!-- Background Effects -->
-        <div class="bfs-bg-fx business-flow-bg-fx">
-          <div class="bfs-blob bfs-blob-alpha"></div>
-          <div class="bfs-blob bfs-blob-beta"></div>
+    <div class="ecosystem-grid">
+      <div class="eco-card">
+        <div class="eco-icon">🚀</div>
+        <div class="eco-body">
+          <h3>Cachina Digital</h3>
+          <p>Desenvolvimento de produtos, apps e plataformas de alta performance.</p>
         </div>
-    
-        <!-- Logo Principal -->
-        <div class="bfs-logo-box business-flow-logo">
-          <img src="./icons/cachina-logoo.png" alt="Cachina Logo" class="bfs-logo-img" loading="lazy">
-        </div>
-
-        
-    
-        <div class="bfs-container business-flow-container">
-          <!-- Layout em Grid Principal -->
-          <div class="bfs-grid-main business-flow-grid">
-            <!-- COLUNA ESQUERDA - Header + Holding -->
-            <div class="bfs-col-left">
-              <!-- Header Compacto -->
-              <div class="bfs-header">
-                <h1 class="bfs-header-h1">
-                  Nosso <span class="bfs-header-span">Ecossistema</span>
-                </h1>
-                <p class="bfs-header-p">Estrutura organizacional completa</p>
-              </div>
-    
-              <!-- HOLDING - Compacta -->
-              <div class="bfs-holding-wrap">
-                <div class="bfs-holding-glow"></div>
-                <div class="bfs-holding-card">
-                  <div class="bfs-holding-logo-box">
-                    <img src="./icons/cachina-logoo.png" alt="Cachina Logo" class="bfs-holding-logo" loading="lazy">
-                  </div>
-                </div>
-              </div>
-    
-              <!-- Seta para direita/baixo -->
-              <div class="bfs-arrow-box">
-                <svg class="bfs-arrow-svg bfs-arrow-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
-              </div>
-            </div>
-    
-            <!-- COLUNA CENTRAL - Divisões Estratégicas -->
-            <div class="bfs-col-center">
-              <h3 class="bfs-divisions-title">Divisões Estratégicas</h3>
-    
-              <!-- Branch 1 - Consultoria -->
-              <div class="bfs-branch-wrap">
-                <div class="bfs-branch-card bfs-branch-purple">
-                  <div class="bfs-branch-header">
-                    <div class="bfs-branch-ico bfs-branch-ico-purple">
-                      <svg class="bfs-branch-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                      </svg>
-                    </div>
-                    <h4 class="bfs-branch-h4">Consultoria de Tecnologia & Inovação</h4>
-                  </div>
-    
-                  <div class="bfs-services-list">
-                    <div class="bfs-service-item">
-                      <div class="bfs-service-dot"></div>
-                      <span class="bfs-service-txt">Projetos / Auditorias / Assessments</span>
-                    </div>
-                    <div class="bfs-service-item">
-                      <div class="bfs-service-dot"></div>
-                      <span class="bfs-service-txt">Governança & Segurança</span>
-                    </div>
-                    <div class="bfs-service-item">
-                      <div class="bfs-service-dot"></div>
-                      <span class="bfs-service-txt">Planos Diretores & Mentoria C-Level</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
-              <!-- Branch 2 - Gestão -->
-              <div class="bfs-branch-wrap">
-                <div class="bfs-branch-card bfs-branch-emerald">
-                  <div class="bfs-branch-header">
-                    <div class="bfs-branch-ico bfs-branch-ico-emerald">
-                      <svg class="bfs-branch-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                      </svg>
-                    </div>
-                    <h4 class="bfs-branch-h4">Gestão de TI & Terceirização</h4>
-                  </div>
-    
-                  <div class="bfs-services-list">
-                    <div class="bfs-service-item">
-                      <div class="bfs-service-dot"></div>
-                      <span class="bfs-service-txt">Gestão de TI Terceirizada</span>
-                    </div>
-                    <div class="bfs-service-item">
-                      <div class="bfs-service-dot"></div>
-                      <span class="bfs-service-txt">Suporte Técnico N1/N2</span>
-                    </div>
-                    <div class="bfs-service-item">
-                      <div class="bfs-service-dot"></div>
-                      <span class="bfs-service-txt">Terceirização de mão de obra</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
-              <!-- Seta para direita/baixo -->
-              <div class="bfs-arrow-box bfs-arrow-center">
-                <svg class="bfs-arrow-svg bfs-arrow-pulse-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
-              </div>
-            </div>
-    
-            <!-- COLUNA DIREITA - Empresas do Ecossistema -->
-            <div class="bfs-col-right">
-              <div class="bfs-companies-header">
-                <h3 class="bfs-companies-h3">Empresas do Ecossistema</h3>
-                <div class="bfs-companies-line"></div>
-              </div>
-    
-              <div class="bfs-companies-list">
-                <!-- Company 1 - AutomaFacil -->
-                <div class="bfs-company-wrap">
-                  <div class="bfs-company-card bfs-company-orange">
-                    <div class="bfs-company-bg bfs-company-bg-orange"></div>
-                    <div class="bfs-company-logo-box">
-                      <img src="./icons/automafacil.png" alt="AutomaFacil Logo" class="bfs-company-logo" loading="lazy">
-                    </div>
-                  </div>
-                </div>
-    
-                <!-- Connector Arrow -->
-                <div class="bfs-connector-arrow">
-                  <svg class="bfs-connector-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                  </svg>
-                </div>
-    
-                <!-- Company 2 - DevFacil -->
-                <div class="bfs-company-wrap">
-                  <div class="bfs-company-card bfs-company-cyan">
-                    <div class="bfs-company-bg bfs-company-bg-cyan"></div>
-                    <div class="bfs-company-logo-box">
-                      <img src="./icons/devfacil.png" alt="DevFacil Logo" class="bfs-company-logo" loading="lazy">
-                    </div>
-                  </div>
-                </div>
-    
-                <!-- Connector Arrow -->
-                <div class="bfs-connector-arrow">
-                  <svg class="bfs-connector-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                  </svg>
-                </div>
-    
-                <!-- Company 3 - CloudBox -->
-                <div class="bfs-company-wrap">
-                  <div class="bfs-company-card bfs-company-violet">
-                    <div class="bfs-company-bg bfs-company-bg-violet"></div>
-                    <div class="bfs-company-logo-box">
-                      <img src="./icons/cloudbox.png" alt="CloudBox Logo" class="bfs-company-logo" loading="lazy">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Elementos Decorativos -->
-        <div class="bfs-deco bfs-deco-alpha">
-          <div class="bfs-deco-box"></div>
-        </div>
-        <div class="bfs-deco bfs-deco-beta">
-          <div class="bfs-deco-circle"></div>
-        </div>
+        <div class="eco-tag">PRODUTOS</div>
       </div>
+
+      <div class="eco-card featured">
+        <div class="eco-icon">⚙️</div>
+        <div class="eco-body">
+          <h3>Cachina Ops</h3>
+          <p>Operação e infraestrutura escalável com foco em segurança e eficiência.</p>
+        </div>
+        <div class="eco-tag">OPERAÇÃO</div>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-icon">💡</div>
+        <div class="eco-body">
+          <h3>Cachina Ventures</h3>
+          <p>Estratégia e inovação para novos modelos de negócios e holdings.</p>
+        </div>
+        <div class="eco-tag">ESTRATÉGIA</div>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-icon">🛡️</div>
+        <div class="eco-body">
+          <h3>Cachina Security</h3>
+          <p>Proteção de dados e conformidade para ambientes corporativos críticos.</p>
+        </div>
+        <div class="eco-tag">SEGURANÇA</div>
+      </div>
+    </div>
+
+    <div class="ecosystem-footer-text">
+      <h3>Conectando tecnologia, pessoas e processos para o próximo nível.</h3>
+    </div>
+  </div>
+
+  <div class="slide-01-footer">
+    <span>PAGE : 04</span>
+    <span>CACHINA PRESENTATION TEMPLATE</span>
+    <span>BUSINESS_2026</span>
+  </div>
+</div>
     `;
 }
 
