@@ -1,0 +1,213 @@
+/* ================= CONTAINER PRINCIPAL ================= */
+.slide-ia-v3-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  padding: 40px 60px;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-color: #0a1128; /* Fundo do modelo */
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+/* EFEITOS DE FUNDO (MALHA E BRILHO DO SEU MODELO) */
+.slide-ia-v3-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 1;
+}
+
+.slide-ia-v3-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle,
+    rgba(14, 165, 233, 0.15) 0%,
+    transparent 70%
+  );
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.slide-ia-v3-container > * {
+  z-index: 2;
+  position: relative;
+}
+
+/* ================= ELEMENTOS DE TEXTO ================= */
+.ia-header-v3 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.ia-badge-v3 {
+  background: rgba(14, 165, 233, 0.1);
+  color: #0ea5e9;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+.ia-title-v3 {
+  font-size: 2.8rem;
+  margin: 15px 0 5px;
+  font-weight: 800;
+}
+.ia-title-v3 span {
+  color: #0ea5e9;
+  text-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+}
+.ia-subtitle-v3 {
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+/* ================= WORKFLOW CENTRAL ================= */
+.ia-workflow-v3 {
+  width: 100%;
+  max-width: 850px;
+  margin-bottom: 30px;
+}
+
+.workflow-card-v3 {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.workflow-tag {
+  color: #22c55e;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.workflow-view {
+  background: #0f172a;
+  border-radius: 12px;
+  margin: 15px 0;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.workflow-view img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.workflow-footer-text {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* ================= BENEFÍCIOS GRID ================= */
+.ia-benefits-grid-v3 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.b-card {
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.b-card:hover {
+  border-color: #0ea5e9;
+  transform: translateY(-3px);
+}
+.b-icon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 8px;
+}
+.b-card h4 {
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+  color: #e2e8f0;
+}
+.b-card p {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.economys-badge {
+  margin-top: 30px;
+  padding: 12px 25px;
+  background: linear-gradient(90deg, rgba(14, 165, 233, 0.2), transparent);
+  border: 1px solid rgba(14, 165, 233, 0.4);
+  border-radius: 50px;
+  z-index: 2;
+  font-weight: 600;
+  color: #e2e8f0;
+
+  /* Adições para conter a imagem */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%; /* Evita que o badge encoste nas bordas da tela */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.economys-badge img {
+  max-width: 100%; /* A imagem nunca será maior que o container */
+  height: auto; /* Mantém a proporção sem achatar */
+  max-height: 300px; /* Ajuste este valor conforme o tamanho desejado na tela */
+  object-fit: contain;
+  display: block;
+}
+
+/* ================= RESPONSIVIDADE ================= */
+@media (max-width: 1024px) {
+  .ia-benefits-grid-v3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ia-title-v3 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide-ia-v3-container {
+    height: auto;
+    padding: 60px 20px;
+    overflow-y: auto;
+  }
+  .ia-benefits-grid-v3 {
+    grid-template-columns: 1fr;
+  }
+  .ia-workflow-v3 {
+    max-width: 100%;
+  }
+  .ia-title-v3 {
+    font-size: 1.8rem;
+  }
+}

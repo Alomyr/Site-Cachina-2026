@@ -11,11 +11,10 @@ const slides = [
     title: "Consultoria de Tecnologia",
     component: "consultoriaTecnologiaSlide",
   },
-  { id: 9, title: "Agente de IA", component: "aiAgentSlide" },
-  { id: 10, title: "Emissor Fácil", component: "emissorFacilSlide" },
+  { id: 9, title: "Agente de IA", component: "customSoftwareSlide" },
   { id: 11, title: "CloudBox/VDI", component: "cloudBoxSlide" },
-  { id: 12, title: "Gestão de TI", component: "" }, //repetido mudar aqui teste de subida
-  { id: 13, title: "Software Personalizado", component: "customSoftwareSlide" },
+  { id: 12, title: "Gestão de TI", component: "aiAgentSlide" },
+  { id: 9, title: "Agente de IA", component: "aboutUsSlide" },
   { id: 14, title: "Clientes", component: "clientsSlide" },
   { id: 15, title: "Diferenciais", component: "differentialsSlide" },
   { id: 16, title: "Processo", component: "processSlide" },
@@ -845,21 +844,24 @@ function coverSlide() {
 
 <div class="slide-01-container">
     <div class="slide-01-left">
-        <h1 class="title">
-            INSPIRE<br>
-            O FUTURO<br>
-            DA SUA<br>
-            <span>EMPRESA</span>
-        </h1>
-        <p class="subtitle">Cachina - Soluções em Tecnologia</p>
+
         
         <div class="experience-box">
             <span class="year">20+</span>
-            <span class="label">ANOS<br>DE EXPERIÊNCIA</span>
+        </div>
+        <div class=slide-01-left>
+        <span class="subtitle">ANOS DE EXPERIÊNCIA</span>
         </div>
     </div>
     
     <div class="slide-01-center">
+         <h1 class="title">
+            INSPIRE O FUTURO DA SUA 
+            <span>EMPRESA</span>
+
+        </h1>
+        <p class="subtitle">Cachina - Soluções em Tecnologia</p>
+
         <div class="avatar-gradient-border">
             <img src="./icons/igor.png" alt="Foto do CEO">
         </div>
@@ -957,7 +959,8 @@ function valuePropositionSlide() {
                 Na <span>Cachina Tecnologia</span>, acreditamos que a tecnologia só faz sentido quando gera <strong>resultados reais</strong>.
             </p>
             <p class="description-text">
-                Somos uma <strong>holding de inovação</strong> que conecta <span>estratégia, operação</span> e <span>produtos digitais</span> para empresas que buscam crescer com <strong>eficiência, segurança e escalabilidade</strong>.
+                Somos uma <strong>holding de inovação</strong> que conecta <span>estratégia, operação</span> e 
+                <span>produtos digitais</span> para empresas que buscam crescer com <strong>eficiência, segurança e escalabilidade</strong>.
             </p>
         </div>
     </div>
@@ -1027,16 +1030,16 @@ function businessFlowSlide() {
           <h3>Cachina Gestão TI</h3>
           <p>
             Operação e infraestrutura escalável com foco em segurança e
-            eficiência suporte e Tercerização.
+            eficiência Gestão e TI que aumentam vendas e reduzem custos.
           </p>
         </div>
         <div class="eco-tag">OPERAÇÃO</div>
       </div>
 
       <div class="eco-card">
-        <div class="eco-icon">💡</div>
-        <div class="eco-body">
-          <h3>Cachina Ventures</h3>
+        <img src="./icons/automafacil.png" class="company-logo-small" />
+      <div class="eco-body">
+          <h3>Cachina Automações</h3>
           <p>
             Estratégia e inovação para novos modelos de negócios e holdings.
           </p>
@@ -1045,15 +1048,15 @@ function businessFlowSlide() {
       </div>
 
       <div class="eco-card">
-        <div class="eco-icon">🛡️</div>
-        <div class="eco-body">
-          <h3>Cachina Security</h3>
+        <img src="./icons/devfacil.png" class="company-logo-small" />
+      <div class="eco-body">
+          <h3>Cachina System</h3>
           <p>
-            Proteção de dados e conformidade para ambientes corporativos
-            críticos.
+          "Software Sob Medida para Operações"
+          Transformamos Sua Ideia em Sistema Real 
           </p>
         </div>
-        <div class="eco-tag">SEGURANÇA</div>
+        <div class="eco-tag">SISTEMA</div>
       </div>
     </div>
 
@@ -1290,33 +1293,260 @@ function consultoriaTecnologiaSlide() {
     `;
 }
 
-function emissorFacilSlide() {
-  return `
-    
+//slide08
+function customSoftwareSlide() {
+  return `<div class="slide-assessment-container">
+    <div class="assessment-header">
+        <h1 class="assessment-title"><span>Consultoria</span> e  <span>Assessment</span> <br>struturado</h1>
+        <p class="assessment-subtitle">
+            Analisamos os principais pilares que sustentam a operação, segurança e eficiência do seu ambiente tecnológico.
+        </p>
+    </div>
+
+    <div class="assessment-grid">
+        <div class="assessment-card">
+            <div class="card-icon">⚖️</div>
+            <h3>Governança de TI</h3>
+            <p>Avaliação da organização, papéis, responsabilidades e alinhamento com os objetivos do negócio.</p>
+        </div>
+
+        <div class="assessment-card">
+            <div class="card-icon">🚀</div>
+            <h3>Projetos e Demandas</h3>
+            <p>Análise de como as demandas são priorizadas e a maturidade na condução de projetos.</p>
+        </div>
+
+        <div class="assessment-card">
+            <div class="card-icon">⚙️</div>
+            <h3>Suporte a Sistemas</h3>
+            <p>Avaliação da sustentação, fluxos de atendimento e tratamento de incidentes.</p>
+        </div>
+
+        <div class="assessment-card">
+            <div class="card-icon">💻</div>
+            <h3>Endpoints</h3>
+            <p>Verificação de equipamentos de ponta, padronização, performance e segurança.</p>
+        </div>
+
+        <div class="assessment-card">
+            <div class="card-icon">☁️</div>
+            <h3>Backup</h3>
+            <p>Análise das rotinas de backup, retenção e capacidade de recuperação em desastres.</p>
+        </div>
+
+        <div class="assessment-card">
+            <div class="card-icon">💾</div>
+            <h3>Servidores e Storage</h3>
+            <p>Avaliação de processamento, armazenamento e disponibilidade do ambiente atual.</p>
+        </div>
+
+        <div class="assessment-card">
+            <div class="card-icon">🌐</div>
+            <h3>Redes</h3>
+            <p>Mapeamento de infraestrutura, conectividade e pontos de vulnerabilidade.</p>
+        </div>
+
+        <div class="assessment-card">
+            <div class="card-icon">📊</div>
+            <h3>Inteligência de Dados</h3>
+            <p>Uso estratégico das informações para apoio à operação e tomada de decisão.</p>
+        </div>
+
+        <div class="assessment-card">
+            <div class="card-icon">📜</div>
+            <h3>Contratos e Compliance</h3>
+            <p>Análise de contratos vigentes, fornecedores e aderência às boas práticas.</p>
+        </div>
+    </div>
+
+    <div class="slide-01-footer">
+        <span>PAGE : 4</span>
+        <span>CACHINA CONSULTORIA</span>
+        <span>BUSINESS_2026</span>
+    </div>
+</div>
 `;
 }
-
+//slide09
 function cloudBoxSlide() {
   return `
-    
-    `;
-}
+<div class="slide-cloudbox-container">
+    <div class="cloudbox-header">
+        <div class="cloudbox-logo-top">☁️ CloudBox</div>
+        <h1 class="cloudbox-title">CloudBox <span>Cachina</span></h1>
+        <p class="cloudbox-tagline">Inovação é o nosso DNA</p>
+    </div>
 
-function customSoftwareSlide() {
-  return `
-     
-`;
+    <div class="cloudbox-grid">
+        
+        <div class="cloudbox-card">
+            <div class="card-img-placeholder">
+                <img src="./icons/cloudbox.png" alt="Dispositivo CloudBox">
+            </div>
+            <h3>O que é a CloudBox?</h3>
+            <p>Solução de virtualização que substitui computadores convencionais, conectando usuários a ambientes em nuvem com alto desempenho.</p>
+        </div>
+
+        <div class="cloudbox-card">
+            <div class="icon-header">⚙️</div>
+            <h3>Problemas que Resolvemos</h3>
+            <ul class="cloud-list">
+                <li><span>✓</span> Baixo desempenho</li>
+                <li><span>✓</span> Obsolescência</li>
+                <li><span>✓</span> Segurança (Ransomware)</li>
+                <li><span>✓</span> Alto consumo de energia</li>
+            </ul>
+        </div>
+
+        <div class="cloudbox-card">
+            <div class="icon-header">⚡</div>
+            <h3>Benefícios</h3>
+            <div class="benefits-mini-grid">
+                <div class="benefit-tag">Dados Protegidos</div>
+                <div class="benefit-tag">Economia</div>
+                <div class="benefit-tag">Alta Disponibilidade</div>
+                <div class="benefit-tag">Sustentável</div>
+            </div>
+        </div>
+
+        <div class="cloudbox-card">
+            <div class="icon-header">👥</div>
+            <h3>Público-Alvo</h3>
+            <div class="target-list">
+                <div class="target-item">Escritórios</div>
+                <div class="target-item">Lojas e Comércios</div>
+                <div class="target-item">Home Offices</div>
+                <div class="target-item">Escolas e Call Centers</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="economy-badge">
+        🌐 Até 90% de economia energética
+    </div>
+
+    <div class="economys-badge">
+                <img src="./icons/cachinacloudbox.png" alt="Dispositivo CloudBox">
+    </div>
+
+
+
+    <div class="slide-01-footer">
+        <span>PAGE : 10</span>
+        <span>CACHINA CLOUD SOLUTIONS</span>
+        <span>BUSINESS_2026</span>
+    </div>
+</div>
+    `;
 }
 function aboutUsSlide() {
   return `
+     <div class="slide-devfacil-container">
+    <div class="dev-content-wrapper">
+        
+        <div class="dev-info-section">
+            <div class="dev-header">
+                <span class="dev-badge"><img src="./icons/devfacil.png" alt="Logo devfacil"></span>
+                <h1 class="dev-main-title">Software Sob <span>Medida</span></h1>
+                <p class="dev-tagline">Transformamos sua ideia em sistemas reais de alta performance.</p>
+            </div>
 
+            <div class="dev-services-list">
+                <div class="service-item"><span>🌐</span> Sites & Landing Pages Responsivas</div>
+                <div class="service-item"><span>📱</span> Apps Mobile Nativos e Híbridos</div>
+                <div class="service-item"><span>🛡️</span> Sistemas Web Seguros e Escaláveis</div>
+                <div class="service-item"><span>⚙️</span> Integrações com ERPs e APIs</div>
+                <div class="service-item"><span>🤖</span> Automação de Processos Únicos</div>
+            </div>
+        </div>
+
+        <div class="dev-methodology-section">
+            <div class="methodology-card-v2">
+                <span class="method-label">NOSSA METODOLOGIA</span>
+                
+                <div class="steps-container">
+                    <div class="method-step">
+                        <div class="step-num">1</div>
+                        <div class="step-text"><strong>DIAGNÓSTICO</strong><p>Entendemos sua dor real</p></div>
+                    </div>
+                    <div class="method-step">
+                        <div class="step-num">2</div>
+                        <div class="step-text"><strong>PROTOTIPAGEM</strong><p>Validamos a solução</p></div>
+                    </div>
+                    <div class="method-step">
+                        <div class="step-num">3</div>
+                        <div class="step-text"><strong>DESENVOLVIMENTO</strong><p>Ágil e transparente</p></div>
+                    </div>
+                    <div class="method-step">
+                        <div class="step-num">4</div>
+                        <div class="step-text"><strong>DEPLOY</strong><p>Implementação sem estresse</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="slide-01-footer">
+        <span>PAGE : 12</span>
+        <span>CACHINA DEV SOLUTIONS</span>
+        <span>BUSINESS_2026</span>
+    </div>
+</div>
     `;
 }
-
+//slide10
 function aiAgentSlide() {
   return `
-         
-      `;
+<div class="slide-ia-v3-container">
+
+    <div class="economys-badge">
+                <img src="./icons/automafacil.png" alt="Dispositivo CloudBox">
+    </div>
+    <div class="ia-header-v3">
+        <h1 class="ia-title-v3">Agente de IA <span>Omnicanal</span></h1>
+        <p class="ia-subtitle-v3">Atendimento 24/7 que qualifica e vende enquanto você dorme.</p>
+    </div>
+
+    <div class="ia-workflow-v3">
+        <div class="workflow-card-v3">
+                <span class="ia-badge-v3">🤖 Automação Inteligente, COMO FUNCIONA:</span>
+            <div class="workflow-view">
+                <img src="./icons/ai-workflow.png" alt="Fluxo de IA">
+            </div>
+            <p class="workflow-footer-text">Fluxo inteligente que conecta múltiplas plataformas e automatiza processos complexos.</p>
+        </div>
+    </div>
+
+    <div class="ia-benefits-grid-v3">
+        <div class="b-card">
+            <span class="b-icon">💬</span>
+            <h4>Resposta Instantânea</h4>
+            <p>WhatsApp, Instagram e Site.</p>
+        </div>
+        <div class="b-card">
+            <span class="b-icon">📈</span>
+            <h4>+300% Conversão</h4>
+            <p>Leads qualificados.</p>
+        </div>
+        <div class="b-card">
+            <span class="b-icon">🎯</span>
+            <h4>Qualificação</h4>
+            <p>Filtra para o comercial.</p>
+        </div>
+        <div class="b-card">
+            <span class="b-icon">💰</span>
+            <h4>Redução de 70%</h4>
+            <p>No custo de atendimento.</p>
+        </div>
+    </div>
+
+    <div class="slide-01-footer">
+        <span>PAGE : 10</span>
+        <span>CACHINA AGENTE IA</span>
+        <span>BUSINESS_2026</span>
+    </div>
+</div>      `;
 }
 
 // slide 13
@@ -1499,7 +1729,7 @@ function processSlide() {
 
         <div class="step-card">
           <div class="step-number step-3">3</div>
-          <div class="step-time">1-2 dias</div>
+          <div class="step-time">1 dias</div>
           <div class="step-icon">📄</div>
           <h3>Proposta</h3>
           <p>Solução sob medida para o seu negócio.</p>

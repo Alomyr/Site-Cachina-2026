@@ -1,0 +1,202 @@
+/* ================= SLIDE CLOUDBOX ================= */
+.slide-cloudbox-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 60px;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-color: #0a1128;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+/* Reutilizando seus efeitos de fundo (Malha e Brilho) */
+.slide-cloudbox-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 1;
+}
+
+.slide-cloudbox-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(14, 165, 233, 0.1) 0%,
+    transparent 70%
+  );
+  filter: blur(60px);
+  z-index: 0;
+}
+
+/* Cabeçalho */
+.cloudbox-header {
+  text-align: center;
+  z-index: 2;
+  margin-bottom: 30px;
+}
+
+.cloudbox-logo-top {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #0ea5e9;
+  margin-bottom: 5px;
+}
+
+.cloudbox-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+}
+
+.cloudbox-title span {
+  color: #0ea5e9;
+  text-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+}
+
+.cloudbox-tagline {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* Grid de 4 colunas */
+.cloudbox-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 1300px;
+  z-index: 2;
+}
+
+.cloudbox-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.cloudbox-card:hover {
+  transform: translateY(-5px);
+  border-color: #0ea5e9;
+}
+
+.cloudbox-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #e2e8f0;
+}
+
+.cloudbox-card p,
+.cloud-list li,
+.target-item {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+/* Listas e Tags */
+.cloud-list {
+  list-style: none;
+  padding: 0;
+}
+.cloud-list li span {
+  color: #0ea5e9;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.benefits-mini-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.benefit-tag {
+  background: rgba(14, 165, 233, 0.1);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.target-item {
+  background: rgba(255, 255, 255, 0.03);
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  border-left: 3px solid #0ea5e9;
+}
+
+/* Badge Inferior */
+.economy-badge {
+  margin-top: 30px;
+  padding: 12px 25px;
+  background: linear-gradient(90deg, rgba(14, 165, 233, 0.2), transparent);
+  border: 1px solid rgba(14, 165, 233, 0.4);
+  border-radius: 50px;
+  z-index: 2;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+.economys-badge {
+  margin-top: 30px;
+  padding: 12px 25px;
+  background: linear-gradient(90deg, rgba(14, 165, 233, 0.2), transparent);
+  border: 1px solid rgba(14, 165, 233, 0.4);
+  border-radius: 50px;
+  z-index: 2;
+  font-weight: 600;
+  color: #e2e8f0;
+
+  /* Adições para conter a imagem */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%; /* Evita que o badge encoste nas bordas da tela */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.economys-badge img {
+  max-width: 100%; /* A imagem nunca será maior que o container */
+  height: auto; /* Mantém a proporção sem achatar */
+  max-height: 300px; /* Ajuste este valor conforme o tamanho desejado na tela */
+  object-fit: contain;
+  display: block;
+}
+/* Responsividade Mobile */
+@media (max-width: 1024px) {
+  .cloudbox-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cloudbox-grid {
+    grid-template-columns: 1fr;
+  }
+  .slide-cloudbox-container {
+    height: auto;
+    padding: 60px 20px;
+  }
+  .cloudbox-title {
+    font-size: 2.2rem;
+  }
+}

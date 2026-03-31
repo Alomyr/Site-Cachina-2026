@@ -19,7 +19,9 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
   z-index: 1;
 }
@@ -47,9 +49,11 @@
   font-size: 1.8rem;
   line-height: 1.4;
   color: #e2e8f0;
+  text-align: justify;
 }
 
-.intro-text span, .description-text span {
+.intro-text span,
+.description-text span {
   color: #0ea5e9;
   font-weight: 600;
 }
@@ -59,6 +63,8 @@
   line-height: 1.6;
   color: #94a3b8;
   max-width: 600px;
+  text-align: justify; 
+  hyphens: auto;
 }
 
 /* ================= PILARES DIREITA ================= */
@@ -84,7 +90,9 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .pilar-card:hover {
