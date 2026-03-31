@@ -147,21 +147,143 @@
 }
 
 /* ================= RESPONSIVIDADE ================= */
-@media (max-width: 1024px) {
+/* ================= 1. BASE (Ajustada para iOS/Safari) ================= */
+.slide-devfacil-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  height: 100vh;
+  height: 100dvh; /* Altura dinâmica para evitar quebras no Safari Mobile */
+  width: 100vw;
+  position: relative;
+  background-color: #0a1128;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased; /* Suaviza fontes no iPhone */
+}
+
+/* Efeito de Malha e Brilho (Padrão Cachina) */
+.slide-devfacil-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.slide-devfacil-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle,
+    rgba(14, 165, 233, 0.12) 0%,
+    transparent 70%
+  );
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.dev-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  width: 100%;
+  max-width: 1300px;
+  z-index: 2;
+}
+
+/* ... (Mantenha seus estilos de .dev-info-section e .methodology-card-v2 aqui) ... */
+
+/* ================= 2. RESPONSIVIDADE BLINDADA (MOBILE) ================= */
+@media (max-width: 768px) {
+  .slide-devfacil-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100dvh; /* Garante preenchimento total da tela no iOS */
+    padding: 50px 20px;
+    gap: 35px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* Scroll suave no iPhone */
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  /* Desativa efeitos pesados no mobile para melhor performance */
+  .slide-devfacil-container::before,
+  .slide-devfacil-container::after {
+    display: none;
+  }
+
   .dev-content-wrapper {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column; /* Empilha as colunas */
     gap: 40px;
+    width: 100%;
     text-align: center;
   }
+
+  /* Ajuste de Títulos para Mobile */
+  .dev-main-title {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  .dev-tagline {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+
+  /* Ajuste da Lista de Serviços */
   .service-item {
     justify-content: center;
+    text-align: left;
+    font-size: 0.9rem;
+    padding: 15px;
   }
+
+  /* Ajuste do Card de Metodologia */
+  .methodology-card-v2 {
+    padding: 25px 15px;
+    width: 100%;
+    backdrop-filter: none; /* Melhora performance em celulares antigos */
+    background: rgba(15, 23, 42, 0.9);
+  }
+
   .method-step {
-    justify-content: center;
+    justify-content: flex-start;
     text-align: left;
   }
-  .slide-devfacil-container {
-    height: auto;
-    padding: 100px 20px;
+
+  .step-num {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  /* Rodapé Mobile */
+  .slide-01-footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+    width: 100%;
   }
 }

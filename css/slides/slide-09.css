@@ -181,22 +181,128 @@
   object-fit: contain;
   display: block;
 }
-/* Responsividade Mobile */
+/* Responsividade Mobile */ /* ================= 1. BASE (Ajustada para iOS/Safari) ================= */
+.slide-cloudbox-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  height: 100vh;
+  height: 100dvh; /* Altura dinâmica para Safari Mobile */
+  width: 100vw;
+  position: relative;
+  background-color: #0a1128;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto; /* Permite scroll se o conteúdo for maior que a tela */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Efeitos de Fundo (Padrão Cachina) */
+.slide-cloudbox-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.slide-cloudbox-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(14, 165, 233, 0.1) 0%,
+    transparent 70%
+  );
+  filter: blur(60px);
+  z-index: 0;
+}
+
+/* Garante que o conteúdo fique acima do fundo */
+.cloudbox-header,
+.cloudbox-grid,
+.economys-badge,
+.slide-01-footer {
+  z-index: 2;
+  position: relative;
+}
+
+/* ... (Mantenha seus estilos de .cloudbox-header, .cloudbox-card, etc., aqui) ... */
+
+/* ================= 2. RESPONSIVIDADE BLINDADA (MOBILE) ================= */
 @media (max-width: 1024px) {
   .cloudbox-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
 }
 
 @media (max-width: 768px) {
-  .cloudbox-grid {
-    grid-template-columns: 1fr;
-  }
   .slide-cloudbox-container {
     height: auto;
-    padding: 60px 20px;
+    min-height: 100dvh;
+    padding: 50px 20px;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch; /* Scroll suave iOS */
   }
+
+  /* Desativa brilhos pesados para performance mobile */
+  .slide-cloudbox-container::before,
+  .slide-cloudbox-container::after {
+    display: none;
+  }
+
   .cloudbox-title {
     font-size: 2.2rem;
+    line-height: 1.1;
+  }
+
+  .cloudbox-grid {
+    grid-template-columns: 1fr; /* Empilha os cards */
+    width: 100%;
+  }
+
+  .cloudbox-card {
+    padding: 25px;
+    backdrop-filter: none; /* Melhora performance */
+    background: rgba(15, 23, 42, 0.9);
+  }
+
+  .economys-badge {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+  }
+
+  .economys-badge img {
+    max-height: 200px; /* Reduz imagem do produto no celular */
+  }
+
+  /* Ajuste do Rodapé Mobile */
+  .slide-01-footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
