@@ -43,6 +43,87 @@
   filter: blur(80px);
   z-index: 0;
 }
+/* ================= CARROSSEL SLIDE 13 (VERSÃO FINAL) ================= */
+
+/* Container que segura o carrossel */
+.slide-13-center {
+  z-index: 10 !important; /* Força ficar na frente de tudo */
+  width: 100%;
+  overflow: visible; /* Mudado para visible para debugar */
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.logo-slider-s13 {
+  width: 100%;
+  overflow: hidden; /* O corte acontece aqui */
+  padding: 20px 0;
+  position: relative;
+}
+
+.logo-track-s13 {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  /* 10 itens (5 originais + 5 cópias) * 200px = 2000px */
+  width: 2000px;
+  animation: scrollS13 20s linear infinite;
+  will-change: transform;
+}
+
+.logo-item-s13 {
+  width: 200px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-item-s13 img {
+  width: 130px;
+  height: 80px;
+  object-fit: contain;
+  filter: none !important;
+  opacity: 1 !important;
+  display: block !important; /* Garante que não está como none */
+}
+
+/* Animação com nome único para não conflitar */
+@keyframes scrollS13 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1000px);
+  } /* Metade da largura total (5 itens) */
+}
+
+/* Ajuste Responsivo Específico */
+@media (max-width: 768px) {
+  .logo-track-s13 {
+    /* No mobile: 10 itens * 150px = 1500px */
+    width: 1500px;
+    animation: scrollS13-mob 15s linear infinite;
+  }
+
+  .logo-item-s13 {
+    width: 150px;
+  }
+
+  .logo-item-s13 img {
+    width: 100px;
+  }
+
+  @keyframes scrollS13-mob {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-750px);
+    } /* Metade de 1500px */
+  }
+}
 /* ================= 2. COLUNA CENTRAL (INFINITE CAROUSEL) ================= */
 .slide-13-center {
   z-index: 2;

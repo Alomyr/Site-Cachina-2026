@@ -1569,19 +1569,16 @@ function clientsSlide() {
   </div>
 
 <div class="slide-13-center">
-  <div class="logo-slider">
-    <div class="logo-track">
-      <div class="logo-item"><img src="icons/logos/Dropped Image (2).png" alt=""></div>
-      <div class="logo-item"><img src="icons/logos/Dropped Image (3).png" alt=""></div>
-      <div class="logo-item"><img src="icons/logos/Dropped Image (12).png" alt=""></div>
-      <div class="logo-item"><img src="icons/logos/Dropped Image.png" alt=""></div>
-      <div class="logo-item"><img src="icons/logos/Dropped Image (5).png" alt=""></div>
-
-      <div class="logo-item"><img src="icons/logos/Dropped Image (2).png" alt=""></div>
-      <div class="logo-item"><img src="icons/logos/Dropped Image (3).png" alt=""></div>
-      <div class="logo-item"><img src="icons/logos/Dropped Image (12).png" alt=""></div>
-      <div class="logo-item"><img src="icons/logos/Dropped Image.png" alt=""></div>
-      <div class="logo-item"><img src="icons/logos/Dropped Image (5).png" alt=""></div>
+  <div class="logo-slider-s13"> <div class="logo-track-s13"> <div class="logo-item-s13"><img src="icons/logos/Dropped Image (2).png" alt=""></div>
+      <div class="logo-item-s13"><img src="icons/logos/Dropped Image (3).png" alt=""></div>
+      <div class="logo-item-s13"><img src="icons/logos/Dropped Image (12).png" alt=""></div>
+      <div class="logo-item-s13"><img src="icons/logos/Dropped Image.png" alt=""></div>
+      <div class="logo-item-s13"><img src="icons/logos/Dropped Image (5).png" alt=""></div>
+      <div class="logo-item-s13"><img src="icons/logos/Dropped Image (2).png" alt=""></div>
+      <div class="logo-item-s13"><img src="icons/logos/Dropped Image (3).png" alt=""></div>
+      <div class="logo-item-s13"><img src="icons/logos/Dropped Image (12).png" alt=""></div>
+      <div class="logo-item-s13"><img src="icons/logos/Dropped Image.png" alt=""></div>
+      <div class="logo-item-s13"><img src="icons/logos/Dropped Image (5).png" alt=""></div>
     </div>
   </div>
 </div>
