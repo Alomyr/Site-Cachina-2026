@@ -325,8 +325,9 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
   z-index: 1;
   pointer-events: none;
@@ -335,10 +336,16 @@
 .slide-02-container.values-page::before {
   content: "";
   position: absolute;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 700px; height: 700px;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 70%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(
+    circle,
+    rgba(14, 165, 233, 0.15) 0%,
+    transparent 70%
+  );
   filter: blur(80px);
   z-index: 0;
 }
@@ -456,5 +463,66 @@
 
   .value-card p {
     font-size: 0.8rem;
+  }
+}
+
+/* ================= CORREÇÃO LANDSCAPE (MODO DEITADO) ================= */
+@media (max-height: 550px) and (orientation: landscape) {
+  /* Seletor genérico para todos os seus containers de slide */
+  .slide-ia-v3-container,
+  .slide-01-container,
+  .slide-02-container,
+  .values-page {
+    display: flex !important;
+    flex-direction: column !important; /* No celular deitado, coluna é melhor para ler */
+    height: auto !important;
+    min-height: 100dvh !important;
+    padding: 20px !important;
+    overflow-y: auto !important; /* Libera a rolagem vertical */
+    overflow-x: hidden !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Diminui o título para não ocupar a tela toda */
+  .ia-title-v3,
+  .section-title {
+    font-size: 1.5rem !important;
+    margin-top: 10px !important;
+  }
+
+  /* Ajusta o workflow (imagem central) */
+  .workflow-view img {
+    max-height: 200px !important;
+  }
+
+  /* Grid de benefícios em 2 colunas no landscape para economizar espaço vertical */
+  .ia-benefits-grid-v3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  /* Esconde brilhos de fundo no landscape para melhorar a performance de scroll */
+  .slide-ia-v3-container::before,
+  .slide-ia-v3-container::after {
+    display: none !important;
+  }
+
+  /* Ajuste dos cards de valores para o modo deitado */
+  .cards-wrapper {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+
+  .value-card {
+    flex: 1 1 45% !important; /* Dois cards por linha */
+    padding: 15px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .presentation-container {
+    height: auto !important;
+    overflow: visible !important;
   }
 }
