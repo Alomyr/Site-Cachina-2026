@@ -885,7 +885,7 @@ function coverSlide() {
 <div class="test-area">
     <a href="linknabio.html" class="btn-test-link" target="_blank">
         <i class="fas fa-external-link-alt"></i>
-        Link da Bio
+        Contatos
     </a>
 </div>
     <div class="slide-01-footer">
@@ -1862,7 +1862,7 @@ function contactSlide() {
   <div class="test-area">
     <a href="linknabio.html" class="btn-test-link" target="_blank">
         <i class="fas fa-external-link-alt"></i>
-        Link da Bio
+        Contatos
     </a>
 </div>
 
