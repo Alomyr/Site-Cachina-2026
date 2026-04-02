@@ -1,0 +1,64 @@
+/* Correção para evitar o scroll lateral do ícone gigante */
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden; /* Garante que o ícone de 1500px seja cortado */
+  padding: 80px 5%;
+}
+
+.automation-background-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  width: 120vw; /* Ajusta conforme a largura da tela */
+  max-width: 1500px;
+  opacity: 0.05; /* Deixei mais sutil para não brigar com os 9 cards */
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Ajuste na grade para caberem 3 cards por linha no desktop */
+.solutions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.solution-card {
+  text-align: left; /* Melhor para leitura de descrições longas */
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.solutions {
+  display: grid;
+  /* Define exatamente 3 colunas com larguras iguais */
+  grid-template-columns: repeat(3, 1fr);
+  /* Define exatamente 3 linhas (opcional, o grid cria automático se houver 9 itens) */
+  grid-template-rows: repeat(3, auto);
+  gap: 20px;
+  padding: 60px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Garante que em telas menores (celulares) ele empilhe em 1 coluna */
+@media (max-width: 992px) {
+  .solutions {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .solutions {
+    grid-template-columns: 1fr; /* 1 coluna em celulares */
+  }
+}

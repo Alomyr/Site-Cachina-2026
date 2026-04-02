@@ -383,7 +383,7 @@ nav a:hover {
   left: 50%; /* Centraliza horizontalmente */
   transform: translate(-50%, -50%) rotate(-15deg); /* Ajuste de rotação e centralização */
 
-  width: 2000px; /* Tamanho grande */
+  width: 1500px; /* Tamanho grande */
   height: auto;
 
   /* Define que ele fique por trás do texto e botões */
@@ -407,57 +407,151 @@ nav a:hover {
 
 /* Container do Ecossistema */
 .ecosystem-flow {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 40px;
 }
 
 .ecosystem-card {
-    background: rgba(16, 42, 67, 0.3);
-    border: 1px solid rgba(0, 229, 255, 0.1);
-    padding: 20px;
-    border-radius: 12px;
-    width: 180px; /* Largura fixa para manter o padrão */
-    text-align: center;
-    transition: 0.3s;
+  background: rgba(16, 42, 67, 0.3);
+  border: 1px solid rgba(0, 229, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  width: 180px; /* Largura fixa para manter o padrão */
+  text-align: center;
+  transition: 0.3s;
 }
 
 .ecosystem-card:hover {
-    border-color: var(--accent-cyan);
-    transform: translateY(-5px);
-    background: rgba(16, 42, 67, 0.5);
+  border-color: var(--accent-cyan);
+  transform: translateY(-5px);
+  background: rgba(16, 42, 67, 0.5);
 }
 
 .ecosystem-card h4 {
-    color: var(--accent-cyan);
-    font-size: 0.9rem;
-    margin-bottom: 8px;
+  color: var(--accent-cyan);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
 }
 
 .ecosystem-card p {
-    font-size: 0.75rem;
-    color: var(--text-gray);
-    line-height: 1.3;
+  font-size: 0.75rem;
+  color: var(--text-gray);
+  line-height: 1.3;
 }
 
 /* Estilização da Seta */
 .arrow-separator {
-    color: var(--accent-cyan);
-    font-weight: bold;
-    font-size: 3.5rem;
-    opacity: 0.6;
+  color: var(--accent-cyan);
+  font-weight: bold;
+  font-size: 3.5rem;
+  opacity: 0.6;
 }
 
 /* Esconder setas específicas no mobile se necessário */
 @media (max-width: 768px) {
-    .arrow-separator {
-        transform: rotate(90deg); /* Seta aponta para baixo no mobile */
-        margin: 10px 0;
-    }
-    .ecosystem-flow {
-        flex-direction: column;
-    }
+  .arrow-separator {
+    transform: rotate(90deg); /* Seta aponta para baixo no mobile */
+    margin: 10px 0;
+  }
+  .ecosystem-flow {
+    flex-direction: column;
+  }
+}
+
+/* Container do Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Estilo do link principal com a setinha */
+.dropdown-trigger {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.arrow {
+  font-size: 0.6rem;
+  transition: transform 0.3s ease;
+}
+
+/* Caixa do Menu Suspenso */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: rgba(10, 17, 40, 0.95); /* Azul escuro do seu root */
+  backdrop-filter: blur(15px); /* Efeito de vidro */
+  min-width: 220px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 229, 255, 0.1); /* Borda ciano sutil */
+  border-radius: 12px;
+  padding: 10px 0;
+  z-index: 1100;
+  top: 100%;
+  left: 0; /* Ajustei para alinhar melhor à esquerda */
+  margin-top: 0; /* REMOVA o margin-top: 10px que estava causando o buraco */
+  padding-top: 10px;
+}
+
+/* Links dentro do Dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.85rem;
+  text-transform: none; /* Mantém leitura natural como na imagem */
+  margin-left: 0; /* Reseta o margin do nav a */
+  transition: 0.2s;
+  opacity: 0.9;
+}
+
+/* Hover nos links internos */
+.dropdown-content a:hover {
+  background: rgba(0, 229, 255, 0.1);
+  color: var(--accent-cyan);
+  padding-left: 25px; /* Efeito de deslocamento ao passar o mouse */
+}
+
+/* Mostrar o menu no Hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.dropdown:hover .arrow {
+  transform: rotate(180deg);
+  color: var(--accent-cyan);
+}
+
+/* Animação suave de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Cria uma área invisível para o mouse não perder o contato entre o link e o menu */
+.dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 20px; /* Tamanho da ponte invisível */
+  display: none;
+}
+
+.dropdown:hover::after {
+  display: block;
 }
