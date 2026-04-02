@@ -1,0 +1,4 @@
+.devfacil-card:hover {
+  border-color: #00b4d8; /* Um tom de azul levemente diferente */
+  box-shadow: 0 0 30px rgba(0, 180, 216, 0.2);
+}

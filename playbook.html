@@ -1,0 +1,99 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Cachina - Soluções em Tecnologia</title>
+
+    <link rel="preload" href="./css/styles.css" as="style" />
+    <link rel="preload" href="./css/slides/slide-01.css" as="style" />
+    <link rel="preload" href="./js/script.js" as="script" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="./css/styles_playbook.css" />
+    
+    <link rel="stylesheet" href="./css/slides/slide-01.css" />
+    <link rel="stylesheet" href="./css/slides/slide-02.css" />
+    <link rel="stylesheet" href="./css/slides/slide-03.css" />
+    <link rel="stylesheet" href="./css/slides/slide-04.css" />
+    <link rel="stylesheet" href="./css/slides/slide-05.css" />
+    <link rel="stylesheet" href="./css/slides/slide-06.css" />
+    <link rel="stylesheet" href="./css/slides/slide-07.css" />
+    <link rel="stylesheet" href="./css/slides/slide-08.css" />
+    <link rel="stylesheet" href="./css/slides/slide-09.css" />
+    <link rel="stylesheet" href="./css/slides/slide-10.css" />
+    <link rel="stylesheet" href="./css/slides/slide-11.css" />
+    <link rel="stylesheet" href="./css/slides/slide-13.css" />
+    <link rel="stylesheet" href="./css/slides/slide-14.css" />
+    <link rel="stylesheet" href="./css/slides/slide-15.css" />
+    <link rel="stylesheet" href="./css/slides/slide-16.css" />
+
+
+
+
+    <style>
+      /* Seus estilos críticos permanecem aqui */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', sans-serif;
+        background: #0f172a;
+        color: #f8fafc;
+      }
+      .presentation-container {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+      }
+      * { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+    </style>
+</head>
+  <body>
+    <div id="presentation-container" class="presentation-container">
+      <!-- Slide Content -->
+      <div id="slide-content" class="slide-content">
+        <!-- Slides will be dynamically loaded here -->
+      </div>
+
+      <!-- Navigation Buttons -->
+      <button
+        id="prev-btn"
+        class="nav-btn prev-btn"
+        aria-label="Slide anterior"
+      >
+        <svg
+          class="nav-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <polyline points="15,18 9,12 15,6"></polyline>
+        </svg>
+      </button>
+
+      <button id="next-btn" class="nav-btn next-btn" aria-label="Próximo slide">
+        <svg
+          class="nav-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <polyline points="9,18 15,12 9,6"></polyline>
+        </svg>
+      </button>
+
+      <!-- Slide Counter -->
+      <div class="slide-counter">
+        <div class="glass-effect">
+          <span id="slide-counter-text">1 / 17</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
