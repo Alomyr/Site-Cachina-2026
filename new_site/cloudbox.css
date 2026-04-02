@@ -65,3 +65,145 @@
   flex-direction: column;
   gap: 30px;
 }
+
+/* Estilo para as listas de benefícios */
+.product-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  text-align: left;
+}
+
+.product-list li {
+  color: var(--text-gray);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  padding-left: 25px;
+  position: relative;
+}
+
+.product-list li::before {
+  content: "✔";
+  color: var(--accent-cyan);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.product-list li strong {
+  color: white;
+}
+
+/* Container de Público Alvo */
+.target-audience {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.target-audience h4 {
+  margin-bottom: 20px;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.product-tag {
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.product-tag:hover {
+  background: var(--accent-cyan);
+  color: var(--bg-dark);
+  transform: translateY(-2px);
+}
+
+/* Badge de energia no Hero */
+.energy-badge {
+  background: rgba(0, 217, 145, 0.2);
+  color: #00d991;
+  border: 1px solid #00d991;
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-top: 25px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 217, 145, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 217, 145, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 217, 145, 0);
+  }
+}
+/* Container que coloca imagem e texto lado a lado */
+.cloudbox-intro-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto 50px auto;
+  padding: 0 5%;
+}
+
+/* Lado da Imagem */
+.intro-image {
+  flex: 1;
+  text-align: right; /* Alinha a imagem para encostar no texto */
+}
+
+.intro-image img {
+  width: 100%;
+  max-width: 450px; /* Ajuste o tamanho conforme necessário */
+  filter: drop-shadow(0 0 30px rgba(0, 229, 255, 0.2)); /* Brilho neon suave */
+  animation: float 4s ease-in-out infinite; /* Efeito flutuante opcional */
+}
+
+/* Lado do Texto */
+.intro-text {
+  flex: 1;
+}
+
+/* Efeito flutuante na imagem */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Responsividade: Em celulares, coloca um embaixo do outro */
+@media (max-width: 768px) {
+  .cloudbox-intro-row {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .intro-image {
+    text-align: center;
+    order: 1;
+  }
+  
+  .intro-text {
+    order: 2;
+  }
+}
