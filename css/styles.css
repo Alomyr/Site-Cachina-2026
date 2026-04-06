@@ -26,7 +26,133 @@ body {
   line-height: 1.6;
   min-height: 100vh;
 }
+/* NAVBAR ESTILO BITI9 */
+.navbar {
+  width: 100%;
+  padding: 15px 5%;
 
+  /* FUNDO GLASS */
+  background: rgba(10, 17, 40, 0.6);
+
+  /* BLUR (efeito vidro) */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  /* BORDA SUTIL */
+  border-bottom: 1px solid rgba(0, 229, 255, 0.15);
+
+  /* GLOSS (brilho suave em cima) */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  overflow: hidden;
+}
+.navbar {
+  box-shadow: 0 5px 30px rgba(0, 229, 255, 0.08);
+}.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 229, 255, 0.6),
+    transparent
+  );
+}
+/* CONTAINER */
+.nav-container {
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* esquerda | centro | direita */
+  align-items: center;
+  width: 100%;
+}
+/* LOGO */
+.company-logo {
+  height: 40px;
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  justify-content: center; /* CENTRALIZA */
+  align-items: center;
+  gap: 30px;
+}
+.cta-btn {
+  justify-self: end; /* joga pro canto direito */
+}
+.nav-links a {
+  text-align: center;
+  white-space: nowrap;
+}
+.nav-links a {
+  color: #cbd5f5;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+/* BOTÃO CTA */
+.cta-btn {
+  background: linear-gradient(90deg, #00b4d8, #00e5ff);
+  color: #001219;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* DROPDOWN AJUSTADO */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: rgba(10, 17, 40, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 10px 0;
+  min-width: 220px;
+  border: 1px solid rgba(0, 229, 255, 0.1);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 0.8rem;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* SETINHA */
+.arrow {
+  font-size: 0.6rem;
+}
 .wave-divider {
   width: 100%;
   overflow: hidden;
