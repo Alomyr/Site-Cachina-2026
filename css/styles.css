@@ -2130,3 +2130,152 @@ nav a:hover {
   filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.5)); /* Efeito de Neon */
   margin-bottom: 20px;
 }
+
+/* ================= 1. ESTRUTURA BASE ================= */
+.slide-13-container {
+  display: grid;
+  grid-template-columns: 0.8fr 1.4fr 0.8fr;
+  gap: 30px;
+  align-items: center;
+  padding: 60px;
+  min-height: 100dvh;
+  width: 100%;
+  position: relative;
+  background-color: #0a1128;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Background effects */
+.slide-13-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ================= 2. CARROSSEL INFINITO (SLIDE 13) ================= */
+.slide-13-center {
+  z-index: 10;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.logo-slider-s13 {
+  width: 100%;
+  padding: 20px 0;
+  /* Máscara de suavização nas bordas */
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.logo-track-s13 {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  /* Cálculo: largura do item * quantidade total de itens (originais + clones) */
+  width: calc(200px * 16); 
+  animation: scrollS13 25s linear infinite;
+  will-change: transform;
+}
+
+.logo-item-s13 {
+  width: 200px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-item-s13 img {
+  width: 130px;
+  height: 80px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-item-s13 img:hover {
+  transform: scale(1.1);
+}
+
+/* Animação: Deve mover exatamente METADE da largura total da track */
+@keyframes scrollS13 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-200px * 8)); } 
+}
+
+.logo-slider-s13:hover .logo-track-s13 {
+  animation-play-state: paused;
+}
+
+/* ================= 3. TEXTOS LATERAIS ================= */
+.slide-13-left .title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.slide-13-left .title span {
+  color: #0ea5e9;
+  text-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+}
+
+.slide-13-right {
+  text-align: right;
+}
+
+/* ================= 4. RESPONSIVIDADE (MOBILE & TABLET) ================= */
+@media (max-width: 992px) {
+  .slide-13-container {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    padding: 40px 20px !important;
+    overflow-y: auto !important;
+    justify-content: center !important;
+  }
+
+  .slide-13-left, .slide-13-right {
+    text-align: center;
+    width: 100%;
+  }
+
+  .logo-item-s13 {
+    width: 150px;
+  }
+
+  .logo-track-s13 {
+    width: calc(150px * 16);
+    animation: scrollS13-mob 15s linear infinite;
+  }
+
+  @keyframes scrollS13-mob {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-150px * 8)); }
+  }
+}
+
+/* ================= 5. MODO LANDSCAPE (CELULAR DEITADO) ================= */
+@media (max-height: 550px) and (orientation: landscape) {
+  .slide-13-container {
+    padding: 20px !important;
+    gap: 15px;
+  }
+
+  .slide-13-left .title {
+    font-size: 1.8rem !important;
+  }
+
+  .logo-item-s13 img {
+    max-height: 50px;
+  }
+}
