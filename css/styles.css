@@ -29,7 +29,6 @@ body {
   --grid-color: rgba(0, 229, 255, 0.01);
 }
 
-/* NAVBAR ESTILO BITI9 */
 .navbar {
   width: 100%;
   padding: 15px 5%;
@@ -209,7 +208,7 @@ body {
 }
 
 .automation-background-icon {
-  filter: blur(12px);
+  filter: blur(10px);
   opacity: 0.2;
 
   mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, transparent 80%);
@@ -219,6 +218,8 @@ body {
     transparent 80%
   );
 }
+
+
 .hero {
   background:
     radial-gradient(circle at center, rgba(0, 229, 255, 0.15), transparent 60%),
