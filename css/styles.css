@@ -25,7 +25,10 @@ body {
   color: white;
   line-height: 1.6;
   min-height: 100vh;
+  overflow-x: hidden;
+  --grid-color: rgba(0, 229, 255, 0.01);
 }
+
 /* NAVBAR ESTILO BITI9 */
 .navbar {
   width: 100%;
@@ -147,10 +150,43 @@ body {
 .arrow {
   font-size: 0.6rem;
 }
+
+.arco-decorativo {
+  position: absolute;
+  /* Posiciona no canto inferior direito */
+  right: -800px;
+  bottom: -150px;
+
+  /* Tamanho do arco (precisa ser grande para fazer a curva suave) */
+  width: 1000px;
+  height: 1000px;
+
+  /* Cria a linha do arco */
+  border: 40px solid rgba(255, 255, 255, 0.1); /* Branco com transparência igual ao seu rascunho */
+  border-radius: 50%; /* Faz ser um círculo */
+
+  /* Remove as bordas de cima e da esquerda para sobrar só o arco do canto */
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+
+  /* Garante que ele fique atrás do texto */
+  z-index: -1;
+
+  /* Inclinação para ajustar o ângulo igual ao seu desenho */
+  transform: rotate(-15deg);
+
+  /* Impede que o arco crie uma barra de rolagem na tela */
+  pointer-events: none;
+}
+
 .wave-divider {
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  position: relative;
+  width: 100vw; /* força largura total da tela */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .wave-divider svg {
@@ -187,6 +223,45 @@ body {
   background:
     radial-gradient(circle at center, rgba(0, 229, 255, 0.15), transparent 60%),
     linear-gradient(to bottom, #020617 0%, #020617 60%, #0a1128 100%);
+  background-image: none !important;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -200px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.15), transparent 70%);
+  filter: blur(80px);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -100px;
+  top: 30%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.1), transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.hero .curve-line {
+  position: absolute;
+  right: -100px;
+  top: 50%;
+  width: 600px;
+  height: 300px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: rotate(20deg);
+  opacity: 0.2;
 }
 
 .section-dark {
@@ -1194,88 +1269,121 @@ nav a:hover {
 
 /*Card box principal*/
 
-/* Container Principal */
+/* Container de apoio */
 .orbit-container {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 
-/* Logo Central */
-.central-logo {
-  width: 120px;
-  height: 120px;
+/* Estilo Geral das Órbitas */
+.orbit {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotate linear infinite;
+}
+
+/* Tamanhos individuais */
+.orbit-1 {
+  width: 200px;
+  height: 200px;
+  animation-duration: 20s;
+}
+.orbit-2 {
+  width: 320px;
+  height: 320px;
+  animation-duration: 30s;
+}
+.orbit-3 {
+  width: 440px;
+  height: 440px;
+  animation-duration: 40s;
+}
+.orbit-4 {
+  width: 560px;
+  height: 560px;
+  animation-duration: 50s;
+}
+
+/* OS ÍCONES - Aqui está a correção principal */
+.tech-icon {
+  position: absolute;
+  width: 45px;
+  height: 45px;
   background: #fff;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
-  box-shadow: 0 0 30px rgba(0, 229, 255, 0.3);
+  padding: 5px;
+  overflow: hidden; /* Corta imagens que tentem sair do círculo */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+  /* Posicionamento radial usando as variáveis do HTML */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%)
+    rotate(calc(360deg / var(--total) * var(--i))) translate(var(--radius))
+    rotate(calc(-360deg / var(--total) * var(--i)));
 }
 
-.central-logo img {
-  width: 80%;
+.tech-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Esse comando faz o branco da imagem ficar transparente em relação ao fundo do ícone */
+  mix-blend-mode: multiply;
 }
-
-/* Órbitas */
-.orbit {
-  position: absolute;
-  border: 1px solid var(--orbit-border);
-  border-radius: 50%;
-  animation: rotate linear infinite;
-}
-
-.orbit-1 {
-  width: 280px;
-  height: 280px;
-  animation-duration: 20s;
-}
-.orbit-2 {
-  width: 420px;
-  height: 420px;
-  animation-duration: 35s;
-}
-
-/* Ícones das Tecnologias */
 .tech-icon {
+  /* ... outras propriedades ... */
+  background: transparent; /* Mude de #fff para transparent */
+  box-shadow: none; /* Remova a sombra se não quiser o contorno da bolinha */
+
   position: absolute;
-  width: 50px;
-  height: 50px;
-  background: var(--icon-bg);
+  width: 65px; /* Aumentado de 45px para 65px */
+  height: 65px; /* Aumentado de 45px para 65px */
+  background: #fff;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  /* Cancela a rotação do pai para o ícone não ficar de ponta cabeça */
-  animation: counter-rotate linear infinite;
+  padding: 8px; /* Ajuste o respiro interno do logo */
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+  /* Mantém o posicionamento centralizado antes do cálculo radial */
+  left: 50%;
+  top: 50%;
+
+  /* O transform continua o mesmo, ele vai usar o novo width/height automaticamente */
+  transform: translate(-50%, -50%)
+    rotate(calc(360deg / var(--total) * var(--i))) translate(var(--radius))
+    rotate(calc(-360deg / var(--total) * var(--i)));
 }
 
-/* Posicionamento dos ícones na circunferência */
-.orbit-1 .tech-icon {
-  top: 50%;
-  left: 100%;
-  transform: translate(-50%, -50%);
+/* Logo Central */
+.central-logo {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  z-index: 50;
+  background: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
 }
-.orbit-2 .tech-icon:nth-child(1) {
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.orbit-2 .tech-icon:nth-child(2) {
-  top: 50%;
-  left: 100%;
-  transform: translate(-50%, -50%);
-}
-.orbit-2 .tech-icon:nth-child(3) {
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+.central-logo img {
+  width: 100%;
+  height: auto;
 }
 
 /* Animações */
@@ -1287,31 +1395,6 @@ nav a:hover {
     transform: rotate(360deg);
   }
 }
-
-@keyframes counter-rotate {
-  from {
-    transform: rotate(360deg) translate(-50%, -50%);
-  }
-  to {
-    transform: rotate(0deg) translate(-50%, -50%);
-  }
-}
-
-/* Ajuste específico para as durações acompanharem os pais */
-.orbit-1 .tech-icon {
-  animation-duration: 20s;
-}
-.orbit-2 .tech-icon {
-  animation-duration: 35s;
-}
-
-/* --- SEÇÃO DE CARDS ESTILO B2BIT --- */
-.tech-cards-section {
-  padding: 80px 0;
-  display: flex;
-  justify-content: center;
-}
-
 .custom-card {
   position: relative; /* Base para os elementos absolutos */
   height: 350px; /* Defina uma altura fixa para o card */
@@ -1357,6 +1440,13 @@ nav a:hover {
   z-index: 3; /* Fica acima de tudo no hover */
   transition: all 0.4s ease;
   transform: translateY(100%); /* Vem de baixo para cima */
+  display: flex;
+  flex-direction: column; /* Ícone em cima, texto embaixo */
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Espaço entre o ícone e o texto */
+  padding: 20px;
+  transition: all 0.4s ease-in-out;
 }
 
 /* Conteúdo (Tag e Título) flutuando no rodapé do card */
@@ -1546,7 +1636,7 @@ nav a:hover {
   transition: transform 0.6s ease;
 }
 
-/* O OVERLAY (Efeito Vidro + Texto Oculto) */
+/* --- O OVERLAY (Efeito Vidro + Centralização) --- */
 .card-overlay {
   position: absolute;
   top: 0;
@@ -1554,43 +1644,90 @@ nav a:hover {
   width: 100%;
   height: 100%;
 
-  /* Gradiente escuro + Blur (efeito do vídeo) */
-  background: rgba(10, 17, 40, 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  /* Efeito de Vidro e Desfoque */
+  background: rgba(10, 17, 40, 0.85); 
+  backdrop-filter: blur(12px); /* Desfoque de fundo */
+  -webkit-backdrop-filter: blur(12px);
 
+  /* Alinhamento Centralizado */
   display: flex;
+  flex-direction: column; /* Ícone em cima, texto embaixo */
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  text-align: center;
+  padding: 25px;
+  gap: 15px; /* Espaço entre o ícone e o texto */
 
-  /* Esconde o texto inicialmente */
+  /* Estados iniciais (Escondido) */
   opacity: 0;
-  transform: translateY(15px);
+  transform: translateY(20px);
   transition: all 0.4s ease-in-out;
-  pointer-events: none; /* Evita que o overlay atrapalhe cliques antes do hover */
+  pointer-events: none;
+  z-index: 5;
 }
 
+/* --- O ÍCONE (PSEUDO-ELEMENTO) --- */
+.card-overlay::before {
+  content: "";
+  display: block;
+  width: 80px; /* Tamanho do ícone central */
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* Estilo visual */
+  filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.7));
+  
+  /* Animação de entrada */
+  transform: scale(0.5);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* --- TEXTO NO OVERLAY --- */
 .card-overlay p {
   color: white;
-  text-align: center;
   font-size: 0.95rem;
-  line-height: 1.5;
-  margin: 0; /* Remove margem que possa quebrar o layout centralizado */
+  line-height: 1.6;
+  margin: 0;
+  max-width: 90%; /* Evita que o texto encoste nas bordas */
 }
 
 /* --- ESTADOS DE HOVER --- */
 
-/* Quando passar o mouse no CARD, o overlay aparece */
+/* Mostra o overlay e centraliza */
 .custom-card:hover .card-overlay {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
 
-/* Zoom na imagem ao fundo */
+/* Faz o ícone "saltar" para o tamanho normal */
+.custom-card:hover .card-overlay::before {
+  transform: scale(1);
+}
+
+/* Imagem de fundo continua com o zoom suave */
 .custom-card:hover .card-image-wrapper img {
   transform: scale(1.1);
+}
+
+/* --- DEFINIÇÃO DOS ÍCONES POR CARD --- */
+
+.custom-card:nth-child(1) .card-overlay::before {
+  background-image: url("../icons/logo-nuvem.png");
+}
+
+.custom-card:nth-child(2) .card-overlay::before {
+  background-image: url("../icons/logo-codigo.png");
+}
+
+.custom-card:nth-child(3) .card-overlay::before {
+  background-image: url("../icons/logo-ia.png");
+}
+
+.custom-card:nth-child(4) .card-overlay::before {
+  background-image: url("../icons/logo-modernizacao.png");
 }
 
 /* Ajuste na Card Content (onde fica o Título e a Tag) */
@@ -1647,6 +1784,8 @@ nav a:hover {
   background: rgba(16, 42, 67, 0.4);
 }
 
+
+
 /* Responsividade */
 @media (max-width: 768px) {
   .cards-grid {
@@ -1654,6 +1793,7 @@ nav a:hover {
     padding: 0 20px;
   }
 }
+
 
 /* Container Principal Lado a Lado */
 .dual-layout-section {
@@ -1859,16 +1999,133 @@ nav a:hover {
   }
 }
 
-/* Filtro para deixar os logos cinzas */
-.logo-item-s13 img {
-  filter: grayscale(100%);
-  opacity: 0.6; /* Deixa um pouco mais sutil/transparente */
-  transition: all 0.4s ease; /* Transição suave para quando passar o mouse */
+.servicos-section {
+  background-color: var(--bg-dark);
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden; /* Importante para o arco não vazar da tela */
+  font-family: "sans-serif";
 }
 
-/* Efeito ao passar o mouse: o logo volta a ter cor e destaque */
-.logo-item-s13:hover img {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.1); /* Leve aumento para dar feedback visual */
+.titulo-principal {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.divider {
+  width: 80px;
+  height: 3px;
+  background: var(--accent-cyan);
+  margin: 0 auto 50px;
+}
+
+/* --- O ARCO DECORATIVO --- */
+.arco-background {
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  border: 60px solid rgba(255, 255, 255, 0.03); /* Bem sutil como na imagem */
+  border-radius: 50%;
+  bottom: -400px;
+  right: -200px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* --- CONTAINER DE CARDS --- */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2; /* Fica acima do arco */
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  border-radius: 40px;
+  padding: 40px 30px;
+  width: 280px;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+  backdrop-filter: blur(10px); /* Efeito glassmorphism */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-cyan);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.card .icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.card h3 {
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.card p {
+  color: var(--text-gray);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+.servicos-section {
+  background-color: var(--bg-dark);
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden; /* Importante para o arco não vazar da tela */
+  font-family: "sans-serif";
+}
+
+.titulo-principal {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.divider {
+  width: 80px;
+  height: 3px;
+  background: var(--accent-cyan);
+  margin: 0 auto 50px;
+}
+
+/* --- O ARCO DECORATIVO --- */
+.arco-background {
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  border: 60px solid rgba(255, 255, 255, 0.03); /* Bem sutil como na imagem */
+  border-radius: 50%;
+  bottom: -400px;
+  right: -200px;
+  z-index: 1;
+  pointer-events: none;
+}
+.card .icon {
+  color: var(--accent-cyan);
+  font-size: 45px;
+  filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.5)); /* Efeito de Neon */
+  margin-bottom: 20px;
 }
