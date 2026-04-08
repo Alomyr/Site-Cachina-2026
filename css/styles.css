@@ -208,13 +208,62 @@ body {
 }
 
 .automation-background-icon {
-  filter: blur(10px);
-  opacity: 0.2;
+  filter: blur(20px);
+  opacity: 1;
 
   mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, transparent 80%);
   -webkit-mask-image: radial-gradient(
     circle,
-    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 1) 60%,
+    transparent 80%
+  );
+}
+
+.rocket-background-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 3000px; /* ajuste conforme necessário */
+  height: auto;
+
+  z-index: -1;
+  pointer-events: none;
+
+  /* efeito visual */
+  filter: blur(1px);
+  opacity: 0.15;
+
+  /* máscara suave */
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 60%,
+    transparent 80%
+  );
+}
+.rocket-kids-background-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 2000px; /* ajuste conforme necessário */
+  height: auto;
+
+  z-index: -1;
+  pointer-events: none;
+
+  /* efeito visual */
+  filter: blur(1px);
+  opacity: 0.15;
+
+  /* máscara suave */
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 60%,
     transparent 80%
   );
 }
@@ -2000,6 +2049,8 @@ nav a:hover {
   }
 }
 
+
+
 .servicos-section {
   background-color: var(--bg-dark);
   padding: 80px 20px;
@@ -2278,4 +2329,69 @@ nav a:hover {
   .logo-item-s13 img {
     max-height: 50px;
   }
+}
+.secao-wave {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-img {
+  position: absolute;
+  bottom: 0; /* fica no fundo da seção */
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0; /* fica atrás do conteúdo */
+  pointer-events: none; /* evita interferir em cliques */
+    filter: blur(1px);
+  opacity: 0.2;
+
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 30%,
+    transparent 80%)
+}
+.slide-14-center * {
+  position: relative;
+  z-index: 2;
+}
+.wave-img {
+  bottom: -5px;
+}
+
+
+.trusted-box {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  padding: 30px 20px;
+
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(0, 229, 255, 0.1);
+
+  overflow: hidden; /* 🔥 ESSENCIAL */
+  position: relative;
+}
+.logo-slider-s13 {
+  width: 100%;
+  overflow: hidden; /* 🔥 impede sair do box */
+}
+.logo-track-s13 {
+  display: flex;
+  gap: 0;
+
+  /* mantém animação */
+  animation: scrollS13 25s linear infinite;
+
+  /* 🔥 importante */
+  will-change: transform;
+}
+.logo-item-s13 {
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
