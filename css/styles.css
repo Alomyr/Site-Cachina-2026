@@ -3,8 +3,7 @@
   --accent-cyan: #00e5ff;
   --accent-blue: #00b4d8;
   --text-gray: #a0a0a0;
-  /* Reduzi a opacidade para 0.03 para evitar o efeito de "vibração" nas linhas */
-  --grid-color: rgba(0, 229, 255, 0.03);
+  --grid-color: rgba(0, 229, 255);
 }
 
 * {
@@ -26,7 +25,7 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
-  --grid-color: rgba(0, 229, 255, 0.01);
+  --grid-color: rgba(255, 255, 255, 0.02);
 }
 
 .navbar {
@@ -1469,6 +1468,11 @@ nav a:hover {
     transform: rotate(360deg);
   }
 }
+
+
+
+
+
 .custom-card {
   position: relative; /* Base para os elementos absolutos */
   height: 350px; /* Defina uma altura fixa para o card */
@@ -2419,3 +2423,157 @@ nav a:hover {
   justify-content: center;
   align-items: center;
 }
+
+/* CONTAINER PRINCIPAL DOS BOTÕES */
+.buttons {
+  display: flex;
+  gap: 20px; /* Espaço entre os botões */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;
+  margin-top: 40px; /* Espaço em relação ao texto acima */
+  flex-wrap: wrap; /* Para telas pequenas, eles quebram de linha */
+}
+
+/* ESTILOS GERAIS DOS BOTÕES */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* Espaço entre texto e ícone */
+  text-decoration: none; /* Remove sublinhado */
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: 50px; /* Arredondado estilo pílula */
+  transition: all 0.3s ease; /* Transição suave para hovers */
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+
+/* ÍCONE DENTRO DO BOTÃO */
+.btn .company-logo {
+  width: 22px; /* Tamanho do ícone */
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); /* Leve sombra no ícone */
+}
+
+/* =========================================
+   ESTILO DO BOTÃO WHATSAPP (Ação Principal)
+   ========================================= */
+.btn-whatsapp {
+  background: #00e5ff; /* Ciano vibrante da sua paleta */
+  color: #0a1128; /* Fundo escuro para contraste no texto */
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.4); /* Sombra de cor (ciano) */
+  animation: pulse-glow 2s infinite; /* Adiciona o efeito de pulso */
+}
+
+/* Hover do botão WhatsApp */
+.btn-whatsapp:hover {
+  background: #00b4d8; /* Ciano um pouco mais escuro */
+  transform: translateY(-3px); /* Levanta levemente */
+  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.6); /* Aumenta o brilho */
+}
+
+/* Animação de Pulso de Brilho */
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(0, 229, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 229, 255, 0);
+  }
+}
+
+/* =========================================
+   ESTILO DO BOTÃO OUTLINE (Ação Secundária)
+   ========================================= */
+.btn-outline {
+  background: transparent;
+  border: 2px solid rgba(0, 229, 255, 0.5); /* Borda ciano sutil */
+  color: #00e5ff; /* Texto ciano */
+}
+
+/* Hover do botão Outline */
+.btn-outline:hover {
+  background: rgba(0, 229, 255, 0.1); /* Preenchimento muito leve no hover */
+  border: 2px solid #00e5ff; /* Borda fica sólida */
+  transform: translateY(-2px); /* Levanta sutilmente */
+}
+
+
+/* Container que esconde o excesso */
+.testimonial-slider {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 30px;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+/* A trilha que move os cards */
+.testimonial-track {
+  display: flex;
+  width: calc(350px * 6); /* Ajuste baseado no tamanho e quantidade de cards */
+  animation: scroll-left 25s linear infinite;
+}
+
+/* Pausar quando o usuário passar o mouse */
+.testimonial-track:hover {
+  animation-play-state: paused;
+}
+
+/* Estilo do Card Individual */
+.testimonial-card {
+  flex-shrink: 0;
+  width: 350px; /* Largura fixa para o cálculo do scroll funcionar */
+  margin: 0 15px;
+  padding: 30px;
+  background: rgba(16, 42, 67, 0.3);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-card p {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  line-height: 1.5;
+}
+
+.client-info {
+  margin-top: 20px;
+  color: var(--accent-cyan);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Animação do Scroll */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Move exatamente a largura de metade dos cards (os originais) */
+    transform: translateX(calc(-350px * 3 - 90px)); 
+  }
+}
+
+/* Ajuste nos cantos do seu testimonial-box para não sumirem */
+.corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent-cyan);
+  z-index: 10;
+}
+.top-left { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+.bottom-right { bottom: -1px; right: -1px; border-left: none; border-top: none; }
