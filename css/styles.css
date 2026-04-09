@@ -1859,7 +1859,7 @@ nav a:hover {
 /* Estilo para um card que já inicia em destaque */
 .custom-card.active {
   border-color: var(--accent-cyan);
-  background: rgba(16, 42, 67, 0.4);
+  /* background: rgba(16, 42, 67, 0.4); */
 }
 
 
@@ -1871,7 +1871,164 @@ nav a:hover {
     padding: 0 20px;
   }
 }
+.delivery-flow-section {
+    padding: 80px 0;
+    /* background: #060b1b; */
+}
 
+.flow-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 50px;
+    position: relative;
+}
+
+/* O CARD ESTILO CACHINA */
+/* O CARD AGORA SEM FUNDO PRETO */
+.flow-card {
+    /* Removido: background: #0d1526; */
+    background: rgba(255, 255, 255, 0.03); /* Fundo quase invisível */
+    backdrop-filter: blur(5px); /* Desfoque leve para não esconder a malha do fundo */
+    -webkit-backdrop-filter: blur(5px);
+    
+    border-radius: 15px;
+    padding: 25px 20px;
+    
+    /* Borda sutil para dar forma ao card sem o fundo escuro */
+    border: 1px solid rgba(0, 229, 255, 0.1); 
+    
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Ajuste no hover para não criar um bloco sólido */
+.flow-card:hover {
+    background: rgba(0, 229, 255, 0.05); /* Brilho ciano bem suave ao passar o mouse */
+    border-color: var(--accent-cyan);
+    transform: translateY(-5px);
+}
+
+/* Removemos também o fundo do footer para seguir o padrão */
+.delivery-footer {
+    margin-top: 40px;
+    background: transparent; /* Remove o fundo preto/cinza */
+    border: 1px dashed rgba(0, 229, 255, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Ícones do Cabeçalho (Estilo imagem de referência) */
+.card-icon-header {
+
+    /* background: rgba(0, 229, 255, 0.1); */
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card-icon-header img {
+    width: 35px;
+    filter: drop-shadow(0 0 5px var(--accent-cyan));
+}
+
+/* Textos */
+.card-body h3 {
+    font-size: 1.1rem;
+    color: white;
+    margin: 0;
+}
+
+.sub-title {
+    font-size: 0.8rem;
+    color: var(--accent-cyan);
+    display: block;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.card-body ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card-body ul li {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    margin-bottom: 8px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.card-body ul li::before {
+    content: "•";
+    color: var(--accent-cyan);
+    position: absolute;
+    left: 0;
+}
+/* Garante a transparência e bordas do novo design */
+.flow-card {
+    background: rgba(255, 255, 255, 0.03); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 229, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    transition: all 0.4s ease;
+}
+
+/* Estilo do link de ação para parecer um botão interativo */
+.card-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.flow-card:hover .card-link {
+    color: var(--accent-cyan);
+}
+
+.flow-card:hover .card-link span {
+    transform: translateX(5px); /* Efeito da seta movendo no hover */
+}
+
+/* CORES DOS CARDS (Baseado na imagem que você mandou) */
+.diagnostic { border-top: 4px solid #f97316; }   /* Laranja */
+.reengineering { border-top: 4px solid #fbbf24; } /* Amarelo */
+.technology { border-top: 4px solid #3b82f6; }    /* Azul */
+.intelligence { border-top: 4px solid #22c55e; }  /* Verde */
+
+/* FOOTER DA ENTREGA */
+.delivery-footer {
+    margin-top: 40px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px dashed rgba(0, 229, 255, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .flow-grid { grid-template-columns: repeat(2, 1fr); }
+    .flow-arrow { display: none; }
+}
+@media (max-width: 600px) {
+    .flow-grid { grid-template-columns: 1fr; }
+}
 
 /* Container Principal Lado a Lado */
 .dual-layout-section {
