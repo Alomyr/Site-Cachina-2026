@@ -243,6 +243,30 @@ body {
     transparent 80%
   );
 }
+.rocket-rabo-background-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 1900px; /* ajuste conforme necessário */
+  height: auto;
+
+  z-index: -1;
+  pointer-events: none;
+
+  /* efeito visual */
+  filter: blur(1px);
+  opacity: 0.15;
+
+  /* máscara suave */
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 60%,
+    transparent 80%
+  );
+}
 .rocket-kids-background-icon {
   position: absolute;
   top: 50%;
@@ -256,7 +280,7 @@ body {
   pointer-events: none;
 
   /* efeito visual */
-  filter: blur(1px);
+  filter: blur(0.2px);
   opacity: 0.15;
 
   /* máscara suave */
@@ -2343,7 +2367,7 @@ nav a:hover {
   height: auto;
   z-index: 0; /* fica atrás do conteúdo */
   pointer-events: none; /* evita interferir em cliques */
-    filter: blur(1px);
+    filter: blur(12px);
   opacity: 0.2;
 
   mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, transparent 80%);
