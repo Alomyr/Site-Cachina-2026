@@ -2577,3 +2577,23 @@ nav a:hover {
 }
 .top-left { top: -1px; left: -1px; border-right: none; border-bottom: none; }
 .bottom-right { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+
+
+.tech-stack-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 2; /* Mantém o container acima do wrapper da imagem */
+}
+
+
+/* Posicionando a Baleia por trás */
+
+
+.tech-whale-graphic {
+    width: 100%;
+    height: auto;
+    /* Filtro opcional para integrar melhor com o fundo escuro */
+    filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.2));
+}
