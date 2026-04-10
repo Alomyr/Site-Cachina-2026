@@ -3657,3 +3657,36 @@ body,
     gap: 40px; /* Espaçamento natural entre logos */
   }
 }
+@media (max-width: 768px) {
+  .hero-text-block h1, 
+  .hero-text-block p {
+    text-align: center !important; /* Centralizar é o padrão mais natural para mobile */
+    hyphens: none !important;      /* Evita que ele corte palavras ao meio */
+    width: 100% !important;
+  }
+  
+  .hero-layout-container {
+    padding: 0 15px; /* Dá um respiro nas laterais */
+  }
+}
+@media (max-width: 768px) {
+  .ecosystem-flow, 
+  .services-grid, 
+  .solutions-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important; /* Garante espaço real entre os blocos */
+    height: auto !important;
+  }
+
+  .tech-card, .solution-card-box {
+    width: 100% !important;
+    min-height: auto !important;
+  }
+}
+@media (max-width: 768px) {
+  .arco-decorativo, 
+  .rocket-background-icon {
+    display: none !important; /* Elementos decorativos gigantes devem sair no mobile para fluidez */
+  }
+}
