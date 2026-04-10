@@ -268,33 +268,28 @@ body {
 }
 
 .rocket-kids-background-icon {
-  position: absolute; 
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  /* FORÇA O PREENCHIMENTO TOTAL */
-  width: 100vw;   /* 100% da largura da tela */
-  height: 100vh;  /* 100% da altura da tela */
-  
-  /* CRUCIAL: Faz a imagem se comportar como um fundo, 
-     cortando as sobras mas mantendo a proporção */
-  object-fit: cover; 
-
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
   z-index: -1;
   pointer-events: none;
   opacity: 0.45;
-
   filter: blur(0px) brightness(1.1);
-  
-  /* Se quiser que ela acompanhe o scroll apenas da seção, 
-     garante que o container pai (.hero) tenha position: relative; */
 }
 
 @keyframes floatWhale {
-  0% { transform: translateY(0px) }
-  50% { transform: translateY(-15px) }
-  100% { transform: translateY(0px) }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .whale-bg {
@@ -307,12 +302,12 @@ body {
   position: absolute;
   width: 400px;
   opacity: 1;
-}.rocket-kids-background-icon:hover {
+}
+.rocket-kids-background-icon:hover {
   transform: scale(1.05);
   transition: 0.4s;
 }
 .hero {
-  
   background:
     radial-gradient(circle at center, rgba(0, 229, 255, 0.15), transparent 60%),
     linear-gradient(to bottom, #020617 0%, #020617 60%, #0a1128 100%);
@@ -740,6 +735,7 @@ nav a:hover {
   text-align: center;
   padding: 100px 10%;
   position: relative; /* Importante para o ícone absoluto */
+  overflow: hidden; /* Impede bordas brancas e mantém o fundo no lugar */
 }
 
 /* Estilização do ícone de automação ao fundo */
@@ -1235,9 +1231,18 @@ nav a:hover {
 }
 /* --- LAYOUT DE LINHAS (ESTILO G. TRIGUEIRO) --- */
 .feature-row {
+  position: relative;
+  overflow: hidden;
   padding: 100px 10%;
   display: flex;
   justify-content: center;
+}
+
+.feature-row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 
 .feature-container {
@@ -1245,6 +1250,8 @@ nav a:hover {
   display: flex;
   align-items: center;
   gap: 80px;
+  position: relative;
+  z-index: 1;
 }
 
 .feature-row.reverse .feature-container {
@@ -1357,6 +1364,16 @@ nav a:hover {
 
   .feature-content h2 {
     font-size: 2rem;
+  }
+
+  .feature-row .rocket-background-icon {
+    position: absolute !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 1100px;
+    max-width: none;
+    opacity: 0.14;
   }
 }
 
@@ -1888,6 +1905,49 @@ nav a:hover {
 .delivery-flow-section {
   padding: 80px 0;
   /* background: #060b1b; */
+}
+
+.section-gap-graphic {
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-gap-graphic .rocket-background-icon {
+  position: relative;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  opacity: 0.12;
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.titulo-principal {
+  text-align: center;
+}
+
+.feature-row .feature-content h2,
+.feature-row .feature-content h3 {
+  text-align: center;
+}
+
+.feature-row .rocket-background-icon {
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  width: 1400px;
+  max-width: none;
+  height: auto;
+  opacity: 0.18;
+  filter: blur(0.8px);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .flow-grid {
@@ -3218,213 +3278,211 @@ img {
     opacity: 0.1 !important; /* Aumenta a opacidade para dar mais destaque */
     z-index: 1;
     pointer-events: none; /* Impede que o ícone atrapalhe cliques em botões */
-    filter: blur(2px); /* Opcional: um leve desfoque ajuda no destaque sem poluir o texto */
+    filter: blur(
+      2px
+    ); /* Opcional: um leve desfoque ajuda no destaque sem poluir o texto */
   }
 
   /* Ajuste para o Ícone da Baleia (Cahalote) */
 
   @media (max-width: 992px) {
-  /* Garante que o container pai não corte a baleia aumentada */
-  .hero, .presentation-container, .slide-content {
-    position: relative;
-    overflow: hidden; 
+    /* Garante que o container pai não corte a baleia aumentada */
+    .hero,
+    .presentation-container,
+    .slide-content {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* --- AJUSTE REFINADO DA BALEIA (CAHALOTE) --- */
+    .rocket-kids-background-icon {
+      display: block !important;
+      position: absolute;
+
+      /* 1. Escala: Aumentamos para preencher mais o fundo */
+      width: 250% !important;
+      max-width: none !important;
+      height: auto;
+
+      /* 2. Posicionamento: Movemos para o centro */
+      /* Desce um pouco para ficar atrás do texto principal */
+      top: 55% !important;
+      /* Centraliza horizontalmente (em vez de travar na direita) */
+      left: 50% !important;
+      right: auto !important;
+
+      /* 3. Transform: Centralização exata + Leve rotação artística */
+      transform: translate(-50%, -50%) rotate(-10deg) !important;
+
+      /* 4. Destaque: Aumentamos a opacidade */
+      opacity: 0.8 !important;
+      z-index: 1;
+      pointer-events: none;
+
+      /* 5. Suavização das Bordas (Efeito Anti-Recorte) */
+      /* Desfoque leve ajuda a misturar com o fundo */
+      filter: blur(1.5px) !important;
+
+      mask-image: radial-gradient(
+        circle at center,
+        rgba(0, 0, 0, 1) 30%,
+        transparent 70%
+      ) !important;
+
+      -webkit-mask-image: radial-gradient(
+        circle at center,
+        rgba(0, 0, 0, 1) 3%,
+        transparent 40%
+      ) !important;
+    }
+    .rocket-rabo-background-icon {
+      display: block !important;
+      position: absolute;
+
+      /* 1. Escala: Aumentamos para preencher mais o fundo */
+      width: 180% !important;
+      max-width: none !important;
+      height: auto;
+
+      /* 2. Posicionamento: Movemos para o centro */
+      /* Desce um pouco para ficar atrás do texto principal */
+      top: 55% !important;
+      /* Centraliza horizontalmente (em vez de travar na direita) */
+      left: 50% !important;
+      right: auto !important;
+
+      /* 3. Transform: Centralização exata + Leve rotação artística */
+      transform: translate(-50%, -50%) rotate(-10deg) !important;
+
+      /* 4. Destaque: Aumentamos a opacidade */
+      opacity: 0.18 !important;
+      z-index: 1;
+      pointer-events: none;
+
+      /* 5. Suavização das Bordas (Efeito Anti-Recorte) */
+      /* Desfoque leve ajuda a misturar com o fundo */
+      filter: blur(5px) !important;
+
+      mask-image: radial-gradient(
+        circle at center,
+        rgba(0, 0, 0, 1) 80%,
+        transparent 80%
+      ) !important;
+
+      -webkit-mask-image: radial-gradient(
+        circle at center,
+        rgba(0, 0, 0, 1) 10%,
+        transparent 80%
+      ) !important;
+    }
+    .rocket-background-icon {
+      display: block !important;
+      position: absolute;
+
+      /* 1. Escala: Aumentamos para preencher mais o fundo */
+      width: 250% !important;
+      max-width: none !important;
+      height: auto;
+
+      /* 2. Posicionamento: Movemos para o centro */
+      /* Desce um pouco para ficar atrás do texto principal */
+      top: 55% !important;
+      /* Centraliza horizontalmente (em vez de travar na direita) */
+      left: 50% !important;
+      right: auto !important;
+
+      /* 3. Transform: Centralização exata + Leve rotação artística */
+      transform: translate(-50%, -50%) rotate(-10deg) !important;
+
+      /* 4. Destaque: Aumentamos a opacidade */
+      opacity: 0.2 !important;
+      z-index: 1;
+      pointer-events: none;
+
+      /* 5. Suavização das Bordas (Efeito Anti-Recorte) */
+      /* Desfoque leve ajuda a misturar com o fundo */
+      filter: blur(5px) !important;
+
+      mask-image: radial-gradient(
+        circle at center,
+        rgba(0, 0, 0, 1) 80%,
+        transparent 80%
+      ) !important;
+
+      -webkit-mask-image: radial-gradient(
+        circle at center,
+        rgba(0, 0, 0, 1) 10%,
+        transparent 80%
+      ) !important;
+    }
+    .rocket-kids-background-icon {
+      display: block !important;
+      position: absolute;
+
+      /* 1. Escala: Aumentamos para preencher mais o fundo */
+      width: 350% !important;
+      max-width: none !important;
+      height: auto;
+
+      /* 2. Posicionamento: Movemos para o centro */
+      /* Desce um pouco para ficar atrás do texto principal */
+      top: 150% !important;
+      /* Centraliza horizontalmente (em vez de travar na direita) */
+      left: 50% !important;
+      right: auto !important;
+
+      /* 3. Transform: Centralização exata + Leve rotação artística */
+      transform: translate(-50%, -50%) rotate(-10deg) !important;
+
+      /* 4. Destaque: Aumentamos a opacidade */
+      opacity: 0.1 !important;
+      z-index: 3;
+      pointer-events: none;
+
+      /* 5. Suavização das Bordas (Efeito Anti-Recorte) */
+      /* Desfoque leve ajuda a misturar com o fundo */
+      filter: blur(1.5px) !important;
+
+      mask-image: radial-gradient(
+        circle at center,
+        rgba(0, 0, 0, 1) 30%,
+        transparent 70%
+      ) !important;
+
+      -webkit-mask-image: radial-gradient(
+        circle at center,
+        rgba(0, 0, 0, 1) 3%,
+        transparent 40%
+      ) !important;
+    }
+    /* Mantém o texto ACIMA da baleia para leitura */
+    .hero-text-block,
+    .hero-layout-container {
+      position: relative;
+      z-index: 10;
+    }
   }
-
-  /* --- AJUSTE REFINADO DA BALEIA (CAHALOTE) --- */
-  .rocket-kids-background-icon {
-    display: block !important;
-    position: absolute;
-    
-    /* 1. Escala: Aumentamos para preencher mais o fundo */
-    width: 250% !important; 
-    max-width: none !important;
-    height: auto;
-
-    /* 2. Posicionamento: Movemos para o centro */
-    /* Desce um pouco para ficar atrás do texto principal */
-    top: 55% !important; 
-    /* Centraliza horizontalmente (em vez de travar na direita) */
-    left: 50% !important; 
-    right: auto !important;
-    
-    /* 3. Transform: Centralização exata + Leve rotação artística */
-    transform: translate(-50%, -50%) rotate(-10deg) !important;
-
-    /* 4. Destaque: Aumentamos a opacidade */
-    opacity: 0.8 !important; 
-    z-index: 1;
-    pointer-events: none;
-
-    /* 5. Suavização das Bordas (Efeito Anti-Recorte) */
-    /* Desfoque leve ajuda a misturar com o fundo */
-    filter: blur(1.5px) !important; 
-
-
-    mask-image: radial-gradient(
-      circle at center, 
-      rgba(0, 0, 0, 1) 30%, 
-      transparent 70%
-    ) !important;
-    
-    -webkit-mask-image: radial-gradient(
-      circle at center, 
-      rgba(0, 0, 0, 1) 3%, 
-      transparent 40%
-    ) !important;
-  }
-.rocket-rabo-background-icon {
-    display: block !important;
-    position: absolute;
-    
-    /* 1. Escala: Aumentamos para preencher mais o fundo */
-    width: 180% !important; 
-    max-width: none !important;
-    height: auto;
-
-    /* 2. Posicionamento: Movemos para o centro */
-    /* Desce um pouco para ficar atrás do texto principal */
-    top: 55% !important; 
-    /* Centraliza horizontalmente (em vez de travar na direita) */
-    left: 50% !important; 
-    right: auto !important;
-    
-    /* 3. Transform: Centralização exata + Leve rotação artística */
-    transform: translate(-50%, -50%) rotate(-10deg) !important;
-
-    /* 4. Destaque: Aumentamos a opacidade */
-    opacity: 0.18 !important; 
-    z-index: 1;
-    pointer-events: none;
-
-    /* 5. Suavização das Bordas (Efeito Anti-Recorte) */
-    /* Desfoque leve ajuda a misturar com o fundo */
-    filter: blur(5px) !important; 
-
-
-    mask-image: radial-gradient(
-      circle at center, 
-      rgba(0, 0, 0, 1) 80%, 
-      transparent 80%
-    ) !important;
-    
-    -webkit-mask-image: radial-gradient(
-      circle at center, 
-      rgba(0, 0, 0, 1) 10%, 
-      transparent 80%
-    ) !important;
-  }
-  .rocket-background-icon {
-    display: block !important;
-    position: absolute;
-    
-    /* 1. Escala: Aumentamos para preencher mais o fundo */
-    width: 250% !important; 
-    max-width: none !important;
-    height: auto;
-
-    /* 2. Posicionamento: Movemos para o centro */
-    /* Desce um pouco para ficar atrás do texto principal */
-    top: 55% !important; 
-    /* Centraliza horizontalmente (em vez de travar na direita) */
-    left: 50% !important; 
-    right: auto !important;
-    
-    /* 3. Transform: Centralização exata + Leve rotação artística */
-    transform: translate(-50%, -50%) rotate(-10deg) !important;
-
-    /* 4. Destaque: Aumentamos a opacidade */
-    opacity: 0.2 !important; 
-    z-index: 1;
-    pointer-events: none;
-
-    /* 5. Suavização das Bordas (Efeito Anti-Recorte) */
-    /* Desfoque leve ajuda a misturar com o fundo */
-    filter: blur(5px) !important; 
-
-
-    mask-image: radial-gradient(
-      circle at center, 
-      rgba(0, 0, 0, 1) 80%, 
-      transparent 80%
-    ) !important;
-    
-    -webkit-mask-image: radial-gradient(
-      circle at center, 
-      rgba(0, 0, 0, 1) 10%, 
-      transparent 80%
-    ) !important;
-  }
-   .rocket-kids-background-icon {
-    display: block !important;
-    position: absolute;
-    
-    /* 1. Escala: Aumentamos para preencher mais o fundo */
-    width: 350% !important; 
-    max-width: none !important;
-    height: auto;
-
-    /* 2. Posicionamento: Movemos para o centro */
-    /* Desce um pouco para ficar atrás do texto principal */
-    top: 150% !important; 
-    /* Centraliza horizontalmente (em vez de travar na direita) */
-    left: 50% !important; 
-    right: auto !important;
-    
-    /* 3. Transform: Centralização exata + Leve rotação artística */
-    transform: translate(-50%, -50%) rotate(-10deg) !important;
-
-    /* 4. Destaque: Aumentamos a opacidade */
-    opacity: 0.1 !important; 
-    z-index: 3;
-    pointer-events: none;
-
-    /* 5. Suavização das Bordas (Efeito Anti-Recorte) */
-    /* Desfoque leve ajuda a misturar com o fundo */
-    filter: blur(1.5px) !important; 
-
-
-    mask-image: radial-gradient(
-      circle at center, 
-      rgba(0, 0, 0, 1) 30%, 
-      transparent 70%
-    ) !important;
-    
-    -webkit-mask-image: radial-gradient(
-      circle at center, 
-      rgba(0, 0, 0, 1) 3%, 
-      transparent 40%
-    ) !important;
-  }
-  /* Mantém o texto ACIMA da baleia para leitura */
-  .hero-text-block, 
-  .hero-layout-container {
-    position: relative;
-    z-index: 10; 
-  }
-}
 
   /* Garante que o texto fique ACIMA dessas imagens */
-  .hero-text-block, 
-  .hero-layout-container, 
-  .slide-13-left, 
+  .hero-text-block,
+  .hero-layout-container,
+  .slide-13-left,
   .slide-13-right {
     position: relative;
-    z-index: 10; 
+    z-index: 10;
   }
 }
-
 
 /* =============================================================
    ESTRUTURA DE COLUNA ÚNICA - SEM ZOOM (IPHONE 15)
    ============================================================= */
 
 @media (max-width: 992px) {
-  
   /* 1. Força TODOS os containers de seção a virarem uma coluna só */
-  .hero-layout-container, 
-  .feature-container, 
-  .impact-container, 
-  .dual-container, 
+  .hero-layout-container,
+  .feature-container,
+  .impact-container,
+  .dual-container,
   .tech-stack-container,
   .solutions-wrapper,
   .footer-container {
@@ -3439,11 +3497,11 @@ img {
   }
 
   /* 2. REORDENAÇÃO (A foto da pessoa/imagem sempre em primeiro) */
-  
+
   /* Alvos: Avatar do Igor, Imagens de destaque, Gráficos */
-  .hero-sidebar-identity, 
-  .feature-image, 
-  .impact-visual, 
+  .hero-sidebar-identity,
+  .feature-image,
+  .impact-visual,
   .graphic-wrapper {
     order: 1 !important; /* Primeiro lugar */
     width: 100% !important;
@@ -3451,23 +3509,24 @@ img {
     justify-content: center !important;
   }
 
-  .avatar-gradient-border, .feature-image img {
+  .avatar-gradient-border,
+  .feature-image img {
     width: 180px !important; /* Tamanho fixo natural */
     height: auto !important;
   }
 
   /* TEXTOS (Título e subtítulos) */
-  .hero-text-block, 
-  .feature-content, 
-  .impact-text, 
+  .hero-text-block,
+  .feature-content,
+  .impact-text,
   .tech-stack-info {
     order: 2 !important; /* Segundo lugar */
     width: 100% !important;
   }
 
   /* BOTÕES E LINKS */
-  .buttons, 
-  .cta-container, 
+  .buttons,
+  .cta-container,
   .footer-links {
     order: 3 !important; /* Terceiro lugar */
     width: 100% !important;
@@ -3501,9 +3560,9 @@ img {
   }
 
   /* 4. GRIDS (Cards de Soluções e Fluxos) */
-  .flow-grid, 
-  .cards-grid, 
-  .mini-stats-grid, 
+  .flow-grid,
+  .cards-grid,
+  .mini-stats-grid,
   .solutions-grid {
     display: flex !important;
     flex-direction: column !important;
@@ -3511,7 +3570,9 @@ img {
     gap: 20px !important;
   }
 
-  .flow-card, .custom-card, .mini-stat {
+  .flow-card,
+  .custom-card,
+  .mini-stat {
     width: 100% !important;
     margin: 0 !important;
   }
