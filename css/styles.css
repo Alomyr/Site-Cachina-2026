@@ -3024,3 +3024,105 @@ body {
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
 }
+/* =========================
+   BALEIA BACKGROUND MELHORADA
+========================= */
+
+.rocket-rabo-background-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%) scale(2.2);
+
+  width: 140vw;
+  max-width: none;
+  height: auto;
+
+  opacity: 0.35;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* MOBILE - ainda maior e mais fluida */
+@media (max-width: 768px) {
+  .rocket-rabo-background-icon {
+    width: 220vw;
+    transform: translate(-50%, -50%) scale(2.8);
+    opacity: 0.25;
+  }
+}
+
+@media (max-width: 480px) {
+  .rocket-rabo-background-icon {
+    width: 260vw;
+    transform: translate(-50%, -50%) scale(3.2);
+    opacity: 0.2;
+  }
+}
+/* =========================
+   HERO MOBILE CORRETO
+========================= */
+
+@media (max-width: 768px) {
+
+  .hero-layout-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-sidebar-identity {
+    order: 1;
+    margin-bottom: 20px;
+  }
+
+  .avatar-gradient-border {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+  }
+
+  .person-info {
+    text-align: center;
+  }
+
+  .person-info h3 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  .person-info span {
+    font-size: 0.8rem;
+  }
+
+  .hero-text-block {
+    order: 2;
+    text-align: center;
+  }
+
+  .hero-text-block h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .hero-text-block h3 {
+    font-size: 1rem;
+  }
+
+  .hero p {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
