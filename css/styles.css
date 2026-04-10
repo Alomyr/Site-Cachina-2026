@@ -3576,7 +3576,7 @@ body,
   0% { transform: translate3d(0, 0, 0); }
   100% { transform: translate3d(-750px, 0, 0); } /* Metade de 1500px */
 }
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   /* Impede que elementos gigantes "empurrem" a tela */
   .automation-background-icon, 
   .rocket-background-icon,
@@ -3619,7 +3619,7 @@ body,
   height: auto;
   object-fit: contain; /* Garante que a imagem não seja esticada */
 }
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   /* Garante que nada saia da tela */
   html, body {
     overflow-x: hidden;
@@ -3657,7 +3657,7 @@ body,
     gap: 40px; /* Espaçamento natural entre logos */
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .hero-text-block h1, 
   .hero-text-block p {
     text-align: center !important; /* Centralizar é o padrão mais natural para mobile */
@@ -3669,7 +3669,7 @@ body,
     padding: 0 15px; /* Dá um respiro nas laterais */
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .ecosystem-flow, 
   .services-grid, 
   .solutions-grid {
@@ -3684,7 +3684,7 @@ body,
     min-height: auto !important;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .arco-decorativo, 
   .rocket-background-icon {
     display: none !important; /* Elementos decorativos gigantes devem sair no mobile para fluidez */
