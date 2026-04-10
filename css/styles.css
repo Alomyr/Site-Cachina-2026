@@ -268,8 +268,8 @@ body {
 }
 .rocket-kids-background-icon {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 82%;
+  left: 66%;
   transform: translate(-50%, -50%);
 
   width: 2000px; /* ajuste conforme necessário */
@@ -3256,7 +3256,7 @@ img {
     position: absolute;
     
     /* 1. Escala: Aumentamos para preencher mais o fundo */
-    width: 350% !important; 
+    width: 180% !important; 
     max-width: none !important;
     height: auto;
 
@@ -3297,7 +3297,7 @@ img {
     position: absolute;
     
     /* 1. Escala: Aumentamos para preencher mais o fundo */
-    width: 350% !important; 
+    width: 250% !important; 
     max-width: none !important;
     height: auto;
 
@@ -3312,7 +3312,7 @@ img {
     transform: translate(-50%, -50%) rotate(-10deg) !important;
 
     /* 4. Destaque: Aumentamos a opacidade */
-    opacity: 0.18 !important; 
+    opacity: 0.2 !important; 
     z-index: 1;
     pointer-events: none;
 
@@ -3338,7 +3338,7 @@ img {
     position: absolute;
     
     /* 1. Escala: Aumentamos para preencher mais o fundo */
-    width: 250% !important; 
+    width: 350% !important; 
     max-width: none !important;
     height: auto;
 
@@ -3497,7 +3497,7 @@ img {
 
   /* 5. ELEMENTOS DE FUNDO (A Baleia) */
   .rocket-kids-background-icon {
-    width: 200% !important; /* Grande mas sem distorcer o layout */
+    width: 250% !important; /* Grande mas sem distorcer o layout */
     position: absolute;
     top: 50%;
     left: 50%;
