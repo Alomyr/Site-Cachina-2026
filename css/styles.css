@@ -2803,7 +2803,8 @@ nav a:hover {
 ========================= */
 
 /* Corrige viewport no iOS (Safari) */
-html, body {
+html,
+body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
@@ -3025,9 +3026,6 @@ body {
   padding-right: env(safe-area-inset-right);
 }
 
-
-
-
 /* ARQUIVO: styles.css (Refatorado - Sem Animações)
    Mantém: Responsividade, Cores e Estrutura de Slides
 */
@@ -3162,531 +3160,118 @@ img {
   height: 24px;
 }
 
-/* Contador de Slides */
-.slide-counter {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
+/* =============================================================
+   BLINDAGEM TOTAL IPHONE 15 / SAFARI (SUBSTITUA O FINAL DO CSS)
+   ============================================================= */
 
-.glass-effect {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  padding: 8px 20px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* --- ESTRUTURAS DE GRID E RESPONSIVIDADE --- */
-
-/* Exemplo de Grid para os Slides (Baseado no seu arquivo anterior) */
-.bfs-grid-main {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 2rem;
-  height: 100%;
-  align-items: center;
-}
-
-/* Responsividade Mobile */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+  /* 1. Reset de Estrutura: Força tudo a fluir verticalmente sem travas */
+  html,
   body {
-    overflow-y: auto; /* Permite scroll no mobile se o conteúdo for grande */
+    overflow-x: hidden !important;
+    height: auto !important;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .presentation-container {
-    height: auto;
-    min-height: 100vh;
-  }
-
-  .bfs-grid-main {
-    grid-template-columns: 1fr; /* Coluna única no mobile */
-    gap: 1.5rem;
-    padding: 1rem;
-  }
-
-  .nav-btn {
-    display: none; /* Esconde setas no mobile para usar touch */
-  }
-}
-
-/* Ajustes para Tablets */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .bfs-grid-main {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-  }
-}
-
-/* Utilitários de Cores e Backgrounds */
-.bg-slate-900 {
-  background-color: #0f172a;
-}
-.text-sky-400 {
-  color: #0ea5e9;
-}
-.text-slate-400 {
-  color: #94a3b8;
-}
-
-/* No seu styles.css */
-:root {
-  --bg-primary: #0a1128; /* #24456f O azul marinho da imagem */
-    --bg-dark: #0a1128;
-
-  --text-white: #ffffff;
-}
-
-body,
-.presentation-container {
-  background-color: var(--bg-primary);
-  color: var(--text-white);
-  overflow: hidden; /* Evita o scroll padrão para o swipe funcionar melhor */
-}
-/* =============================================================
-   PÁGINA 02: VALORES (RESPONSIVIDADE BLINDADA TOTAL)
-   ============================================================= */
-
-.slide-02-container.values-page {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 60px;
-  height: 100vh;
-  height: 100dvh; /* Altura dinâmica para iOS */
-  width: 100vw;
-  background-color: #0a1128;
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* FUNDO E BRILHOS (IDÊNTICO AO SLIDE 01) */
-.slide-02-container.values-page::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.slide-02-container.values-page::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(
-    circle,
-    rgba(14, 165, 233, 0.15) 0%,
-    transparent 70%
-  );
-  filter: blur(80px);
-  z-index: 0;
-}
-
-/* ... (Mantenha seus estilos de .sidebar-identity, .value-card, etc aqui) ... */
-
-/* =============================================================
-   6. RESPONSIVIDADE (VERTICAL - MOBILE & TABLET)
-   ============================================================= */
-@media (max-width: 1024px) {
+  .presentation-container,
+  .slide-13-container,
   .slide-02-container.values-page {
-    flex-direction: column;
-    height: auto;
-    min-height: 100dvh;
-    padding: 60px 30px;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    justify-content: flex-start;
-  }
-
-  /* Remove efeitos pesados no mobile para fluidez */
-  .slide-02-container.values-page::before,
-  .slide-02-container.values-page::after {
-    display: none;
-  }
-
-  .sidebar-identity {
-    min-width: 100%;
-    padding-right: 0;
-    border-right: none;
-    border-bottom: 1px solid rgba(14, 165, 233, 0.2);
-    padding-bottom: 30px;
-    margin-bottom: 30px;
-  }
-
-  .values-content {
-    padding-left: 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  .cards-wrapper {
-    flex-direction: column; /* Empilha os cards */
-    gap: 20px;
-  }
-
-  .value-card {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  .section-title {
-    font-size: 2.2rem;
-  }
-
-  .slide-01-footer {
-    position: relative;
-    margin-top: 50px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-}
-
-/* =============================================================
-   7. RESPONSIVIDADE (HORIZONTAL - LANDSCAPE)
-   ============================================================= */
-@media (max-height: 550px) and (orientation: landscape) {
-  .slide-container.values-page {
-    height: auto;
-    min-height: 100dvh;
-    padding: 30px;
-    flex-direction: row; /* Volta para row para aproveitar a largura */
-    align-items: flex-start;
-  }
-
-  .sidebar-identity {
-    min-width: 200px;
-    border-right: 1px solid rgba(14, 165, 233, 0.2);
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-
-  .sidebar-identity .mini-logo {
-    width: 120px;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-  }
-
-  .cards-wrapper {
-    flex-direction: row; /* Cards lado a lado no landscape */
-    flex-wrap: wrap; /* Quebra se não couber */
-    justify-content: center;
-  }
-
-  .value-card {
-    flex: 1 1 200px; /* Base de 200px mas pode crescer */
-    padding: 20px 15px;
-  }
-
-  .card-icon {
-    font-size: 1.8rem;
-  }
-
-  .value-card h3 {
-    font-size: 1.1rem;
-  }
-
-  .value-card p {
-    font-size: 0.8rem;
-  }
-}
-
-/*teste*/
-
-/* ================= BLINDAGEM SAMSUNG & MOBILE ================= */
-@media (max-width: 992px) {
-  /* Aumentamos o range para pegar tablets e "desktop mode" de celulares */
-
-  .slide-01-container,
-  .slide-02-container,
-  .slide-03-container,
-  .slide-04-container,
-  .slide-05-container,
-  .slide-06-container,
-  .slide-07-container,
-  .slide-08-container,
-  .slide-09-container,
-  .slide-10-container,
-  .slide-11-container,
-  .slide-12-container,
-  .slide-14-container,
-  .slide-15-container,
-  .index,
-  .slide-16-container {
-    /* 1. Resolve o bug do 100vh no Samsung/Android */
     display: flex !important;
     flex-direction: column !important;
     height: auto !important;
-    min-height: 100dvh !important;
-    min-height: -webkit-fill-available !important;
-
-    /* 2. Força o preenchimento correto da largura */
-    width: 100% !important;
+    min-height: 100dvh !important; /* Altura dinâmica para iOS */
     padding: 40px 20px !important;
-    gap: 30px !important;
-
-    /* 3. Garante que o scroll seja suave e tátil */
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    -webkit-overflow-scrolling: touch;
-
-    /* 4. Reseta o grid que causa o bug de sobreposição no Samsung */
-    grid-template-columns: 1fr !important;
+    overflow: visible !important;
   }
 
-  /* 5. Previne que imagens e logos "estourem" no modo desktop do celular */
-  .company-logo,
-  .cloudbox-logo-top,
-  .sidebar-identity img {
-    max-width: 180px !important;
-    height: auto !important;
-    margin: 0 auto !important;
-  }
-
-  /* 6. Corrige o tamanho do texto gigante (20+) que aparece na sua imagem */
-  .slide-01-left .year {
-    font-size: clamp(
-      5rem,
-      20vw,
-      8rem
-    ) !important; /* Ajusta conforme o espaço disponível */
-    line-height: 1;
-    margin: 0 auto;
-  }
-
-  /* 7. Blindagem para os Cards (Cloudbox/Valores) */
-  .cloudbox-grid,
-  .cards-wrapper {
-    display: flex !important;
-    flex-direction: column !important;
-    width: 100% !important;
-    gap: 15px !important;
-  }
-
-  /* 8. Resolve o bug de "elementos voando" no Samsung Internet */
-  .slide-01-left,
-  .slide-01-center,
-  .slide-01-right {
-    position: relative !important;
-    width: 100% !important;
-    left: 0 !important;
-    transform: none !important;
+  /* 2. Tipografia Natural: Chega de texto "espremido" ou justificado */
+  h1,
+  h2,
+  .titulo-principal,
+  .slide-13-left .title {
+    font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
     text-align: center !important;
+    line-height: 1.2 !important;
+    width: 100% !important;
+    hyphens: none !important;
   }
 
-  /* 9. Coloca a foto sempre no topo no mobile */
-  .slide-01-center {
-    order: -1 !important;
-  }
-}
-
-/* Fix para navegadores que não suportam dvh (Legacy Android) */
-@supports not (height: 100dvh) {
-  .slide-01-container {
-    height: 100vh !important;
-  }
-}
-
-/* ================= FIX CARROSSEL MOBILE/SAFARI ================= */
-
-@media (max-width: 992px) {
-  /* Força o container do slide 13 a aceitar conteúdo flexível */
-  .slide-13-container {
-    display: flex !important;
-    flex-direction: column !important;
-    height: auto !important;
-    min-height: 100dvh !important;
-    padding: 40px 20px !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
+  p {
+    text-align: center !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
   }
 
-  /* Garante que o container do meio ocupe espaço e seja visível */
+  /* 3. Ajuste do Carrossel (Onde o iPhone mais sofre) */
   .slide-13-center {
-    display: block !important;
     width: 100% !important;
-    min-height: 120px !important; /* Altura mínima para o Safari "enxergar" */
-    margin: 20px 0 !important;
-    position: relative !important;
-    order: 2 !important; /* Garante que fique entre o título e o rodapé */
-    overflow: visible !important; 
-    z-index: 20 !important;
+    margin: 30px 0 !important;
+    overflow: hidden !important; /* Esconde o que sobra do carrossel */
   }
 
-  /* Ajuste do Slider para sangrar na tela (opcional) */
   .logo-slider-s13 {
-    width: 100vw !important;
-    margin-left: -20px !important; 
-    overflow: hidden !important;
-    display: flex !important;
-    align-items: center !important;
+    mask-image: none !important; /* Filtros pesados travam o scroll no Safari */
+    -webkit-mask-image: none !important;
   }
 
-  /* Força a largura da track para o Safari não colapsar os itens */
   .logo-track-s13 {
     display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    width: 1500px !important; /* 10 itens * 150px */
-    animation: scrollS13-mob 15s linear infinite !important;
+    width: max-content !important; /* Deixa o conteúdo respirar */
+    gap: 30px !important;
+    animation: scrollS13-mob 20s linear infinite !important;
   }
 
-  .logo-item-s13 {
-    width: 150px !important;
-    flex-shrink: 0 !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-
-  .logo-item-s13 img {
-    width: 100px !important;
-    height: auto !important;
-    max-height: 60px !important;
-    display: block !important;
-    opacity: 1 !important;
-    filter: none !important; /* Safari às vezes buga com filtros em animações */
-  }
-}
-
-/* Keyframe específico para mobile para evitar saltos */
-@keyframes scrollS13-mob {
-  0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-750px, 0, 0); } /* Metade de 1500px */
-}
-@media (max-width: 968px) {
-  /* Impede que elementos gigantes "empurrem" a tela */
-  .automation-background-icon, 
+  /* 4. Remoção de Elementos que causam "Espaço em Branco" na direita */
+  .arco-background,
+  .arco-decorativo,
   .rocket-background-icon,
-  .arco-decorativo {
-    width: 100% !important;
-    height: auto !important;
-    left: 0 !important;
-    right: 0 !important;
-    transform: none !important;
-    opacity: 0.05; /* Deixa ainda mais subtil no mobile */
+  .automation-background-icon {
+    display: none !important; /* No mobile, menos é mais para performance */
   }
 
-  /* Ajuste de tipografia para fluidez */
-  .hero h1 {
-    font-size: 1.8rem !important; /* Tamanho mais legível */
-    text-align: center;
-  }
-
-  .hero-layout-container {
-    padding: 0 20px;
-    gap: 20px;
-  }
-
-  /* Faz os cards ocuparem a largura total de forma elegante */
-  .solutions-grid, 
-  .cards-container, 
-  .ecosystem-flow {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 15px;
-  }
-
-  .solution-card-box, .card, .ecosystem-card {
-    width: 100% !important;
-    max-width: none !important;
-  }
-}
-.tech-icon img, .logo-item-s13 img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain; /* Garante que a imagem não seja esticada */
-}
-@media (max-width: 968px) {
-  /* Garante que nada saia da tela */
-  html, body {
-    overflow-x: hidden;
-    position: relative;
-    width: 100%;
-  }
-
-  /* Faz o Hero escalar proporcionalmente como no PC */
-  .hero-layout-container {
-    flex-direction: column;
-    text-align: center;
-    padding: 60px 20px;
-    gap: 30px;
-  }
-
-  /* O erro das imagens gigantes: limite-as ao tamanho da tela */
-  .automation-background-icon, 
-  .rocket-background-icon {
-    max-width: 100vw !important;
-    height: auto !important;
-    position: absolute;
-    z-index: -1;
-  }
-
-  /* Ajuste do Slider (Cachina/Logos) para ser fluido */
-  .logo-slider-s13 {
-    width: 100% !important;
-    margin: 0 !important;
-    overflow: hidden;
-  }
-
-  .logo-track-s13 {
-    width: fit-content !important; /* Em vez de 1500px */
-    display: flex;
-    gap: 40px; /* Espaçamento natural entre logos */
-  }
-}
-@media (max-width: 968px) {
-  .hero-text-block h1, 
-  .hero-text-block p {
-    text-align: center !important; /* Centralizar é o padrão mais natural para mobile */
-    hyphens: none !important;      /* Evita que ele corte palavras ao meio */
-    width: 100% !important;
-  }
-  
-  .hero-layout-container {
-    padding: 0 15px; /* Dá um respiro nas laterais */
-  }
-}
-@media (max-width: 968px) {
-  .ecosystem-flow, 
-  .services-grid, 
-  .solutions-grid {
+  /* 5. Cards e Grids: 100% da largura com margem natural */
+  .cards-container,
+  .solutions-grid,
+  .services-grid,
+  .values-content,
+  .cards-wrapper {
     display: flex !important;
     flex-direction: column !important;
-    gap: 30px !important; /* Garante espaço real entre os blocos */
-    height: auto !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 20px !important;
+    padding: 0 !important;
   }
 
-  .tech-card, .solution-card-box {
+  .card,
+  .value-card,
+  .solution-card-box,
+  .tech-card {
     width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
     min-height: auto !important;
+    transform: none !important; /* Remove hovers que podem bugar no touch */
+  }
+
+  /* 6. Botões */
+  .buttons {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .btn {
+    width: 100% !important;
+    justify-content: center !important;
   }
 }
-@media (max-width: 968px) {
-  .arco-decorativo, 
-  .rocket-background-icon {
-    display: none !important; /* Elementos decorativos gigantes devem sair no mobile para fluidez */
+
+/* Keyframe suave para o iPhone não "pular" */
+@keyframes scrollS13-mob {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
   }
 }
