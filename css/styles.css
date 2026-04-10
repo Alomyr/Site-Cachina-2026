@@ -207,8 +207,10 @@ body {
 }
 
 .automation-background-icon {
-  filter: blur(20px);
+  filter: blur(2px);
   opacity: 1;
+  width: 10px; /* ajuste conforme necessário */
+  height: auto;
 
   mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, transparent 80%);
   -webkit-mask-image: radial-gradient(
@@ -248,8 +250,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 1900px; /* ajuste conforme necessário */
-  height: auto;
+  width: auto; /* ajuste conforme necessário */
+  height: 2000px;
 
   z-index: -1;
   pointer-events: none;
@@ -262,8 +264,8 @@ body {
   mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, transparent 80%);
   -webkit-mask-image: radial-gradient(
     circle,
-    rgba(0, 0, 0, 1) 60%,
-    transparent 80%
+    rgba(0, 0, 0, 1) 40%,
+    transparent 90%
   );
 }
 
@@ -648,7 +650,7 @@ nav a:hover {
 /* Container que envolve os 3 cards */
 .solutions-wrapper {
   background: rgba(0, 0, 0, 0.4); /* Fundo preto transparente */
-  border: 1px solid rgba(0, 229, 255, 0.1); /* Contorno bem sutil */
+  border: none;
   padding: 50px 30px;
   border-radius: 24px;
   backdrop-filter: blur(5px); /* Efeito de vidro opcional */
@@ -668,7 +670,7 @@ nav a:hover {
 .solution-card-box {
   flex: 1;
   background: rgba(16, 42, 67, 0.3);
-  border: 1px solid rgba(0, 229, 255, 0.2);
+  border: none;
   padding: 30px 20px;
   border-radius: 15px;
   transition: 0.3s;
@@ -676,7 +678,7 @@ nav a:hover {
 
 .solution-card-box:hover {
   background: rgba(16, 42, 67, 0.6);
-  border-color: var(--accent-cyan);
+  border: none;
   transform: translateY(-5px);
 }
 
@@ -687,7 +689,7 @@ nav a:hover {
   flex: 1;
   font-size: 0.9rem;
   color: var(--text-gray);
-  border: 1px solid rgba(0, 229, 255, 0.05); /* Borda quase invisível */
+  border: none;
   border-bottom: 3px solid transparent;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transição com "bounce" */
   cursor: pointer;
@@ -745,19 +747,61 @@ nav a:hover {
   left: 50%; /* Centraliza horizontalmente */
   transform: translate(-50%, -50%); /* Centralização sem rotação */
 
-  width: 1900px; /* Tamanho grande */
+  width: 10000px; /* Tamanho grande */
   height: auto;
 
   /* Define que ele fique por trás do texto e botões */
   z-index: -1;
 
   /* Deixa o ícone bem sutil (quase transparente) */
-  opacity: 0.1;
+  opacity: 0.2;
 
   /* Garante que o usuário não interaja com o ícone ao invés do texto */
   pointer-events: none;
 }
+.automation-c-background-icon {
+  position: absolute;
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Centralização sem rotação */
 
+  width: 2000px; /* Tamanho grande */
+  height: auto;
+
+  /* Define que ele fique por trás do texto e botões */
+  z-index: -1;
+
+  /* Deixa o ícone bem sutil (quase transparente) */
+  opacity: 0.4;
+
+  /* Garante que o usuário não interaja com o ícone ao invés do texto */
+  pointer-events: none;
+}
+.automation-pulo-background-icon {
+  position: absolute;
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Centralização sem rotação */
+
+  width: 3000px; /* Tamanho grande */
+  height: 1400px;
+
+  /* Define que ele fique por trás do texto e botões */
+  z-index: -1;
+
+  /* Deixa o ícone bem sutil (quase transparente) */
+  opacity: 0.2;
+
+  /* Garante que o usuário não interaja com o ícone ao invés do texto */
+  pointer-events: none;
+  filter: blur(3px) !important;
+
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 50%,
+    transparent 90%
+  ) !important;
+}
 /* Ajuste sutil no H1 para garantir que ele fique legível */
 .hero h1 {
   font-size: 3.5rem;
@@ -1048,7 +1092,31 @@ nav a:hover {
 /* --- SEÇÃO IMPACTO --- */
 .impact-section {
   padding: 80px 10%;
-  background: rgba(10, 17, 40, 0.5);
+  background: rgba(10, 17, 40, 0);
+}
+
+.impact-solutions-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.impact-solutions-section .rocket-background-icon {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.16;
+  filter: blur(0.4px) brightness(1.05);
+}
+
+.impact-solutions-section .impact-section,
+.impact-solutions-section .solutions-section {
+  position: relative;
+  z-index: 1;
 }
 
 .impact-container {
@@ -1089,7 +1157,25 @@ nav a:hover {
   background: rgba(16, 42, 67, 0.2);
   padding: 40px;
   border-radius: 20px;
-  border: 1px solid rgba(0, 229, 255, 0.1);
+  border: none;
+}
+
+.impact-section,
+.impact-section .impact-visual,
+.impact-section .impact-text,
+.impact-section .impact-stats,
+.impact-section .stat-item {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.solutions-section .solutions-wrapper,
+.solutions-section .solutions-grid,
+.solutions-section .solution-card-box,
+.solutions-section .custom-card,
+.solutions-section .card {
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .chart-container {
@@ -1512,7 +1598,7 @@ nav a:hover {
   background: #0d1526;
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(0, 229, 255, 0.1);
+  border: none;
   transition: all 0.4s ease;
 }
 
@@ -2127,7 +2213,7 @@ nav a:hover {
 /* Container Principal Lado a Lado */
 .dual-layout-section {
   padding: 80px 5%;
-  background: rgba(10, 17, 40, 0.3);
+  background: rgba(10, 17, 40, 0);
 }
 
 .dual-container {
