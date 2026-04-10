@@ -312,10 +312,7 @@ body {
   transition: 0.4s;
 }
 .hero {
-  position: relative;
-  width: 100%;
-  min-height: 100vh; /* ocupa tela inteira */
-  overflow: hidden;  /* corta qualquer sobra */
+  
   background:
     radial-gradient(circle at center, rgba(0, 229, 255, 0.15), transparent 60%),
     linear-gradient(to bottom, #020617 0%, #020617 60%, #0a1128 100%);
