@@ -3576,3 +3576,41 @@ body,
   0% { transform: translate3d(0, 0, 0); }
   100% { transform: translate3d(-750px, 0, 0); } /* Metade de 1500px */
 }
+@media (max-width: 768px) {
+  /* Impede que elementos gigantes "empurrem" a tela */
+  .automation-background-icon, 
+  .rocket-background-icon,
+  .arco-decorativo {
+    width: 100% !important;
+    height: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+    opacity: 0.05; /* Deixa ainda mais subtil no mobile */
+  }
+
+  /* Ajuste de tipografia para fluidez */
+  .hero h1 {
+    font-size: 1.8rem !important; /* Tamanho mais legível */
+    text-align: center;
+  }
+
+  .hero-layout-container {
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  /* Faz os cards ocuparem a largura total de forma elegante */
+  .solutions-grid, 
+  .cards-container, 
+  .ecosystem-flow {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 15px;
+  }
+
+  .solution-card-box, .card, .ecosystem-card {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
