@@ -291,7 +291,11 @@ body {
      garante que o container pai (.hero) tenha position: relative; */
 }
 
-
+@keyframes floatWhale {
+  0% { transform: translateY(0px) }
+  50% { transform: translateY(-15px) }
+  100% { transform: translateY(0px) }
+}
 
 .whale-bg {
   position: absolute;
@@ -308,6 +312,10 @@ body {
   transition: 0.4s;
 }
 .hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* ocupa tela inteira */
+  overflow: hidden;  /* corta qualquer sobra */
   background:
     radial-gradient(circle at center, rgba(0, 229, 255, 0.15), transparent 60%),
     linear-gradient(to bottom, #020617 0%, #020617 60%, #0a1128 100%);
