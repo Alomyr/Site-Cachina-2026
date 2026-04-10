@@ -266,31 +266,51 @@ body {
     transparent 80%
   );
 }
+
 .rocket-kids-background-icon {
-  position: absolute;
-  top: 82%;
-  left: 66%;
+  position: absolute; 
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 2000px; /* ajuste conforme necessário */
-  height: auto;
+  /* FORÇA O PREENCHIMENTO TOTAL */
+  width: 100vw;   /* 100% da largura da tela */
+  height: 100vh;  /* 100% da altura da tela */
+  
+  /* CRUCIAL: Faz a imagem se comportar como um fundo, 
+     cortando as sobras mas mantendo a proporção */
+  object-fit: cover; 
 
   z-index: -1;
   pointer-events: none;
+  opacity: 0.45;
 
-  /* efeito visual */
-  filter: blur(0.2px);
-  opacity: 0.15;
-
-  /* máscara suave */
-  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, transparent 80%);
-  -webkit-mask-image: radial-gradient(
-    circle,
-    rgba(0, 0, 0, 1) 60%,
-    transparent 80%
-  );
+  filter: blur(0px) brightness(1.1);
+  
+  /* Se quiser que ela acompanhe o scroll apenas da seção, 
+     garante que o container pai (.hero) tenha position: relative; */
 }
 
+@keyframes floatWhale {
+  0% { transform: translateY(0px) }
+  50% { transform: translateY(-15px) }
+  100% { transform: translateY(0px) }
+}
+
+.whale-bg {
+  position: absolute;
+  width: 900px;
+  opacity: 0.1;
+}
+
+.whale-front {
+  position: absolute;
+  width: 400px;
+  opacity: 1;
+}.rocket-kids-background-icon:hover {
+  transform: scale(1.05);
+  transition: 0.4s;
+}
 .hero {
   background:
     radial-gradient(circle at center, rgba(0, 229, 255, 0.15), transparent 60%),
