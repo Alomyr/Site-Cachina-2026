@@ -257,7 +257,7 @@ body {
 .automation-background-icon {
   filter: blur(2px);
   opacity: 1;
-  width: 10px; /* ajuste conforme necessário */
+  width: 50px; /* ajuste conforme necessário */
   height: auto;
 
   mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, transparent 80%);
