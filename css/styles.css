@@ -178,7 +178,7 @@ body {
   margin-top: -5px;
 }
 
-.rocket-background-icon {
+.baleia-background-icon {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -202,7 +202,7 @@ body {
     transparent 80%
   );
 }
-.rocket-rabo-background-icon {
+.baleia-rabo-background-icon {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -241,7 +241,7 @@ body {
   );
 }
 
-.rocket-kids-background-icon {
+.baleia-kids-background-icon {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -277,7 +277,7 @@ body {
   width: 400px;
   opacity: 1;
 }
-.rocket-kids-background-icon:hover {
+.baleia-kids-background-icon:hover {
   transform: scale(1.05);
   transition: 0.4s;
 }
@@ -1072,7 +1072,7 @@ nav a:hover {
   overflow: hidden;
 }
 
-.impact-solutions-section .rocket-background-icon {
+.impact-solutions-section .baleia-background-icon {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1424,7 +1424,7 @@ nav a:hover {
     font-size: 2rem;
   }
 
-  .feature-row .rocket-background-icon {
+  .feature-row .baleia-background-icon {
     position: absolute !important;
     top: 50%;
     left: 50%;
@@ -1844,7 +1844,7 @@ nav a:hover {
   align-items: center;
 }
 
-.section-gap-graphic .rocket-background-icon {
+.section-gap-graphic .baleia-background-icon {
   position: relative;
   width: auto;
   max-width: 100%;
@@ -1865,7 +1865,7 @@ nav a:hover {
   text-align: center;
 }
 
-.feature-row .rocket-background-icon {
+.feature-row .baleia-background-icon {
   position: absolute !important;
   top: 50%;
   left: 50%;
@@ -2866,9 +2866,9 @@ img {
    BACKGROUND ICONS (EVITA QUEBRAR NO MOBILE)
 ========================= */
 @media (max-width: 768px) {
-  .rocket-background-icon,
-  .rocket-rabo-background-icon,
-  .rocket-kids-background-icon,
+  .baleia-background-icon,
+  .baleia-rabo-background-icon,
+  .baleia-kids-background-icon,
   .automation-background-icon {
     width: 120%;
     opacity: 0.05;
@@ -3224,7 +3224,7 @@ img {
     }
 
     /* --- AJUSTE REFINADO DA BALEIA (CAHALOTE) --- */
-    .rocket-kids-background-icon {
+    .baleia-kids-background-icon {
       display: block !important;
       position: absolute;
 
@@ -3264,7 +3264,7 @@ img {
         transparent 40%
       ) !important;
     }
-    .rocket-rabo-background-icon {
+    .baleia-rabo-background-icon {
       display: block !important;
       position: absolute;
 
@@ -3304,7 +3304,7 @@ img {
         transparent 80%
       ) !important;
     }
-    .rocket-background-icon {
+    .baleia-background-icon {
       display: block !important;
       position: absolute;
 
@@ -3344,7 +3344,7 @@ img {
         transparent 80%
       ) !important;
     }
-    .rocket-kids-background-icon {
+    .baleia-kids-background-icon {
       display: block !important;
       position: absolute;
 
@@ -3507,7 +3507,7 @@ img {
   }
 
   /* 5. ELEMENTOS DE FUNDO (A Baleia) */
-  .rocket-kids-background-icon {
+  .baleia-kids-background-icon {
     width: 250% !important; /* Grande mas sem distorcer o layout */
     position: absolute;
     top: 50%;
