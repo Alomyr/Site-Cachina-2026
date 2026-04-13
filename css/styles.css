@@ -149,34 +149,6 @@ body {
   font-size: 0.6rem;
 }
 
-.arco-decorativo {
-  position: absolute;
-  /* Posiciona no canto inferior direito */
-  right: -800px;
-  bottom: -150px;
-
-  /* Tamanho do arco (precisa ser grande para fazer a curva suave) */
-  width: 1000px;
-  height: 1000px;
-
-  /* Cria a linha do arco */
-  border: 40px solid rgba(255, 255, 255, 0.1); /* Branco com transparência igual ao seu rascunho */
-  border-radius: 50%; /* Faz ser um círculo */
-
-  /* Remove as bordas de cima e da esquerda para sobrar só o arco do canto */
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-
-  /* Garante que ele fique atrás do texto */
-  z-index: -1;
-
-  /* Inclinação para ajustar o ângulo igual ao seu desenho */
-  transform: rotate(-15deg);
-
-  /* Impede que o arco crie uma barra de rolagem na tela */
-  pointer-events: none;
-}
-
 .wave-divider {
   width: 100%;
   overflow: hidden;
@@ -206,19 +178,6 @@ body {
   margin-top: -5px;
 }
 
-.automation-background-icon {
-  filter: blur(2px);
-  opacity: 1;
-  width: 10px; /* ajuste conforme necessário */
-  height: auto;
-
-  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, transparent 80%);
-  -webkit-mask-image: radial-gradient(
-    circle,
-    rgba(0, 0, 0, 1) 60%,
-    transparent 80%
-  );
-}
 
 .rocket-background-icon {
   position: absolute;
@@ -268,6 +227,21 @@ body {
     transparent 90%
   );
 }
+
+.automation-background-icon {
+  filter: blur(2px);
+  opacity: 1;
+  width: 10px; /* ajuste conforme necessário */
+  height: auto;
+
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 60%,
+    transparent 80%
+  );
+}
+
 
 .rocket-kids-background-icon {
   position: absolute;
@@ -1465,133 +1439,6 @@ nav a:hover {
 
 /*Card box principal*/
 
-/* Container de apoio */
-.orbit-container {
-  position: relative;
-  width: 600px;
-  height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
-
-/* Estilo Geral das Órbitas */
-.orbit {
-  position: absolute;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: rotate linear infinite;
-}
-
-/* Tamanhos individuais */
-.orbit-1 {
-  width: 200px;
-  height: 200px;
-  animation-duration: 20s;
-}
-.orbit-2 {
-  width: 320px;
-  height: 320px;
-  animation-duration: 30s;
-}
-.orbit-3 {
-  width: 440px;
-  height: 440px;
-  animation-duration: 40s;
-}
-.orbit-4 {
-  width: 560px;
-  height: 560px;
-  animation-duration: 50s;
-}
-
-/* OS ÍCONES - Aqui está a correção principal */
-.tech-icon {
-  position: absolute;
-  width: 45px;
-  height: 45px;
-  background: #fff;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-  overflow: hidden; /* Corta imagens que tentem sair do círculo */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-
-  /* Posicionamento radial usando as variáveis do HTML */
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%)
-    rotate(calc(360deg / var(--total) * var(--i))) translate(var(--radius))
-    rotate(calc(-360deg / var(--total) * var(--i)));
-}
-
-.tech-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  /* Esse comando faz o branco da imagem ficar transparente em relação ao fundo do ícone */
-  mix-blend-mode: multiply;
-}
-.tech-icon {
-  /* ... outras propriedades ... */
-  background: transparent; /* Mude de #fff para transparent */
-  box-shadow: none; /* Remova a sombra se não quiser o contorno da bolinha */
-
-  position: absolute;
-  width: 65px; /* Aumentado de 45px para 65px */
-  height: 65px; /* Aumentado de 45px para 65px */
-  background: #fff;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 8px; /* Ajuste o respiro interno do logo */
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-
-  /* Mantém o posicionamento centralizado antes do cálculo radial */
-  left: 50%;
-  top: 50%;
-
-  /* O transform continua o mesmo, ele vai usar o novo width/height automaticamente */
-  transform: translate(-50%, -50%)
-    rotate(calc(360deg / var(--total) * var(--i))) translate(var(--radius))
-    rotate(calc(-360deg / var(--total) * var(--i)));
-}
-
-/* Logo Central */
-.central-logo {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  z-index: 50;
-  background: #fff;
-  border-radius: 50%;
-  padding: 10px;
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
-}
-
-.central-logo img {
-  width: 100%;
-  height: auto;
-}
-
-/* Animações */
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .custom-card {
   position: relative; /* Base para os elementos absolutos */
   height: 350px; /* Defina uma altura fixa para o card */
@@ -1927,10 +1774,8 @@ nav a:hover {
   background-image: url("../icons/logo-modernizacao.png");
 }
 
-/* Ajuste na Card Content (onde fica o Título e a Tag) */
 .card-content {
   padding: 20px;
-  /* Removido o p daqui no HTML, então o layout ficará limpo */
 }
 
 .card-content h3 {
@@ -2664,6 +2509,9 @@ nav a:hover {
   text-align: right;
 }
 
+
+
+
 /* ================= 4. RESPONSIVIDADE (MOBILE & TABLET) ================= */
 @media (max-width: 992px) {
   .slide-13-container {
@@ -2762,7 +2610,7 @@ nav a:hover {
 }
 .logo-slider-s13 {
   width: 100%;
-  overflow: hidden; /* 🔥 impede sair do box */
+  overflow: hidden; 
 }
 .logo-track-s13 {
   display: flex;
