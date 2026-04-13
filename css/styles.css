@@ -67,6 +67,33 @@ body {
   align-items: center;
   width: 100%;
 }
+
+
+
+.navbar {
+  top: 15px; 
+  left: 5%;
+  width: 90%; 
+  position: fixed; 
+  z-index: 1000;
+  padding: 10px 5%;
+  background: rgba(10, 17, 40, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 50px;
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* Compensação para o conteúdo não sumir sob a navbar */
+body {
+  padding-top: 100px;
+}
+
+
+
+
 /* LOGO */
 .company-logo {
   height: 40px;
@@ -1361,6 +1388,61 @@ nav a:hover {
   color: var(--accent-cyan);
   font-weight: bold;
 }
+/* Aumentando o corpo da lista */
+.feature-list {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.feature-list li {
+  font-size: 1.25rem; /* Aumenta o título do item */
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+.feature-list p {
+  font-size: 1.05rem; /* Aumenta a descrição */
+  line-height: 1.5;
+  margin-bottom: 25px; /* Espaço entre um tópico e outro */
+  color: rgba(255, 255, 255, 0.8); /* Suaviza a cor do parágrafo */
+  padding-left: 25px; /* Alinha o texto abaixo do ícone → */
+}
+
+/* Ajustando o tamanho do ícone indicador */
+.feature-list li::before {
+  content: "→";
+  color: var(--accent-cyan);
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+/* --- RESPONSIVIDADE PARA CELULAR --- */
+@media (max-width: 992px) {
+  .feature-row {
+    display: flex;
+    flex-direction: column; /* Força o empilhamento vertical */
+    gap: 30px; /* Espaço entre a primeira e a segunda lista */
+  }
+
+  .feature-list {
+    width: 100%; /* Garante que a lista use toda a largura disponível */
+    padding: 0;
+  }
+
+  /* Opcional: Ajustar o tamanho da fonte para telas menores */
+  .feature-list li {
+    font-size: 1.15rem;
+  }
+
+  .feature-list p {
+    font-size: 1rem;
+    padding-left: 20px; /* Ajusta o recuo do texto no mobile */
+  }
+}
 
 .mini-stats-grid {
   display: grid;
@@ -1378,7 +1460,16 @@ nav a:hover {
   flex: 1;
   position: relative;
 }
+/* Espaçamento entre o frame do vídeo e o conteúdo abaixo */
+.feature-image + div {
+  margin-top: 60px; /* Ajuste este valor conforme necessário */
+}
 
+/* Melhorando o espaçamento interno do título de benefícios */
+.feature-image + div h2 {
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
 .image-frame {
   position: relative;
   border-radius: 20px;
@@ -1834,6 +1925,32 @@ nav a:hover {
 .delivery-flow-section {
   padding: 80px 0;
   /* background: #060b1b; */
+}.delivery-flow-section .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os itens do container horizontalmente */
+  text-align: center; /* Centraliza o texto interno */
+}
+.titulo-principal span {
+  color: #00e5ff; /* Um azul tech vibrante */
+  /* Ou, se preferir usar sua variável: color: var(--accent-cyan); */
+  font-weight: bold; /* Garante que o destaque fique nítido */
+}
+.delivery-flow-section h1.titulo-principal {
+  margin-bottom: 50px;
+}
+
+.delivery-flow-section p {
+  max-width: 800px; /* Evita que a linha fique muito comprida no desktop */
+  margin: 0 auto 50px auto; /* Centraliza o bloco e dá espaço para os cards abaixo */
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8); /* Exemplo de cor para manter a legibilidade */
+}
+
+/* Ajuste para o grid não herdar o alinhamento central do texto nos cards */
+.flow-grid {
+  text-align: left; 
+  width: 100%;
 }
 
 .section-gap-graphic {
@@ -3401,7 +3518,33 @@ img {
     z-index: 10;
   }
 }
+.solutions-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente os elementos flex */
+  text-align: center;    /* Centraliza o texto dentro do h1 */
+  width: 100%;
+  padding: 40px 0;      /* Espaçamento opcional */
+}
 
+.solutions-wrapper h1 {
+  font-size: 2.5rem;    /* Ajuste conforme seu design */
+  margin-bottom: 10px;
+}
+
+/* Estilizando o span com o azul que definimos antes */
+.solutions-wrapper h1 span {
+  color: #00d4ff; 
+}
+
+/* Centralizando o divisor */
+.divider {
+  width: 80px;          /* Largura da linha */
+  height: 4px;          /* Espessura */
+  background: #00d4ff;  /* Cor do divisor */
+  margin: 0 auto;       /* Garante a centralização se não usar flex no pai */
+  border-radius: 2px;
+}
 /* =============================================================
    ESTRUTURA DE COLUNA ÚNICA - SEM ZOOM (IPHONE 15)
    ============================================================= */
