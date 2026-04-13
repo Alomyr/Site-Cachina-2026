@@ -178,7 +178,6 @@ body {
   margin-top: -5px;
 }
 
-
 .rocket-background-icon {
   position: absolute;
   top: 50%;
@@ -241,7 +240,6 @@ body {
     transparent 80%
   );
 }
-
 
 .rocket-kids-background-icon {
   position: absolute;
@@ -2509,9 +2507,6 @@ nav a:hover {
   text-align: right;
 }
 
-
-
-
 /* ================= 4. RESPONSIVIDADE (MOBILE & TABLET) ================= */
 @media (max-width: 992px) {
   .slide-13-container {
@@ -2610,7 +2605,7 @@ nav a:hover {
 }
 .logo-slider-s13 {
   width: 100%;
-  overflow: hidden; 
+  overflow: hidden;
 }
 .logo-track-s13 {
   display: flex;
