@@ -348,10 +348,10 @@ body {
   text-align: justify;
   margin-bottom: 15px;
 }
-.hero {
+/* .hero {
   background: url('./icons/Glowing whale in ocean depths.png') no-repeat right center;
   background-size: contain;
-}
+} */
 .buttons {
   display: flex;
   gap: 16px;
@@ -3034,7 +3034,7 @@ img {
 /* =========================
    BACKGROUND ICONS (EVITA QUEBRAR NO MOBILE)
 ========================= */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .baleia-background-icon,
   .baleia-rabo-background-icon,
   .baleia-kids-background-icon,
@@ -3047,7 +3047,7 @@ img {
 /* =========================
    BOTÕES
 ========================= */
-@media (max-width: 600px) {
+@media (max-width: 992px) {
   .buttons {
     gap: 10px;
   }
@@ -3061,7 +3061,7 @@ img {
 /* =========================
    CARDS FLEX
 ========================= */
-@media (max-width: 900px) {
+@media (max-width: 992px) {
   .cards-container {
     flex-direction: column;
   }
@@ -3070,7 +3070,7 @@ img {
 /* =========================
    SOLUTIONS GRID
 ========================= */
-@media (max-width: 900px) {
+@media (max-width: 992px) {
   .solutions-grid {
     flex-direction: column;
   }
@@ -3079,7 +3079,7 @@ img {
 /* =========================
    IMPACT SECTION
 ========================= */
-@media (max-width: 900px) {
+@media (max-width: 992px) {
   .impact-container {
     flex-direction: column;
     text-align: center;
@@ -3094,7 +3094,7 @@ img {
 /* =========================
    TECH SERVICES
 ========================= */
-@media (max-width: 900px) {
+@media (max-width: 992px) {
   .services-grid {
     grid-template-columns: 1fr;
   }
@@ -3103,7 +3103,7 @@ img {
 /* =========================
    FEATURE SECTIONS
 ========================= */
-@media (max-width: 900px) {
+@media (max-width: 992px) {
   .feature-container {
     flex-direction: column;
     text-align: center;
@@ -3126,7 +3126,7 @@ img {
 /* =========================
    TECH STACK
 ========================= */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .tech-stack-container {
     padding: 30px 15px;
   }
@@ -3139,7 +3139,7 @@ img {
 /* =========================
    DELIVERY FLOW
 ========================= */
-@media (max-width: 900px) {
+@media (max-width: 992px) {
   .flow-grid {
     grid-template-columns: 1fr;
   }
@@ -3148,7 +3148,7 @@ img {
 /* =========================
    DUAL SECTION
 ========================= */
-@media (max-width: 900px) {
+@media (max-width: 992px) {
   .dual-container {
     flex-direction: column;
   }
@@ -3252,7 +3252,7 @@ body {
 }
 
 /* Responsividade para não atrapalhar no celular */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .test-area {
     bottom: 80px;
     right: 50%;
@@ -3524,9 +3524,9 @@ img {
 
       /* 2. Posicionamento: Movemos para o centro */
       /* Desce um pouco para ficar atrás do texto principal */
-      top: 150% !important;
+      top: 50% !important;
       /* Centraliza horizontalmente (em vez de travar na direita) */
-      left: 50% !important;
+      left: 80% !important;
       right: auto !important;
 
       /* 3. Transform: Centralização exata + Leve rotação artística */
@@ -3539,18 +3539,18 @@ img {
 
       /* 5. Suavização das Bordas (Efeito Anti-Recorte) */
       /* Desfoque leve ajuda a misturar com o fundo */
-      filter: blur(1.5px) !important;
+      filter: blur(0.5px) !important;
 
       mask-image: radial-gradient(
         circle at center,
-        rgba(0, 0, 0, 1) 30%,
-        transparent 70%
+        rgba(0, 0, 0, 1) 100%,
+        transparent 10%
       ) !important;
 
       -webkit-mask-image: radial-gradient(
         circle at center,
-        rgba(0, 0, 0, 1) 3%,
-        transparent 40%
+        rgba(0, 0, 0, 1) 10%,
+        transparent 70%
       ) !important;
     }
     /* Mantém o texto ACIMA da baleia para leitura */
