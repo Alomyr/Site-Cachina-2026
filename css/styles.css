@@ -3658,3 +3658,644 @@ img {
     -webkit-mask-image: radial-gradient(circle, black, transparent 70%);
   }
 }
+
+
+
+.cachina-confia-section {
+    position: relative;
+    background: #061227;
+    padding: 80px 20px;
+    overflow: hidden;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Background Gradients & Circles */
+.decor-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(55,140,187,0.16), transparent 35%);
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.circle-center-lg { 
+    width: 420px; height: 420px; top: 8%; left: 50%; 
+    transform: translateX(-50%); border-width: 42px; 
+}
+
+/* Glass Effect Main Card */
+.glass-card {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(13, 91, 143, 0.35);
+    border-radius: 34px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+}
+
+.grid-header {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.badge-top {
+    background: rgba(55, 140, 187, 0.1);
+    border: 1px solid rgba(55, 140, 187, 0.4);
+    color: #83d7ff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.title-main {
+    font-size: 2.5rem;
+    margin-top: 20px;
+    line-height: 1.2;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.stat-item {
+    background: rgba(8, 23, 47, 0.75);
+    padding: 15px;
+    border-radius: 22px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Logos */
+.logos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.logo-card {
+    background: rgba(8, 23, 47, 0.72);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.logo-card:hover {
+    transform: translateY(-5px);
+    border-color: #378CBB;
+}
+
+.logo-placeholder {
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(55, 140, 187, 0.25);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-weight: bold;
+}
+
+/* Cases */
+.cases-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.case-card {
+    background: linear-gradient(180deg, rgba(8,23,47,0.9), rgba(10,30,59,0.85));
+    padding: 25px;
+    border-radius: 28px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.case-tag { color: #7dd5ff; font-size: 10px; text-transform: uppercase; }
+
+.tags-row span {
+    background: rgba(255,255,255,0.05);
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 11px;
+    margin-right: 5px;
+}
+
+/* Footer CTA */
+.cta-footer {
+    margin-top: 40px;
+    background: rgba(11, 29, 59, 0.6);
+    padding: 30px;
+    border-radius: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(55, 140, 187, 0.2);
+}
+
+.btn-primary {
+    background: #378CBB;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 10px 20px rgba(55, 140, 187, 0.3);
+}
+/* Removemos o grid antigo para o Swiper assumir o controle */
+.logos-grid, .cases-row {
+    display: block; /* O Swiper usa flex internamente */
+    margin-top: 30px;
+}
+
+.swiper {
+    width: 100%;
+    padding: 20px 0 40px !important; /* Espaço para as bolinhas embaixo */
+}
+
+/* Garante que o card ocupe o espaço total do slide */
+.swiper-slide {
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-card, .case-card {
+    width: 100%; /* Ocupa a largura da coluna definida no JS */
+}
+
+/* Estilo das bolinhas de paginação */
+.swiper-pagination-bullet {
+    background: rgba(55, 140, 187, 0.5);
+}
+.swiper-pagination-bullet-active {
+    background: #378CBB;
+}
+
+/* No seu CSS, substitua ou adicione estas regras: */
+
+.logos-swiper {
+    width: 100%;
+    max-width: 450px; /* Evita que o carrossel de logos estique demais na direita */
+    overflow: hidden;
+}
+
+/* Forçamos o Swiper a ignorar qualquer grid residual */
+.logos-swiper .swiper-wrapper, 
+.cases-swiper .swiper-wrapper {
+    display: flex !important; 
+    flex-direction: row !important;
+}
+
+.swiper-slide {
+    height: auto; /* Garante que os cards tenham a mesma altura */
+}
+
+
+/* Responsividade Básica */
+@media (max-width: 968px) {
+    .grid-header, .cases-row, .cta-footer { grid-template-columns: 1fr; flex-direction: column; text-align: center; }
+    .logos-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-grid { grid-template-columns: 1fr; }
+}
+
+
+
+.logos-wrapper-double {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre as duas fileiras */
+    width: 100%;
+}
+
+.logos-swiper, .logos-swiper-reverse {
+    width: 100%;
+    padding: 10px 0 !important;
+}
+
+/* Ajuste para o carrossel de logos não ficar muito grande */
+.logo-card {
+    min-height: 120px;
+}
+
+
+
+
+:root {
+  --bg-dark: #040914;
+  --color-orange: #ff6a00;
+  --color-blue: #378cbb;
+  --color-yellow: #ffd800;
+  --color-green: #00ff21;
+  --gear-size: 380px; /* Tamanho ajustado para caber 4 em telas Full HD */
+}
+
+.flow-section {
+  background: var(--bg-dark);
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden; /* Importante para não quebrar a página */
+}
+
+.gears-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; /* Força a mesma linha */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.gear-wrapper {
+  position: relative;
+  width: var(--gear-size);
+  height: var(--gear-size);
+  /* O segredo da conexão: margem negativa baseada no tamanho do dente */
+  margin: 0 -35px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Os Dentes das Engrenagens */
+.gear-teeth {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  border-radius: 50%;
+  /* 12 dentes para encaixe mecânico */
+  clip-path: polygon(
+    50% 0%, 55% 0%, 58% 12%, 68% 15%, 75% 8%, 80% 12%, 78% 24%, 85% 32%, 95% 30%, 100% 35%, 90% 45%, 90% 55%, 100% 65%, 95% 70%, 85% 68%, 78% 76%, 80% 88%, 75% 92%, 68% 85%, 58% 88%, 55% 100%, 45% 100%, 42% 88%, 32% 85%, 25% 92%, 20% 88%, 22% 76%, 15% 68%, 5% 70%, 0% 65%, 10% 55%, 10% 45%, 0% 35%, 5% 30%, 15% 32%, 22% 24%, 20% 12%, 25% 8%, 32% 15%, 42% 12%, 45% 0%
+  );
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.gear-core {
+  position: absolute;
+  width: 82%;
+  height: 82%;
+  background: var(--bg-dark);
+  border-radius: 50%;
+  border: 6px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.gear-inner {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+}
+
+/* Cores e Glows */
+.orange { color: var(--color-orange); filter: drop-shadow(0 0 20px rgba(255,106,0,0.4)); }
+.blue   { color: var(--color-blue);   filter: drop-shadow(0 0 20px rgba(0,148,255,0.4)); }
+.yellow { color: var(--color-yellow); filter: drop-shadow(0 0 20px rgba(255,216,0,0.4)); }
+.green  { color: var(--color-green);  filter: drop-shadow(0 0 20px rgba(0,255,33,0.4)); }
+
+/* Animações de Rotação Sincronizada */
+.gear-cw .gear-teeth { animation: rotateCW 15s linear infinite; }
+.gear-ccw .gear-teeth { animation: rotateCCW 15s linear infinite; }
+
+/* Para as engrenagens parecerem conectadas, o ponto inicial de uma 
+   deve estar compensado em relação à outra */
+.blue .gear-teeth { animation-delay: -0.5s; } 
+.green .gear-teeth { animation-delay: -0.5s; }
+
+@keyframes rotateCW {
+  from { transform: scale(1.1) rotate(0deg); }
+  to { transform: scale(1.1) rotate(360deg); }
+}
+
+@keyframes rotateCCW {
+  from { transform: scale(1.1) rotate(0deg); }
+  to { transform: scale(1.1) rotate(-360deg); }
+}
+
+/* Estilo do Conteúdo */
+.icon { font-size: 40px; margin-bottom: 10px; }
+.category { font-size: 10px; font-weight: 900; letter-spacing: 2px; }
+h3 { font-size: 15px; margin: 10px 0; color: #fff; line-height: 1.2; }
+ul { font-size: 11px; padding: 0; list-style: none; opacity: 0.7; }
+/* a { color: #fff; text-decoration: none; font-size: 12px; font-weight: bold; margin-top: 10px; border-bottom: 1px solid currentColor; } */
+
+/* Responsividade: Diminui o tamanho para telas menores que 1600px */
+@media (max-width: 1600px) {
+  :root { --gear-size: 300px; }
+  .gear-wrapper { margin: 0 -28px; }
+  .icon { font-size: 30px; }
+  h3 { font-size: 13px; }
+}/* Unificação do Fundo e Remoção de Divisórias */
+.flow-section {
+  background: radial-gradient(circle at center, #0a162b 0%, #050b18 100%);
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: none; /* Remove qualquer linha residual */
+}
+
+/* Container de Conteúdo Superior */
+.flow-section .container {
+  text-align: center;
+  max-width: 850px;
+  margin-bottom: 50px;
+  z-index: 10;
+}
+
+/* Container das Engrenagens - Alinhamento Perfeito */
+.gears-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; 
+  align-items: center;
+  justify-content: center;
+  gap: -40px; /* Sobreposição para conexão mecânica */
+  padding: 20px;
+}
+
+.gear-wrapper {
+  position: relative;
+  width: 460px; /* Tamanho otimizado para enquadramento */
+  height: 460px;
+  margin: 0 -30px; /* Ajuste fino de encaixe */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+/* Dentes mais robustos e sem bordas duras */
+.gear-teeth {
+  position: absolute;
+  width: 105%;
+  height: 105%;
+  background-color: currentColor;
+  border-radius: 50%;
+  clip-path: polygon(
+    50% 0%, 56% 0%, 59% 10%, 69% 13%, 76% 6%, 81% 10%, 79% 22%, 86% 30%, 96% 28%, 100% 33%, 91% 43%, 91% 57%, 100% 67%, 96% 72%, 86% 70%, 79% 78%, 81% 90%, 76% 94%, 69% 87%, 59% 90%, 56% 100%, 44% 100%, 41% 90%, 31% 87%, 24% 94%, 19% 90%, 21% 78%, 14% 70%, 4% 72%, 0% 67%, 9% 57%, 9% 43%, 0% 33%, 4% 28%, 14% 30%, 21% 22%, 19% 10%, 24% 6%, 31% 13%, 41% 10%, 44% 0%
+  );
+}
+
+/* Miolo da engrenagem com efeito de vidro para suavizar a transição */
+.gear-core {
+  position: relative;
+  width: 82%;
+  height: 82%;
+  background: rgba(5, 11, 24, 0.9); /* Mesma cor do fundo para sumir com linhas */
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  border: 4px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.gear-inner {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+/* Animação suave */
+.gear-cw .gear-teeth { animation: rotateCW 20s linear infinite; }
+.gear-ccw .gear-teeth { animation: rotateCCW 20s linear infinite; }
+
+@keyframes rotateCW {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateCCW {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+/* Ajuste de Texto */
+.titulo-principal {
+  font-size: 2.8rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.titulo-principal span {
+  color: var(--color-blue);
+}
+
+@media (max-width: 992px) {
+  :root {
+    /* Diminuímos o tamanho para caberem duas por linha confortavelmente */
+    --gear-size: 480px; 
+  }
+
+  .flow-section {
+    padding: 60px 20px;
+  }
+
+  .titulo-principal {
+    font-size: 2rem;
+  }
+
+  .gears-container {
+    /* Mudamos para wrap para permitir a quebra de linha */
+    flex-wrap: wrap; 
+    gap: 20px; /* Adicionamos um gap para não embolarem verticalmente */
+    max-width: 650px; /* Limita a largura para forçar o 2x2 */
+    margin: 0 auto;
+  }
+
+  .gear-wrapper {
+    /* Removemos a margem negativa agressiva para evitar sobreposição excessiva no mobile */
+    margin: 10px; 
+    width: var(--gear-size);
+    height: var(--gear-size);
+  }
+
+  .gear-core {
+    width: 85%;
+    height: 85%;
+    border-width: 3px; /* Bordas mais finas para escalas menores */
+  }
+
+  .gear-inner {
+    padding: 15px;
+  }
+
+  .icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+
+  h3 {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  ul {
+    display: none; /* Escondemos a lista em telas pequenas para manter o foco no título e ícone */
+  }
+
+  .category {
+    font-size: 8px;
+  }
+}
+
+/* Ajuste extra para celulares (abaixo de 600px) */
+@media (max-width: 600px) {
+  :root {
+    --gear-size: 260px;
+  }
+
+  .gears-container {
+    flex-direction: column; /* Em celulares muito pequenos, empilhamos tudo */
+    gap: 30px;
+  }
+
+  .gear-wrapper {
+    margin: 0;
+  }
+}
+
+
+
+
+
+
+:root {
+  --blue-dark: #1e4373;
+  --blue-light: #378cbb;
+  --green-glow: #ffffff;
+  --radar-size: 350px;
+}
+
+.radar-container {
+  position: relative;
+  width: var(--radar-size);
+  height: var(--radar-size);
+  margin: 60px auto;
+}
+
+.radar-chart {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Base dos Pentágonos */
+.radar-grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.level-1 { transform: scale(0.35); }
+.level-2 { transform: scale(0.70); }
+.level-3 { transform: scale(1); border-style: solid; border-color: rgba(55, 140, 187, 0.3); }
+
+/* Linhas dos Eixos */
+.axis-line {
+  position: absolute;
+  width: 1px;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  top: 0;
+  left: 50%;
+  transform-origin: bottom center;
+}
+.a1 { transform: rotate(0deg); }
+.a2 { transform: rotate(72deg); }
+.a3 { transform: rotate(144deg); }
+.a4 { transform: rotate(216deg); }
+.a5 { transform: rotate(288deg); }
+
+/* Área de Dados Assimétrica (Simulando o gráfico da imagem) */
+.radar-data-shape {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(55, 140, 187, 0.3) 0%, rgba(55, 140, 187, 0.4) 100%);
+  /* Valores de 0 a 100% para cada ponta do pentágono */
+  /* Topo, Direita, Baixo-Dir, Baixo-Esq, Esquerda */
+  clip-path: polygon(50% 10%, 90% 40%, 75% 85%, 25% 90%, 15% 35%);
+  border: 2px solid var(--green-glow);
+  z-index: 2;
+}
+
+/* Pontos Verdes de Destaque */
+.radar-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--green-glow);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--green-glow);
+  z-index: 3;
+}
+
+/* Posicionamento manual dos pontos conforme o clip-path da data-shape */
+.p-processos { top: 10%; left: 50%; transform: translate(-50%, -50%); }
+.p-tech { top: 40%; left: 90%; transform: translate(-50%, -50%); }
+.p-seguranca { top: 85%; left: 75%; transform: translate(-50%, -50%); }
+.p-gestao { top: 90%; left: 25%; transform: translate(-50%, -50%); }
+.p-escala { top: 35%; left: 15%; transform: translate(-50%, -50%); }
+
+/* Labels */
+.radar-label {
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  width: 120px;
+  line-height: 1.2;
+}
+
+.radar-label strong { font-size: 13px; display: block; margin-top: 5px; }
+.radar-label span { font-size: 10px; color: #ccc; }
+.mini-icon { width: 24px; height: 24px; filter: brightness(0) saturate(100%) invert(84%) sepia(29%) saturate(836%) hue-rotate(33deg) brightness(101%) contrast(91%); }
+
+.l-top { top: -60px; left: 50%; transform: translateX(-50%); }
+.l-right { top: 30%; right: -100px; }
+.l-bottom-right { bottom: -40px; right: -40px; }
+.l-bottom-left { bottom: -40px; left: -40px; }
+.l-left { top: 30%; left: -100px; }
