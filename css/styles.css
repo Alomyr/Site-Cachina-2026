@@ -4860,3 +4860,239 @@ h2 {
 .dropdown {
   position: relative;
 }
+/* Container Principal */
+.secao-wave {
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Título com degradê */
+.title span {
+  color: #0094ff; /* Azul da engrenagem inferior */
+  text-shadow: 0 0 15px rgba(0, 148, 255, 0.6);
+}
+
+/* Layout dos Cards */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* Estilo do Card (Glassmorphism + Glow) */
+.card {
+  /* background: rgba(255, 255, 255, 0.03); */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cores específicas baseadas nas engrenagens */
+.card:nth-child(1) { border-top: 4px solid #ff6a00; } /* Laranja */
+.card:nth-child(2) { border-top: 4px solid #0094ff; } /* Azul */
+.card:nth-child(3) { border-top: 4px solid #00ff21; } /* Verde */
+
+/* Efeito de Hover (Brilho neon) */
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card:nth-child(1):hover { box-shadow: 0 10px 30px rgba(255, 106, 0, 0.2); }
+.card:nth-child(2):hover { box-shadow: 0 10px 30px rgba(0, 148, 255, 0.2); }
+.card:nth-child(3):hover { box-shadow: 0 10px 30px rgba(0, 255, 33, 0.2); }
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 992px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 90%;
+  }
+}
+.highlights-mini {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente o grupo */
+  align-items: center;     /* Alinha verticalmente os itens */
+  flex-wrap: wrap;         /* Permite quebrar linha em telas muito pequenas */
+  gap: 20px;               /* Espaço entre cada mini-item */
+  margin: 20px auto;       /* Margem em cima/baixo e centraliza o bloco na página */
+  width: 100%;             /* Garante que ocupe a largura total para o justify funcionar */
+}
+
+.mini-item {
+  display: flex;
+  align-items: center;     /* Centraliza o emoji com o texto */
+  gap: 8px;                /* Espaço entre emoji e palavra */
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;             /* Cor para fundo escuro */
+  opacity: 0.8;
+}
+
+.mini-item span {
+  font-size: 18px;         /* Deixa o emoji levemente maior que o texto */
+}
+/* Estilo específico para o card de checklist */
+.card-checklist {
+  border-top: 4px solid #00ff21 !important; /* Verde neon para alinhar com as engrenagens */
+  text-align: left;
+  background: rgba(0, 255, 33, 0.02); /* Leve brilho esverdeado no fundo */
+}
+
+.category-tag {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #00ff21;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.checklist-v {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checklist-v li {
+  font-size: 13px;
+  color: #fff;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+/* Estilo do checkmark verde */
+.checklist-v li span {
+  color: #00ff21;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 255, 33, 0.5);
+}
+
+/* Hover específico para o card verde */
+.card-checklist:hover {
+  box-shadow: 0 10px 30px rgba(0, 255, 33, 0.15) !important;
+}
+
+/* Ajuste no container para 4 colunas em telas grandes */
+@media (min-width: 1200px) {
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+    margin: 40px auto;
+  }
+}
+.secao-wave {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
+  justify-content: center;
+  width: 100%;
+  padding: 60px 20px;
+}
+.cards-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os cards quebrem linha se necessário */
+  justify-content: center; /* Centraliza os cards horizontalmente */
+  align-items: stretch;    /* Mantém todos os cards com a mesma altura */
+  gap: 20px;               /* Espaço entre os cards */
+  width: 100%;
+  max-width: 1200px;       /* Limite de largura para desktop */
+  margin: 0 auto;
+}
+
+/* Ajuste no Card de Checklist para ele entrar no container */
+.card-checklist {
+  max-width: 300px;        /* Mesma largura dos outros cards */
+  margin-top: 0;           /* Remove margens que possam desalinhá-lo */
+  text-align: left;        /* Mantém o texto interno à esquerda para leitura */
+}
+
+/* Centralização do Cabeçalho (Título e Ícones Mini) */
+.slide-14-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.highlights-mini {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+/* Container que envolve todo o checklist */
+.checklist-h3-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espaço entre cada item */
+  max-width: 600px; /* Limita a largura para centralizar bem */
+  margin: 30px auto; /* Centraliza o bloco na página */
+  align-items: flex-start; /* Alinha os itens à esquerda internamente */
+  text-align: left;
+}
+
+/* Estilo para cada item de título H3 */
+.item-check {
+  font-size: 25px !important; /* Tamanho do texto visível */
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  display: flex;
+  align-items: center; /* Centraliza o checkmark verticalmente com o texto */
+  gap: 12px; /* Espaço entre o check e o texto */
+  width: fit-content;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Estilo do Checkmark (span ✓) com Glow */
+.item-check span {
+  color: #00ff21; /* Verde neon vibrante */
+  font-size: 40px; /* Checkmark maior e mais imponente */
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 255, 33, 0.6); /* Efeito de brilho (glow) */
+}
+
+/* Efeito de destaque ao passar o mouse (opcional) */
+.item-check:hover {
+  transform: translateX(5px);
+  color: #00ff21;
+}
+
+/* Centralização do Cabeçalho da Seção */
+.slide-14-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
