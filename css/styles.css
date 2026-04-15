@@ -607,7 +607,7 @@ nav a:hover {
 .testimonial-box {
   border: 1px solid #102a43;
   padding: 40px;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   position: relative;
 }
@@ -3052,69 +3052,6 @@ img {
 /* =========================
    NAVBAR MOBILE
 ========================= */
-@media (max-width: 992px) {
-  .nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 25px 35px;
-  }
-
-  /* Logo menor */
-  .company-logo {
-    height: 35px;
-  }
-
-  /* Esconde texto dos links */
-  .nav-links {
-    display: flex;
-    gap: 12px;
-  }
-
-  .nav-links a,
-  .dropdown-trigger {
-    font-size: 0; /* esconde texto */
-    position: relative;
-  }
-
-  /* Emojis no lugar dos textos */
-  .nav-links a[href*="FAQ"]::before {
-    content: "❓";
-    font-size: 18px;
-  }
-
-  .nav-links a[href*="playbook"]::before {
-    content: "📘";
-    font-size: 18px;
-  }
-
-  .dropdown-trigger::before {
-    content: "⚙️";
-    font-size: 18px;
-  }
-
-  /* Remove seta */
-  .arrow {
-    display: none;
-  }
-
-  /* Dropdown ajustado */
-  .dropdown-content {
-    top: 40px;
-    right: 0;
-  }
-
-  /* Botão vai pra esquerda */
-  .cta-btn {
-    order: -1; /* joga pro começo */
-    padding: 8px 12px;
-    font-size: 0.7rem;
-    white-space: nowrap;
-  }
-}
-.dropdown {
-  position: relative;
-}
 
 /* =========================
    HERO
@@ -3857,7 +3794,7 @@ img {
 /* Glass Effect Main Card */
 .glass-card {
   position: relative;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(13, 91, 143, 0.35);
@@ -4103,6 +4040,11 @@ img {
   justify-content: center;
   width: 100%;
 }
+.gear-inner li {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
 
 .gear-wrapper {
   position: relative;
@@ -4185,8 +4127,8 @@ img {
 }
 
 .gear-inner {
-  width: 90%;
-  height: 90%;
+  /* width: 90%; */
+  /* height: 90%; */
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -4199,6 +4141,9 @@ img {
     rgba(255, 255, 255, 0.05) 0%,
     transparent 70%
   );
+  width: 90%;
+  min-height: 90%; /* em vez de height */
+  height: auto;
 }
 
 /* Cores e Glows */
@@ -4292,7 +4237,11 @@ ul {
   h3 {
     font-size: 13px;
   }
-} /* Unificação do Fundo e Remoção de Divisórias */
+} 
+
+
+
+/* Unificação do Fundo e Remoção de Divisórias */
 .flow-section {
   background: radial-gradient(circle at center, #0a162b 0%, #050b18 100%);
   padding: 80px 0;
@@ -4507,6 +4456,28 @@ ul {
   .category {
     font-size: 8px;
   }
+  .gear-core {
+  /* ... mantenha o que já tem ... */
+  overflow: visible; /* Garante que o conteúdo que sair do círculo não suma */
+}
+
+.gear-inner ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  opacity: 1 !important; /* Força a visibilidade */
+  display: block;        /* Garante que o container da lista exista */
+}
+
+.gear-inner li {
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 4px;
+  display: block;        /* Garante que cada item ocupe sua linha */
+}
+.gear-inner span {
+  font-size: 14px;
+}
 }
 
 /* Ajuste extra para celulares (abaixo de 600px) */
@@ -4524,7 +4495,41 @@ ul {
     margin: 0;
   }
 }
+.image-frame {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 56.25%; /* 16:9 */
+}
 
+.image-frame iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+h2 {
+  margin-top: 40px; /* aumenta aqui */
+}
+.image-box {
+  width: 100%;
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 :root {
   --blue-dark: #1e4373;
   --blue-light: #378cbb;
@@ -4708,8 +4713,29 @@ ul {
     position: fixed;
     /* Inverte a sombra para projetar para cima, já que está no fundo */
     box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+    
+    
+  }
+.dropdown-trigger {
+    display: flex;
+    flex-direction: column; /* Alinha o emoji em cima do texto */
+    align-items: center;
+    gap: 4px;              /* Espaço entre emoji e texto */
+    font-size: 0.65rem !important; /* Texto um pouco menor para dar destaque ao ícone */
+    color: #fff;
+    text-decoration: none;
+  }
+  .nav-links a span, 
+  .dropdown-trigger span {
+    font-size: 1.4rem;     /* Tamanho do emoji */
+    margin-bottom: 2px;
   }
 
+  /* Se a seta (arrow) do dropdown estiver atrapalhando, podemos escondê-la no mobile */
+  .dropdown-trigger .arrow {
+    display: none;
+  }
+  
   /* Remove o padding do topo e adiciona no fundo para o conteúdo não ficar atrás da barra */
   body {
     padding-top: 20px;
@@ -4719,15 +4745,118 @@ ul {
   /* Ajuste opcional: se o menu de links ficar muito apertado, 
      você pode diminuir o gap ou esconder itens menos importantes */
   .nav-links {
-    gap: 5px;
+    gap: 30px; /* Aumentei o espaço entre os links para não grudarem */
+    display: flex;
+    gap: 0;
+    flex: 2;
+    justify-content: space-around;
   }
 
-  .nav-links a {
-    font-size: 0.7rem;
+  .nav-links a, 
+  .dropdown-trigger {
+    font-size: 20px !important; /* Tamanho do texto visível */
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    display: flex !important;
+    flex-direction: column !important; /* EMPILHA: Ícone em cima, Texto embaixo */
+    align-items: center !important;
+    gap: 4px;
+    position: relative;
   }
 
+  /* Emojis via pseudo-elemento */
+  .nav-links a[href*="FAQ"]::before { content: "❓"; font-size: 30px; }
+  .nav-links a[href*="playbook"]::before { content: "📘"; font-size: 30px; }
+  .dropdown-trigger::before { content: "⚙️"; font-size: 30px; }
+
+  /* Esconde a seta original */
+  .arrow { display: none; }
+  .nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around; /* Distribui como ícones de app */
+    align-items: center;
+  }
+
+  /* Ajuste no botão para acompanhar o tamanho */
+  .cta-btn {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+    
+  }
   /* Esconde a linha decorativa ::after no mobile para um visual mais limpo embaixo */
   .navbar::after {
     display: none;
   }
+  .logo {
+    display: none;
+  }
+
+  /* Ajuste para centralizar o restante dos itens */
+  .nav-container {
+    justify-content: space-around; /* Distribui os links e o botão melhor sem a logo */
+  }
+    .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 35px;
+  }
+
+  /* Logo menor */
+  .company-logo {
+    height: 35px;
+  }
+
+  /* Esconde texto dos links */
+  .nav-links {
+    display: flex;
+    gap: 12px;
+  }
+
+  .nav-links a,
+  .dropdown-trigger {
+    font-size: 0; /* esconde texto */
+    position: relative;
+  }
+
+  /* Emojis no lugar dos textos */
+  /* .nav-links a[href*="FAQ"]::before {
+    content: "❓";
+    font-size: 18px;
+  }
+
+  .nav-links a[href*="playbook"]::before {
+    content: "📘";
+    font-size: 18px;
+  }
+
+  .dropdown-trigger::before {
+    content: "⚙️";
+    font-size: 18px;
+  } */
+
+  /* Remove seta */
+  .arrow {
+    display: none;
+  }
+
+  /* Dropdown ajustado */
+  .dropdown-content {
+    top: 40px;
+    right: 0;
+  }
+
+  /* Botão vai pra esquerda */
+  .cta-btn {
+    order: -1; /* joga pro começo */
+    padding: 8px 12px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+}
+.dropdown {
+  position: relative;
 }
