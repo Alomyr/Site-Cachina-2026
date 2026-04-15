@@ -4017,10 +4017,10 @@ img {
 
 :root {
   --bg-dark: #040914;
-  --color-orange: #ff6a00;
+  --color-orange: #ffffff;
   --color-blue: #378cbb;
-  --color-yellow: #ffd800;
-  --color-green: #00ff21;
+  --color-yellow: #ffffff;
+  --color-green: #378cbb;
   --gear-size: 380px; /* Tamanho ajustado para caber 4 em telas Full HD */
 }
 
@@ -4149,7 +4149,7 @@ img {
 /* Cores e Glows */
 .orange {
   color: var(--color-orange);
-  filter: drop-shadow(0 0 20px rgba(255, 106, 0, 0.4));
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
 }
 .blue {
   color: var(--color-blue);
@@ -4157,11 +4157,11 @@ img {
 }
 .yellow {
   color: var(--color-yellow);
-  filter: drop-shadow(0 0 20px rgba(255, 216, 0, 0.4));
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
 }
 .green {
   color: var(--color-green);
-  filter: drop-shadow(0 0 20px rgba(0, 255, 33, 0.4));
+  filter: drop-shadow(0 0 20px rgba(0, 148, 255, 0.4));
 }
 
 /* Animações de Rotação Sincronizada */
@@ -4911,18 +4911,18 @@ font-size: 20px !important; /* Diminuímos de 20px para 16px (20px é muito para
 }
 
 /* Cores específicas baseadas nas engrenagens */
-.card:nth-child(1) { border-top: 4px solid #ff6a00; } /* Laranja */
-.card:nth-child(2) { border-top: 4px solid #0094ff; } /* Azul */
-.card:nth-child(3) { border-top: 4px solid #00ff21; } /* Verde */
+.card:nth-child(1) { border-top: 4px solid #ffffff; } /* Laranja */
+.card:nth-child(2) { border-top: 4px solid #378cbb; } /* Azul */
+.card:nth-child(3) { border-top: 4px solid #ffffff; } /* Verde */
 
 /* Efeito de Hover (Brilho neon) */
 .card:hover {
   transform: translateY(-10px);
 }
 
-.card:nth-child(1):hover { box-shadow: 0 10px 30px rgba(255, 106, 0, 0.2); }
-.card:nth-child(2):hover { box-shadow: 0 10px 30px rgba(0, 148, 255, 0.2); }
-.card:nth-child(3):hover { box-shadow: 0 10px 30px rgba(0, 255, 33, 0.2); }
+.card:nth-child(1):hover { box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4); }
+.card:nth-child(2):hover { box-shadow: 0 10px 30px rgba(0, 148, 255, 0.4); }
+.card:nth-child(3):hover { box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4); }
 
 .card h3 {
   font-size: 1.2rem;
@@ -5004,9 +5004,9 @@ font-size: 20px !important; /* Diminuímos de 20px para 16px (20px é muito para
 
 /* Estilo do checkmark verde */
 .checklist-v li span {
-  color: #00ff21;
+  color: #378cbb;
   font-weight: bold;
-  text-shadow: 0 0 10px rgba(0, 255, 33, 0.5);
+  text-shadow: 0 0 10px rgba(0, 148, 255, 0.4);
 }
 
 /* Hover específico para o card verde */
@@ -5091,16 +5091,16 @@ font-size: 20px !important; /* Diminuímos de 20px para 16px (20px é muito para
 
 /* Estilo do Checkmark (span ✓) com Glow */
 .item-check span {
-  color: #00ff21; /* Verde neon vibrante */
+  color: #378cbb; /* Verde neon vibrante */
   font-size: 40px; /* Checkmark maior e mais imponente */
   font-weight: bold;
-  text-shadow: 0 0 10px rgba(0, 255, 33, 0.6); /* Efeito de brilho (glow) */
+  text-shadow: 0 0 10px rgba(0, 148, 255, 0.4); /* Efeito de brilho (glow) */
 }
 
 /* Efeito de destaque ao passar o mouse (opcional) */
 .item-check:hover {
   transform: translateX(5px);
-  color: #00ff21;
+  color: #378cbb;
 }
 
 /* Centralização do Cabeçalho da Seção */
@@ -5110,4 +5110,29 @@ font-size: 20px !important; /* Diminuímos de 20px para 16px (20px é muito para
   flex-direction: column;
   align-items: center;
   margin-bottom: 40px;
+}
+
+/* Remove o respiro exagerado entre as seções */
+section {
+  padding-top: 20px !important;    /* Ajuste o valor conforme desejar (ex: 10px ou 0) */
+  padding-bottom: 20px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Ajuste específico para o vídeo e a seção de radar */
+#video-section {
+  margin-bottom: 10px !important;
+  padding-bottom: 0 !important;
+}
+
+.feature-row {
+  margin-top: 10px !important;
+  padding-top: 0 !important;
+}
+
+/* Se houver títulos h2 ou h1 com margens grandes, diminua aqui */
+h1, h2, h3 {
+  margin-top: 10px !important;
+  margin-bottom: 15px !important;
 }
