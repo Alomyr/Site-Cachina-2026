@@ -4764,7 +4764,22 @@ h2 {
     align-items: center !important;
     gap: 4px;
     position: relative;
+    
   }
+  .dropdown-content a {
+font-size: 20px !important; /* Diminuímos de 20px para 16px (20px é muito para mobile) */
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    
+    /* QUEBRA DE TEXTO: */
+    white-space: normal;    /* Permite que o texto pule linha se for grande */
+    line-height: 1.2;       /* Espaço entre as linhas se o texto quebrar */
+    display: block;         /* Garante que ocupe a largura toda do menu */
+    text-align: center;  }
 
   /* Emojis via pseudo-elemento */
   .nav-links a[href*="FAQ"]::before { content: "❓"; font-size: 30px; }
