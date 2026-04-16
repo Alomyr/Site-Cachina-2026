@@ -359,7 +359,7 @@ body {
   justify-content: space-between;
 }
 .hero-text-block {
-  max-width: 600px;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Força o alinhamento de todos os blocos na mesma linha vertical */
@@ -1077,7 +1077,7 @@ nav a:hover {
 
 /* Ajuste do bloco de texto */
 .hero-text-block {
-  max-width: 600px; /* Limita a largura para manter a legibilidade */
+  max-width: 900px; /* Limita a largura para manter a legibilidade */
 }
 
 /* Responsividade: No celular, eles voltam a ficar um em cima do outro */
@@ -1159,7 +1159,7 @@ nav a:hover {
 
 /* Alinhamento do Bloco de Texto */
 .hero-text-block {
-  max-width: 800px;
+  max-width: 900px;
   text-align: justify; /* Alinha o texto em ambos os lados */
 }
 
@@ -5540,4 +5540,29 @@ h2,
 h3 {
   margin-top: 10px !important;
   margin-bottom: 15px !important;
+}
+.hero-text-block {
+  width: 90% ; /* Usa a largura da tela em vez de fixo */
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left; /* Alinhamento mais seguro para diferentes telas */
+}
+
+.hero-text-block h1 {
+  font-size: clamp(2rem, 5vw, 4rem); /* A fonte aumenta/diminui conforme a tela */
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.hero-text-block h1 span {
+  display: inline-block; /* Garante que o span se comporte como parte do texto */
+  color: var(--accent-cyan);
+  white-space: nowrap; /* Impede que a palavra do span quebre sozinha */
+}
+.hero-text-block h1 {
+  text-align: left; /* Ou center, mas nunca justify para títulos */
+  word-break: keep-all; /* Evita quebra de palavras no meio */
 }
