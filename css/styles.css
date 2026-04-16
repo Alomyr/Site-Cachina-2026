@@ -28,19 +28,6 @@ body {
   --grid-color: rgba(255, 255, 255, 0.02);
 }
 
-.navbar {
-  width: 100%;
-  padding: 15px 5%;
-  background: linear-gradient(90deg, #020617, #0a1a3a);
-  position: sticky;
-  background: rgba(10, 17, 40, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(10px);
-}
 .navbar::after {
   content: "";
   position: absolute;
@@ -57,9 +44,7 @@ body {
     transparent
   );
 }
-.navbar {
-  box-shadow: 0 5px 30px rgba(0, 229, 255, 0.08);
-}
+
 /* CONTAINER */
 .nav-container {
   display: grid;
@@ -69,12 +54,26 @@ body {
 }
 
 .navbar {
+    width: 100%;
+  padding: 15px 5%;
+  background: linear-gradient(90deg, #020617, #0a1a3a);
+  position: sticky;
+  background: rgba(10, 17, 40, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+
   top: 15px;
   left: 5%;
   width: 90%;
   position: fixed;
   z-index: 1000;
   padding: 10px 5%;
+  box-shadow: 0 5px 30px rgba(0, 229, 255, 0.08);
+
   background: rgba(10, 17, 40, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -82,6 +81,7 @@ body {
   border: 1px solid rgba(0, 229, 255, 0.2);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
+  overflow: visible; /* evita cortar o dropdown */
 }
 
 /* Compensação para o conteúdo não sumir sob a navbar */
@@ -174,9 +174,6 @@ body {
     margin-bottom: 8px;
   }
 }
-.navbar {
-  overflow: visible; /* evita cortar o dropdown */
-}
 
 .dropdown {
   position: relative;
@@ -197,7 +194,7 @@ body {
   .dropdown-content {
     top: auto !important;
     bottom: 100% !important; /* 👈 força subir */
-    
+
     left: 50%;
     transform: translateX(-50%);
   }
@@ -209,7 +206,7 @@ body {
     position: absolute;
     top: auto;
     bottom: 110%; /* 👆 sobe */
-    
+
     left: 50%;
     transform: translateX(-50%);
   }
@@ -284,7 +281,7 @@ body {
   transform: translate(-50%, -50%);
 
   width: 1000px; /* ajuste conforme necessário */
-  height:auto;
+  height: auto;
 
   z-index: -1;
   pointer-events: none;
@@ -2281,11 +2278,14 @@ nav a:hover {
   padding: 80px 5%;
   background: rgba(10, 17, 40, 0);
 }
-section, .main-wrapper, .body-content { /* Adicione aqui as classes que envolvem o dual-container */
-    max-width: none !important;
-    width: 100% !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+section,
+.main-wrapper,
+.body-content {
+  /* Adicione aqui as classes que envolvem o dual-container */
+  max-width: none !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 .dual-container {
   display: flex;
@@ -2296,7 +2296,6 @@ section, .main-wrapper, .body-content { /* Adicione aqui as classes que envolvem
   border: 1px solid rgba(0, 229, 255, 0.1);
   border-radius: 30px;
   overflow: hidden;
-  
 }
 
 .dual-column {
@@ -2843,6 +2842,385 @@ section, .main-wrapper, .body-content { /* Adicione aqui as classes que envolvem
   animation: scrollS13 25s linear infinite;
 
   /* 🔥 importante */
+  /* --- RESPONSIVIDADE PARA CELULAR --- */
+  @media (max-width: 992px) {
+    .feature-row {
+      display: flex;
+      flex-direction: column; /* Força o empilhamento vertical */
+      gap: 30px; /* Espaço entre a primeira e a segunda lista */
+    }
+
+    .feature-list {
+      width: 100%; /* Garante que a lista use toda a largura disponível */
+      padding: 0;
+    }
+
+    /* Opcional: Ajustar o tamanho da fonte para telas menores */
+    .feature-list li {
+      font-size: 1.15rem;
+    }
+
+    .feature-list p {
+      font-size: 1rem;
+      padding-left: 20px; /* Ajusta o recuo do texto no mobile */
+    }
+  }
+
+  .mini-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .mini-stat h4 {
+    font-size: 1.8rem;
+    color: var(--accent-cyan);
+  }
+
+  /* --- FRAME DE IMAGEM TECH --- */
+  .feature-image {
+    flex: 1;
+    position: relative;
+  }
+  /* Espaçamento entre o frame do vídeo e o conteúdo abaixo */
+  .feature-image + div {
+    margin-top: 60px; /* Ajuste este valor conforme necessário */
+  }
+
+  /* Melhorando o espaçamento interno do título de benefícios */
+  .feature-image + div h2 {
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  .image-frame {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .image-frame img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .image-frame:hover img {
+    transform: scale(1.05);
+  }
+
+  .frame-glare {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%
+    );
+    pointer-events: none;
+  }
+
+  /* Responsividade */
+  @media (max-width: 968px) {
+    .feature-container,
+    .feature-row.reverse .feature-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 40px;
+    }
+
+    .feature-content h2 {
+      font-size: 2rem;
+    }
+
+    .feature-row .baleia-background-icon {
+      position: absolute !important;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      width: 1100px;
+      max-width: none;
+      opacity: 0.14;
+    }
+  }
+
+  /*Card box principal*/
+
+  .custom-card {
+    position: relative; /* Base para os elementos absolutos */
+    height: 350px; /* Defina uma altura fixa para o card */
+    background: #0d1526;
+    border-radius: 20px;
+    overflow: hidden;
+    border: none;
+    transition: all 0.4s ease;
+  }
+
+  /* Faz a imagem ocupar 100% do card */
+  .card-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  /* Overlay de vidro (escondido) */
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 17, 40, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    opacity: 0;
+    z-index: 3; /* Fica acima de tudo no hover */
+    transition: all 0.4s ease;
+    transform: translateY(100%); /* Vem de baixo para cima */
+    display: flex;
+    flex-direction: column; /* Ícone em cima, texto embaixo */
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Espaço entre o ícone e o texto */
+    padding: 20px;
+    transition: all 0.4s ease-in-out;
+  }
+
+  /* Conteúdo (Tag e Título) flutuando no rodapé do card */
+  .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 2; /* Acima da imagem, abaixo do overlay de hover */
+    background: linear-gradient(to top, rgba(10, 17, 40, 0.9), transparent);
+    transition: opacity 0.3s ease;
+  }
+
+  /* --- ESTADOS DE HOVER --- */
+
+  .custom-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-cyan);
+  }
+
+  /* Mostra o overlay com o texto descritivo */
+  .custom-card:hover .card-overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Esconde o título original para não dar conflito visual com o texto do overlay */
+  .custom-card:hover .card-content {
+    opacity: 0;
+  }
+
+  .custom-card:hover .card-image-wrapper img {
+    transform: scale(1.1);
+  }
+
+  /* Container do Grid */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px;
+  }
+
+  /* O Card Principal */
+  .custom-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 229, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: relative;
+  }
+
+  .custom-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Wrapper da Imagem e Overlay */
+  .card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: #0f172a; /* Fundo escuro para destacar a imagem */
+  }
+
+  .card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  /* O Efeito de Vidro (Overlay) */
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 17, 40, 0.85); /* Tom azul escuro transparente */
+    backdrop-filter: blur(8px); /* Efeito de desfoque igual ao vídeo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0; /* Invisível por padrão */
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease;
+    transform: translateY(20px); /* Começa um pouco abaixo */
+  }
+
+  .overlay-text {
+    color: white;
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  /* Trigger da Animação no Hover */
+  .custom-card:hover .card-overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .custom-card:hover .card-image-wrapper img {
+    transform: scale(1.1); /* Zoom suave na imagem de fundo */
+  }
+
+  /* Conteúdo abaixo da imagem */
+  .card-content {
+    padding: 20px;
+    background: transparent;
+  }
+
+  .card-tag {
+    color: var(--accent-cyan);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .card-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .cards-grid {
+    display: grid;
+    /* Força 4 colunas de tamanho igual */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; /* Reduzi levemente o gap para caber melhor */
+    width: 100%;
+    max-width: 3000px;
+    margin: 0 auto;
+  }
+
+  /* Ajuste na altura da imagem para os cards não ficarem muito longos na vertical */
+  .card-image-wrapper {
+    width: 100%;
+    height: 160px; /* Reduzido de 200px para equilibrar o design horizontal */
+  }
+
+  /* Responsividade: Como 4 cards em linha ficam muito estreitos no tablet/celular */
+  @media (max-width: 1024px) {
+    .cards-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 por linha em tablets */
+    }
+  }
+
+  @media (max-width: 600px) {
+    .cards-grid {
+      grid-template-columns: 1fr; /* 1 por linha no celular */
+    }
+  }
+
+  .custom-card {
+    background: #0d1526; /* Um tom acima do seu bg-dark para dar contraste */
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 229, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    cursor: pointer;
+  }
+
+  /* Container da Imagem */
+  /* Container da Imagem */
+  .card-image-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    background: #0f172a;
+  }
+
+  .card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  /* --- O OVERLAY (Efeito Vidro + Centralização) --- */
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Efeito de Vidro e Desfoque */
+    background: rgba(10, 17, 40, 0.85);
+    backdrop-filter: blur(12px); /* Desfoque de fundo */
+    -webkit-backdrop-filter: blur(12px);
+
+    /* Alinhamento Centralizado */
+    display: flex;
+    flex-direction: column; /* Ícone em cima, texto embaixo */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    gap: 15px; /* Espaço entre o ícone e o texto */
+
+    /* Estados iniciais (Escondido) */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease-in-out;
+    pointer-events: none;
+    z-index: 5;
+  }
+
   will-change: transform;
 }
 .logo-item-s13 {
@@ -4242,9 +4620,7 @@ ul {
   h3 {
     font-size: 13px;
   }
-} 
-
-
+}
 
 /* Unificação do Fundo e Remoção de Divisórias */
 .flow-section {
@@ -4462,27 +4838,27 @@ ul {
     font-size: 8px;
   }
   .gear-core {
-  /* ... mantenha o que já tem ... */
-  overflow: visible; /* Garante que o conteúdo que sair do círculo não suma */
-}
+    /* ... mantenha o que já tem ... */
+    overflow: visible; /* Garante que o conteúdo que sair do círculo não suma */
+  }
 
-.gear-inner ul {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0;
-  opacity: 1 !important; /* Força a visibilidade */
-  display: block;        /* Garante que o container da lista exista */
-}
+  .gear-inner ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    opacity: 1 !important; /* Força a visibilidade */
+    display: block; /* Garante que o container da lista exista */
+  }
 
-.gear-inner li {
-  font-size: 20px;
-  line-height: 1.4;
-  margin-bottom: 4px;
-  display: block;        /* Garante que cada item ocupe sua linha */
-}
-.gear-inner span {
-  font-size: 14px;
-}
+  .gear-inner li {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4px;
+    display: block; /* Garante que cada item ocupe sua linha */
+  }
+  .gear-inner span {
+    font-size: 14px;
+  }
 }
 
 /* Ajuste extra para celulares (abaixo de 600px) */
@@ -4718,21 +5094,19 @@ h2 {
     position: fixed;
     /* Inverte a sombra para projetar para cima, já que está no fundo */
     box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
-    
-    
   }
-.dropdown-trigger {
+  .dropdown-trigger {
     display: flex;
     flex-direction: column; /* Alinha o emoji em cima do texto */
     align-items: center;
-    gap: 4px;              /* Espaço entre emoji e texto */
+    gap: 4px; /* Espaço entre emoji e texto */
     font-size: 0.65rem !important; /* Texto um pouco menor para dar destaque ao ícone */
     color: #fff;
     text-decoration: none;
   }
-  .nav-links a span, 
+  .nav-links a span,
   .dropdown-trigger span {
-    font-size: 1.4rem;     /* Tamanho do emoji */
+    font-size: 1.4rem; /* Tamanho do emoji */
     margin-bottom: 2px;
   }
 
@@ -4740,7 +5114,7 @@ h2 {
   .dropdown-trigger .arrow {
     display: none;
   }
-  
+
   /* Remove o padding do topo e adiciona no fundo para o conteúdo não ficar atrás da barra */
   body {
     padding-top: 20px;
@@ -4757,7 +5131,7 @@ h2 {
     justify-content: space-around;
   }
 
-  .nav-links a, 
+  .nav-links a,
   .dropdown-trigger {
     font-size: 20px !important; /* Tamanho do texto visível */
     font-weight: 700;
@@ -4769,30 +5143,41 @@ h2 {
     align-items: center !important;
     gap: 4px;
     position: relative;
-    
   }
   .dropdown-content a {
-font-size: 20px !important; /* Diminuímos de 20px para 16px (20px é muito para mobile) */
+    font-size: 20px !important; /* Diminuímos de 20px para 16px (20px é muito para mobile) */
     padding: 15px;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: white;
     text-decoration: none;
     font-weight: 600;
-    
+
     /* QUEBRA DE TEXTO: */
-    white-space: normal;    /* Permite que o texto pule linha se for grande */
-    line-height: 1.2;       /* Espaço entre as linhas se o texto quebrar */
-    display: block;         /* Garante que ocupe a largura toda do menu */
-    text-align: center;  }
+    white-space: normal; /* Permite que o texto pule linha se for grande */
+    line-height: 1.2; /* Espaço entre as linhas se o texto quebrar *
+    display: block; /* Garante que ocupe a largura toda do menu */
+    text-align: center;
+  }
 
   /* Emojis via pseudo-elemento */
-  .nav-links a[href*="FAQ"]::before { content: "❓"; font-size: 30px; }
-  .nav-links a[href*="playbook"]::before { content: "📘"; font-size: 30px; }
-  .dropdown-trigger::before { content: "⚙️"; font-size: 30px; }
+  .nav-links a[href*="FAQ"]::before {
+    content: "❓";
+    font-size: 30px;
+  }
+  .nav-links a[href*="playbook"]::before {
+    content: "📘";
+    font-size: 30px;
+  }
+  .dropdown-trigger::before {
+    content: "⚙️";
+    font-size: 30px;
+  }
 
   /* Esconde a seta original */
-  .arrow { display: none; }
+  .arrow {
+    display: none;
+  }
   .nav-container {
     width: 100%;
     display: flex;
@@ -4804,7 +5189,6 @@ font-size: 20px !important; /* Diminuímos de 20px para 16px (20px é muito para
   .cta-btn {
     font-size: 0.8rem;
     padding: 8px 12px;
-    
   }
   /* Esconde a linha decorativa ::after no mobile para um visual mais limpo embaixo */
   .navbar::after {
@@ -4818,7 +5202,7 @@ font-size: 20px !important; /* Diminuímos de 20px para 16px (20px é muito para
   .nav-container {
     justify-content: space-around; /* Distribui os links e o botão melhor sem a logo */
   }
-    .nav-container {
+  .nav-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -4910,24 +5294,38 @@ font-size: 20px !important; /* Diminuímos de 20px para 16px (20px é muito para
   border-radius: 20px;
   padding: 30px;
   width: 300px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
 /* Cores específicas baseadas nas engrenagens */
-.card:nth-child(1) { border-top: 4px solid #ffffff; } /* Laranja */
-.card:nth-child(2) { border-top: 4px solid #378cbb; } /* Azul */
-.card:nth-child(3) { border-top: 4px solid #ffffff; } /* Verde */
+.card:nth-child(1) {
+  border-top: 4px solid #ffffff;
+} /* Laranja */
+.card:nth-child(2) {
+  border-top: 4px solid #378cbb;
+} /* Azul */
+.card:nth-child(3) {
+  border-top: 4px solid #ffffff;
+} /* Verde */
 
 /* Efeito de Hover (Brilho neon) */
 .card:hover {
   transform: translateY(-10px);
 }
 
-.card:nth-child(1):hover { box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4); }
-.card:nth-child(2):hover { box-shadow: 0 10px 30px rgba(0, 148, 255, 0.4); }
-.card:nth-child(3):hover { box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4); }
+.card:nth-child(1):hover {
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
+}
+.card:nth-child(2):hover {
+  box-shadow: 0 10px 30px rgba(0, 148, 255, 0.4);
+}
+.card:nth-child(3):hover {
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
+}
 
 .card h3 {
   font-size: 1.2rem;
@@ -4954,25 +5352,25 @@ font-size: 20px !important; /* Diminuímos de 20px para 16px (20px é muito para
 .highlights-mini {
   display: flex;
   justify-content: center; /* Centraliza horizontalmente o grupo */
-  align-items: center;     /* Alinha verticalmente os itens */
-  flex-wrap: wrap;         /* Permite quebrar linha em telas muito pequenas */
-  gap: 20px;               /* Espaço entre cada mini-item */
-  margin: 20px auto;       /* Margem em cima/baixo e centraliza o bloco na página */
-  width: 100%;             /* Garante que ocupe a largura total para o justify funcionar */
+  align-items: center; /* Alinha verticalmente os itens */
+  flex-wrap: wrap; /* Permite quebrar linha em telas muito pequenas */
+  gap: 20px; /* Espaço entre cada mini-item */
+  margin: 20px auto; /* Margem em cima/baixo e centraliza o bloco na página */
+  width: 100%; /* Garante que ocupe a largura total para o justify funcionar */
 }
 
 .mini-item {
   display: flex;
-  align-items: center;     /* Centraliza o emoji com o texto */
-  gap: 8px;                /* Espaço entre emoji e palavra */
+  align-items: center; /* Centraliza o emoji com o texto */
+  gap: 8px; /* Espaço entre emoji e palavra */
   font-size: 14px;
   font-weight: 500;
-  color: #fff;             /* Cor para fundo escuro */
+  color: #fff; /* Cor para fundo escuro */
   opacity: 0.8;
 }
 
 .mini-item span {
-  font-size: 18px;         /* Deixa o emoji levemente maior que o texto */
+  font-size: 18px; /* Deixa o emoji levemente maior que o texto */
 }
 /* Estilo específico para o card de checklist */
 .card-checklist {
@@ -5040,18 +5438,18 @@ font-size: 20px !important; /* Diminuímos de 20px para 16px (20px é muito para
   display: flex;
   flex-wrap: wrap; /* Permite que os cards quebrem linha se necessário */
   justify-content: center; /* Centraliza os cards horizontalmente */
-  align-items: stretch;    /* Mantém todos os cards com a mesma altura */
-  gap: 20px;               /* Espaço entre os cards */
+  align-items: stretch; /* Mantém todos os cards com a mesma altura */
+  gap: 20px; /* Espaço entre os cards */
   width: 100%;
-  max-width: 1200px;       /* Limite de largura para desktop */
+  max-width: 1200px; /* Limite de largura para desktop */
   margin: 0 auto;
 }
 
 /* Ajuste no Card de Checklist para ele entrar no container */
 .card-checklist {
-  max-width: 300px;        /* Mesma largura dos outros cards */
-  margin-top: 0;           /* Remove margens que possam desalinhá-lo */
-  text-align: left;        /* Mantém o texto interno à esquerda para leitura */
+  max-width: 300px; /* Mesma largura dos outros cards */
+  margin-top: 0; /* Remove margens que possam desalinhá-lo */
+  text-align: left; /* Mantém o texto interno à esquerda para leitura */
 }
 
 /* Centralização do Cabeçalho (Título e Ícones Mini) */
@@ -5119,7 +5517,7 @@ font-size: 20px !important; /* Diminuímos de 20px para 16px (20px é muito para
 
 /* Remove o respiro exagerado entre as seções */
 section {
-  padding-top: 75px !important;    /* Ajuste o valor conforme desejar (ex: 10px ou 0) */
+  padding-top: 75px !important; /* Ajuste o valor conforme desejar (ex: 10px ou 0) */
   padding-bottom: 20px !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
@@ -5137,7 +5535,9 @@ section {
 }
 
 /* Se houver títulos h2 ou h1 com margens grandes, diminua aqui */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin-top: 10px !important;
   margin-bottom: 15px !important;
 }

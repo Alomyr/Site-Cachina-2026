@@ -57,7 +57,7 @@ body {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 992px) {
   .solutions {
     grid-template-columns: 1fr; /* 1 coluna em celulares */
   }
