@@ -62,3 +62,38 @@ body {
     grid-template-columns: 1fr; /* 1 coluna em celulares */
   }
 }
+
+/* Container principal dos cards */
+.assessment-grid {
+  display: flex;
+  flex-wrap: wrap;       /* Permite que os cards pulem para a próxima linha */
+  justify-content: center; /* CENTRALIZA os itens horizontalmente */
+  gap: 20px;             /* Espaçamento entre os cards */
+  max-width: 1600px;     /* Limita a largura máxima do conjunto */
+  margin: 40px auto;     /* Centraliza o container na página */
+  padding: 0 20px;
+}
+
+/* Ajuste nos cards para manterem um tamanho consistente */
+.assessment-card {
+  flex: 1 1 300px;       /* O card pode crescer, diminuir, mas tenta ter 300px */
+  max-width: 350px;      /* Impede que o card fique largo demais em telas grandes */
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* Centraliza o conteúdo INTERNO do card */
+  text-align: center;    /* Centraliza os textos do card */
+  padding: 30px;
+  
+}
+
+.assessment-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-cyan);
+}
+
+/* Centraliza o ícone dentro do card */
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  display: block;
+}
