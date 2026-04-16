@@ -5194,8 +5194,14 @@ h2 {
   .navbar::after {
     display: none;
   }
+.logo, .cta-btn {
+    grid-column: 2; /* Ambos ficam na segunda coluna */
+    justify-self: center;
+  }
+
   .logo {
-    display: none;
+    order: 1; /* Logo em cima */
+    margin-bottom: 5px;
   }
 
   /* Ajuste para centralizar o restante dos itens */
