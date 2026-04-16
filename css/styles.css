@@ -479,24 +479,24 @@ body {
   filter: blur(60px);
   pointer-events: none;
 }
-
+/* 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
+  padding: 1rem 5%; */
 
   /* Torna o menu fixo */
-  position: sticky;
-  top: 0;
-  z-index: 1000; /* Garante que ele fique acima de tudo */
+  /* position: sticky; */
+  /* top: 0; */
+  /* z-index: 1000; Garante que ele fique acima de tudo */
 
   /* Efeito de fundo para não misturar com o conteúdo no scroll */
-  background: rgba(10, 17, 40, 0.8);
+  /* background: rgba(10, 17, 40, 0.8);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0, 229, 255, 0.05);
   transition: all 0.3s ease;
-}
+} */
 .logo {
   color: var(--accent-cyan);
   font-weight: 900;
