@@ -96,4 +96,14 @@ body {
   font-size: 2.5rem;
   margin-bottom: 15px;
   display: block;
+  background: none !important;        /* Remove qualquer cor de fundo */
+  background-color: transparent !important; /* Garante que fique transparente */
+  border-radius: 0 !important;        /* Remove o arredondamento */
+  box-shadow: none !important;        /* Remove sombras, se houver */
+  
+  /* Ajustes extras para o emoji ficar bonito solto */
+  font-size: 2.5rem;                   /* Tamanho do emoji */
+  display: block;
+  margin-bottom: 15px;
+  text-align: center;
 }
