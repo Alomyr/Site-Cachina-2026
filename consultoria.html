@@ -1,183 +1,302 @@
 <!doctype html>
 <html lang="pt-br">
-  
-  <link rel="stylesheet" href="./css/slides/slide-08.css" />
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cachina - Consultoria</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <link rel="stylesheet" href="./css/styles.css" />
   <link rel="stylesheet" href="./css/new_site/consultoria.css">
-
+  
+  <style>
+    /* GARANTE O EFEITO DE ESTEIRA INFINITA LISO */
+    .assessment-swiper .swiper-wrapper,
+    .assessment-swiper-reverse .swiper-wrapper {
+      transition-timing-function: linear !important;
+    }
+    
+    .assessment-card {
+      min-width: 300px; /* Largura mínima para os cards não esmagarem */
+    }
+  </style>
+</head>
 
 <body>
-  <body>
-<header class="navbar">
-  <div class="nav-container">
-
-    <!-- LOGO -->
-    <div class="logo">
-     <a href="./index.html"> <img src="./icons/cachina-logoo.png" class="company-logo" /></a>
-    </div>
-
-    <!-- LINKS -->
-    <nav class="nav-links">
-      
-      <div class="dropdown">
-        <a href="#" class="dropdown-trigger">
-          SOLUÇÕES <span class="arrow">▼</span>
-        </a>
-        <div class="dropdown-content">
-          <a href="./agente.html">Agente de IA Omnicanal</a>
-          <a href="./cloudbox.html">VDI Cloud/CloudBox</a>
-          <a href="./devfacil.html">Devfácil</a>
-          <a href="./consultoria.html">Consultoria</a>
-        </div>
-      </div>
-
-      <a href="./FAQ.html">FAQ</a>
-      <a href="./playbook.html">PLAYBOOK</a>
-
-    </nav>
-
-    <!-- BOTÃO -->
-    <a href="https://typebot.co/cachina-solu-es-agente-ia-diagn-stico-0gu016d" class="cta-btn">
-      FAÇA DIAGNOSTICO
-    </a>
-
-  </div>
-</header>
-<script>
-
-const trigger = document.querySelector('.dropdown-trigger');
-const dropdown = document.querySelector('.dropdown');
-
-trigger.addEventListener('click', (e) => {
-  e.preventDefault();
-  dropdown.classList.toggle('active');
-});
-
-</script>
-<!-- <div class="wave-divider top">
-  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-    <path d="M0,40 C300,120 1100,0 1440,60 L1440,0 L0,0 Z"></path>
-  </svg>
-</div> -->
-
-    <section class="hero">
-   <img src="./icons/Glowing whale in ocean depths.png" class="baleia-kids-background-icon" alt="Ícone" />
-
-
-      <h1>Consultoria e <span>Assessment</span> estruturado</h1>
-      <p>
-        Analisamos os principais pilares que sustentam a operação, segurança e
-        eficiência do seu ambiente tecnológico.
-      </p>
-    <div class="assessment-grid">
-        <div class="assessment-card">
-            <div class="card-icon">⚖️</div>
-            <h3>Governança de TI</h3>
-            <p>Avaliação da organização, papéis, responsabilidades e alinhamento com os objetivos do negócio.</p>
-        </div>
-
-        <div class="assessment-card">
-            <div class="card-icon">🚀</div>
-            <h3>Projetos e Demandas</h3>
-            <p>Análise de como as demandas são priorizadas e a maturidade na condução de projetos.</p>
-        </div>
-
-        <div class="assessment-card">
-            <div class="card-icon">⚙️</div>
-            <h3>Suporte a Sistemas</h3>
-            <p>Avaliação da sustentação, fluxos de atendimento e tratamento de incidentes.</p>
-        </div>
-
-        <div class="assessment-card">
-            <div class="card-icon">💻</div>
-            <h3>Endpoints</h3>
-            <p>Verificação de equipamentos de ponta, padronização, performance e segurança.</p>
-        </div>
-
-        <div class="assessment-card">
-            <div class="card-icon">☁️</div>
-            <h3>Backup</h3>
-            <p>Análise das rotinas de backup, retenção e capacidade de recuperação em desastres.</p>
-        </div>
-
-        <div class="assessment-card">
-            <div class="card-icon">💾</div>
-            <h3>Servidores e Storage</h3>
-            <p>Avaliação de processamento, armazenamento e disponibilidade do ambiente atual.</p>
-        </div>
-
-        <div class="assessment-card">
-            <div class="card-icon">🌐</div>
-            <h3>Redes</h3>
-            <p>Mapeamento de infraestrutura, conectividade e pontos de vulnerabilidade.</p>
-        </div>
-
-        <div class="assessment-card">
-            <div class="card-icon">📊</div>
-            <h3>Inteligência de Dados</h3>
-            <p>Uso estratégico das informações para apoio à operação e tomada de decisão.</p>
-        </div>
-
-        <div class="assessment-card">
-            <div class="card-icon">📜</div>
-            <h3>Contratos e Compliance</h3>
-            <p>Análise de contratos vigentes, fornecedores e aderência às boas práticas.</p>
-        </div>
-    </div>
-      <div class="buttons">
-        <a href="#" class="btn btn-whatsapp">Solicitar Assessment</a>
-        <a href="#" class="btn btn-outline">Ver Metodologia</a>
-      </div>
-
-       <div class="solutions-wrapper">
-        <h1>Pronto para <span>Modernizar</span> sua Gestão?</h1>
-        <p>
-          Nossa consultoria C-Level traz a expertise de 20 anos do Grupo Cachina
-          para o seu negócio.
-        </p>
-        <div class="buttons">
-          <a href="https://wa.me/5584991551968" class="btn btn-whatsapp"
-            >Falar com Consultor</a
-          >
-        </div>
-      </div>
-    </section>
-
-
-
-    <!-- TRANSIÇÃO -->
-    <div class="footer-fade"></div>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="footer-container">
-        <div>
+  <header class="navbar">
+    <div class="nav-container">
       <div class="logo">
-        <img src="./icons/cachina-logoo.png" class="company-logo" />
+        <a href="./index.html"> <img src="./icons/cachina-logoo.png" class="company-logo" /></a>
       </div>
-      <p>Automação inteligente para negócios.</p>
+      <nav class="nav-links">
+        <div class="dropdown">
+          <a href="#" class="dropdown-trigger">SOLUÇÕES <span class="arrow">▼</span></a>
+          <div class="dropdown-content">
+            <a href="./agente.html">Agente de IA Omnicanal</a>
+            <a href="./cloudbox.html">VDI Cloud/CloudBox</a>
+            <a href="./devfacil.html">Devfácil</a>
+            <a href="./consultoria.html">Consultoria</a>
+          </div>
         </div>
+        <a href="./FAQ.html">FAQ</a>
+        <a href="./playbook.html">PLAYBOOK</a>
+      </nav>
+      <a href="https://typebot.co/cachina-solu-es-agente-ia-diagn-stico-0gu016d" class="cta-btn">FAÇA DIAGNOSTICO</a>
+    </div>
+  </header>
 
-        <div class="footer-links">
-          <h4>Navegação</h4>
-          <a href="#">Soluções</a>
-          <a href="#">Serviços</a>
-          <a href="#">FAQ</a>
-        </div>
+  <section class="hero">
+    <img src="./icons/Glowing whale in ocean depths.png" class="baleia-kids-background-icon" alt="Ícone" />
 
-        <div>
-          <h4>Contato</h4>
-          <p>contato@cachina.com</p>
-        </div>
+    <h1>Consultoria e <span>Assessment</span> estruturado</h1>
+    <p>
+      Analisamos os principais pilares que sustentam a operação, segurança e eficiência do seu ambiente tecnológico.
+    </p>
+
+   <!doctype html>
+
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste Carrossel Infinito</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <style>
+    body {
+      margin: 0;
+      background: #0b1c2c;
+      font-family: Arial;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      padding: 80px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .swiper {
+      max-width: 1400px;
+      margin: 40px auto;
+      overflow: hidden;
+    }
+
+    .swiper-wrapper {
+      transition-timing-function: linear !important;
+    }
+
+    .swiper-slide {
+      width: 320px !important;
+    }
+
+    .assessment-card {
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      background: rgba(16, 42, 67, 0.6);
+      border: 1px solid rgba(0, 229, 255, 0.2);
+      backdrop-filter: blur(10px);
+
+      padding: 20px;
+      border-radius: 20px;
+      color: white;
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<section class="hero">
+  <!-- PRIMEIRO -->
+<div class="swiper assessment-swiper container-padrao">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <div class="assessment-card">
+        <div class="card-icon">⚖️</div>
+        <h3>Governança de TI</h3>
+        <p>Avaliação da organização, papéis, responsabilidades e alinhamento com os objetivos do negócio.</p>
       </div>
-
-      <div class="footer-bottom">
-        © 2026 Cachina. Todos os direitos reservados.
+    </div>
+    <div class="swiper-slide">
+      <div class="assessment-card">
+        <div class="card-icon">🚀</div>
+        <h3>Projetos e Demandas</h3>
+        <p>Análise de como as demandas são priorizadas e a maturidade na condução de projetos.</p>
       </div>
-    </footer>
-  </body>
-  
+    </div>
+    <div class="swiper-slide">
+      <div class="assessment-card">
+        <div class="card-icon">⚙️</div>
+        <h3>Suporte a Sistemas</h3>
+        <p>Avaliação da sustentação, fluxos de atendimento e tratamento de incidentes.</p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="assessment-card"><div class="card-icon">⚖️</div><h3>Governança de TI</h3><p>Avaliação da organização, papéis, responsabilidades e alinhamento.</p></div>
+    </div>
+    <div class="swiper-slide">
+      <div class="assessment-card"><div class="card-icon">🚀</div><h3>Projetos e Demandas</h3><p>Análise de como as demandas são priorizadas e a maturidade.</p></div>
+    </div>
+    <div class="swiper-slide">
+      <div class="assessment-card"><div class="card-icon">⚙️</div><h3>Suporte a Sistemas</h3><p>Avaliação da sustentação, fluxos de atendimento e incidentes.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="swiper assessment-swiper-reverse container-padrao">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <div class="assessment-card">
+        <div class="card-icon">☁️</div>
+        <h3>Backup</h3>
+        <p>Análise das rotinas de backup, retenção e capacidade de recuperação em desastres.</p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="assessment-card">
+        <div class="card-icon">💾</div>
+        <h3>Servidores e Storage</h3>
+        <p>Avaliação de processamento, armazenamento e disponibilidade do ambiente atual.</p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="assessment-card">
+        <div class="card-icon">🌐</div>
+        <h3>Redes</h3>
+        <p>Mapeamento de infraestrutura, conectividade e pontos de vulnerabilidade.</p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="assessment-card">
+        <div class="card-icon">📊</div>
+        <h3>Inteligência de Dados</h3>
+        <p>Uso estratégico das informações para apoio à operação e tomada de decisão.</p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="assessment-card"><div class="card-icon">☁️</div><h3>Backup</h3><p>Análise das rotinas de backup e retenção.</p></div>
+    </div>
+    <div class="swiper-slide">
+      <div class="assessment-card"><div class="card-icon">💾</div><h3>Servidores e Storage</h3><p>Avaliação de processamento e armazenamento.</p></div>
+    </div>
+  </div>
+</div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const config = {
+      slidesPerView: 'auto',
+      spaceBetween: 25,
+      loop: true,
+      speed: 6000, // Ajuste para mais lento (8000) ou mais rápido (4000)
+      allowTouchMove: true,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+      // Isso ajuda o Swiper a entender que ele deve clonar mais slides
+      loopAdditionalSlides: 5, 
+    };
+
+    // Inicializa o primeiro
+    new Swiper('.assessment-swiper', config);
+
+    // Inicializa o segundo invertido
+    new Swiper('.assessment-swiper-reverse', {
+      ...config,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+        reverseDirection: true,
+      }
+    });
+  });
+</script>
+
+</body>
 </html>
 
+
+    <div class="buttons">
+      <a href="#" class="btn btn-whatsapp">Solicitar Assessment</a>
+      <a href="#" class="btn btn-outline">Ver Metodologia</a>
+    </div>
+
+    <div class="solutions-wrapper">
+      <h1>Pronto para <span>Modernizar</span> sua Gestão?</h1>
+      <p>Nossa consultoria C-Level traz a expertise de 20 anos do Grupo Cachina para o seu negócio.</p>
+      <div class="buttons">
+        <a href="https://wa.me/5584991551968" class="btn btn-whatsapp">Falar com Consultor</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div>
+        <div class="logo">
+          <img src="./icons/cachina-logoo.png" class="company-logo" />
+        </div>
+        <p>Automação inteligente para negócios.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navegação</h4>
+        <a href="#">Soluções</a>
+        <a href="#">Serviços</a>
+        <a href="#">FAQ</a>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <p>contato@cachina.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Cachina. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+ const config = {
+  slidesPerView: 'auto',
+  spaceBetween: 25,
+  loop: true,
+  speed: 6000,
+  allowTouchMove: false,
+  loopAdditionalSlides: 10,
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+  },
+};
+
+new Swiper('.assessment-swiper', config);
+
+new Swiper('.assessment-swiper-reverse', {
+  ...config,
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+    reverseDirection: true,
+  }
+});
+  </script>
+  
+</body>
+
+</html>

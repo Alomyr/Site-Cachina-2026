@@ -1915,14 +1915,26 @@ nav a:hover {
 }
 
 /* --- TEXTO NO OVERLAY --- */
-.card-overlay p {
-  color: white;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin: 0;
-  max-width: 90%; /* Evita que o texto encoste nas bordas */
+.card-overlay {
+  display: flex;
+  flex-direction: column;
+  /* Muda de center para flex-end para empurrar o texto para baixo */
+  justify-content: flex-end; 
+  
+  /* Alinha horizontalmente no centro */
+  align-items: center; 
+  
+  /* Adiciona uma margem interna no fundo para o texto não colar na borda */
+  padding-bottom: 30px; 
+  
+  /* Garante que o texto ocupe a área total para o alinhamento funcionar */
+  height: 100%;
+  box-sizing: border-box;
+  
+  /* Mantém suas configurações de visibilidade */
+  opacity: 0;
+  transition: all 0.4s ease;
 }
-
 /* --- ESTADOS DE HOVER --- */
 
 /* Mostra o overlay e centraliza */
@@ -3527,7 +3539,25 @@ img {
    FEATURE SECTIONS
 ========================= */
 @media (max-width: 992px) {
-  .feature-container {
+  .feature-container {.container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 40px;
+  background-color: #f4f4f4; /* Fundo da página para contraste */
+}
+
+.custom-card {
+  background-color: var(--primary-blue);
+  border-radius: 20px;
+  width: 280px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--text-white);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
     flex-direction: column;
     text-align: center;
   }
@@ -4321,6 +4351,7 @@ img {
 
 .swiper {
   width: 100%;
+  
   padding: 20px 0 40px !important; /* Espaço para as bolinhas embaixo */
 }
 
@@ -4335,7 +4366,41 @@ img {
 .case-card {
   width: 100%; /* Ocupa a largura da coluna definida no JS */
 }
+/* Container do card de logo */
+.logo-card {
+  width: 100%;
+  height: 100px; /* Defina uma altura fixa padrão para todos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.03); /* Leve fundo para uniformizar */
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
 
+/* A imagem dentro do card */
+.logo-card img {
+  max-width: 100%;  /* Não deixa passar da largura do card */
+  max-height: 60px; /* Define o tamanho real que o logo terá lá dentro */
+  width: auto;
+  height: auto;
+  object-fit: contain; /* Faz a imagem caber no espaço sem distorcer */
+  /* filter: grayscale(1) brightness(1.5); Opcional: deixa os logos uniformes em cinza claro */
+  /* transition: filter 0.3s ease; */
+}
+
+.logos-swiper,
+.logos-swiper-reverse {
+  width: 100%;
+  padding: 10px 0 !important;
+}
+
+
+/* Efeito ao passar o mouse (volta a cor original se quiser) */
+.logo-card:hover img {
+  filter: grayscale(0) brightness(1);
+}
 /* Estilo das bolinhas de paginação */
 .swiper-pagination-bullet {
   background: rgba(55, 140, 187, 0.5);
@@ -4362,7 +4427,16 @@ img {
 .swiper-slide {
   height: auto; /* Garante que os cards tenham a mesma altura */
 }
-
+.tech-stack-container, 
+.cases-section-inner, 
+.dual-container,
+.logos-swiper,
+.logos-swiper-reverse {
+  width: 95% !important;
+  max-width: 1600px !important; /* TODOS com o mesmo limite */
+  margin: 0 auto !important;   /* Centraliza todos */
+  box-sizing: border-box !important;
+}
 /* Responsividade Básica */
 @media (max-width: 968px) {
   .grid-header,
@@ -4387,11 +4461,6 @@ img {
   width: 100%;
 }
 
-.logos-swiper,
-.logos-swiper-reverse {
-  width: 100%;
-  padding: 10px 0 !important;
-}
 
 /* Ajuste para o carrossel de logos não ficar muito grande */
 .logo-card {
@@ -5572,3 +5641,139 @@ h3 {
   text-align: left; /* Ou center, mas nunca justify para títulos */
   word-break: keep-all; /* Evita quebra de palavras no meio */
 }
+
+/* Container que segura os cards lado a lado */
+.glass-flex-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* Card Individual */
+.glass-services-card {
+  background-color: #1E4373; /* Cor solicitada */
+  border-radius: 20px;
+  width: 280px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.glass-services-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+/* Ajuste na parte de cima (Removido padding e min-height fixo) */
+.glass-card-header {
+  position: relative;
+  height: 200px; /* Defina uma altura fixa para a área da imagem */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Garante que a imagem não saia das bordas arredondadas */
+}
+
+/* A mágica para preencher tudo */
+.glass-main-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz a imagem cobrir toda a área sem distorcer */
+  display: block;
+}
+
+/* Ajuste no Overlay para cobrir exatamente a imagem */
+.glass-card-hover-layer {
+  position: absolute;
+  inset: 0; /* Preenche 100% do header */
+  background: rgba(30, 67, 115, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centralizei para melhor leitura sobre a imagem */
+  align-items: center;
+  padding: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+/* Garante que o Badge (Tag) fique acima da imagem */
+.glass-badge {
+  z-index: 3;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(30, 67, 115, 0.7); /* Fundo semi-transparente para leitura */
+  backdrop-filter: blur(4px);
+  border: 1px solid #00e5ff;
+  color: #00e5ff;
+  font-size: 10px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+/* OVERLAY NO HOVER - O segredo para o texto aparecer */
+
+.glass-services-card:hover .glass-card-hover-layer {
+  opacity: 1;
+}
+
+.glass-card-hover-layer p {
+  color: white;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+}
+
+/* Parte de baixo (Texto fixo e Botão) */
+.glass-card-body {
+  padding: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.02); /* Leve destaque no corpo */
+  flex-grow: 1;
+}
+
+.glass-card-title {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.glass-card-description {
+  color: #ccd6f6;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/* Botão Azul Ciano */
+.glass-action-btn {
+  background-color: #00e5ff;
+  color: #1E4373;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.glass-action-btn:hover {
+  background-color: white;
+  transform: scale(1.05);
+}
+
+.glass-hover-link {
+  color: #00e5ff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+

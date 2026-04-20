@@ -73,19 +73,24 @@ body {
   margin: 40px auto;     /* Centraliza o container na página */
   padding: 0 20px;
 }
-
-/* Ajuste nos cards para manterem um tamanho consistente */
 .assessment-card {
-  flex: 1 1 300px;       /* O card pode crescer, diminuir, mas tenta ter 300px */
-  max-width: 350px;      /* Impede que o card fique largo demais em telas grandes */
+  width: 320px;
+  min-height: 220px;
+
   display: flex;
   flex-direction: column;
-  align-items: center;   /* Centraliza o conteúdo INTERNO do card */
-  text-align: center;    /* Centraliza os textos do card */
-  padding: 30px;
-  
-}
+  justify-content: center;
+  align-items: center;
 
+  text-align: center;
+
+  background: rgba(16, 42, 67, 0.6);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  backdrop-filter: blur(10px);
+
+  padding: 30px;
+  border-radius: 20px;
+}
 .assessment-card:hover {
   transform: translateY(-5px);
   border-color: var(--accent-cyan);
@@ -106,4 +111,23 @@ body {
   display: block;
   margin-bottom: 15px;
   text-align: center;
+}
+.assessment-swiper,
+.assessment-swiper-reverse {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.assessment-swiper .swiper-wrapper,
+.assessment-swiper-reverse .swiper-wrapper {
+  display: flex;
+  transition-timing-function: linear !important;
+}
+
+.assessment-swiper .swiper-slide,
+.assessment-swiper-reverse .swiper-slide {
+  width: 320px !important;
+  flex-shrink: 0;
 }
