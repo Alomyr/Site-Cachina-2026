@@ -898,6 +898,7 @@ nav a:hover {
     transparent 90%
   ) !important;
 }
+
 /* Ajuste sutil no H1 para garantir que ele fique legível */
 .hero h1 {
   font-size: 3.5rem;
@@ -1186,76 +1187,178 @@ nav a:hover {
 }
 
 /* --- SEÇÃO IMPACTO --- */
+:root {
+  --accent-cyan: #00d4ff;
+  --bg-dark: #050b1a; /* Azul bem escuro */
+  --card-border: #1e4373;
+}
+
 .impact-section {
   padding: 80px 10%;
-  background: rgba(10, 17, 40, 0);
+  background: transparent;
+  color: white;
+  font-family: 'Arial', sans-serif;
 }
 
-.impact-solutions-section {
-  position: relative;
-  overflow: hidden;
+.impact-text h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.1;
 }
 
-.impact-solutions-section .baleia-background-icon {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.16;
-  filter: blur(0.4px) brightness(1.05);
+.cyan-text { color: var(--accent-cyan); }
+
+.description {
+  font-size: 1.1rem;
+  max-width: 600px;
+  opacity: 0.9;
+  margin-bottom: 40px;
 }
 
-.impact-solutions-section .impact-section,
-.impact-solutions-section .solutions-section {
-  position: relative;
-  z-index: 1;
+/* Container dos Cards Inferiores */
+.impact-cards {
+  display: flex;
+  gap: 20px;
 }
 
-.impact-container {
+.card-item {
   display: flex;
   align-items: center;
-  gap: 50px;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 15px;
+  padding: 15px 25px;
+  border: 2px solid var(--card-border);
+  border-radius: 15px;
+  background: rgba(30, 67, 115, 0.1);
+  min-width: 200px;
 }
 
-.impact-text {
-  flex: 1;
-  text-align: left;
-}
-.impact-text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-.impact-text h2 span {
+.icon-box {
   color: var(--accent-cyan);
-}
-
-.impact-stats {
-  display: flex;
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.stat-item h4 {
   font-size: 2rem;
-  color: var(--accent-cyan);
-  margin-bottom: 5px;
+  position: relative;
 }
 
-/* Gráfico Animado */
+.small-arrow {
+  font-size: 0.8rem;
+  position: absolute;
+  top: 0; right: -5px;
+}
+/* Responsividade: Volta ao normal no celular */
+@media (max-width: 900px) {
+  .hero-layout-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+}
+.hero-text-block p {
+  text-align: justify;
+  color: var(--text-gray); /* Mantendo sua cor original */
+}
+.hero-text-block p {
+  text-align: justify;
+  hyphens: auto; /* Adiciona hífens automaticamente se necessário */
+}
+
+/* --- SEÇÃO IMPACTO --- */
+:root {
+  --accent-cyan: #00d4ff;
+  --bg-dark: #050b1a; /* Azul bem escuro */
+  --card-border: #1e4373;
+}
+
+.impact-section {
+  padding: 80px 10%;
+  background: transparent;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+.impact-text h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+.card-icon-img {
+  width: 50px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+  display: block;
+}
+
+.cyan-text { color: var(--accent-cyan); }
+
+.description {
+  font-size: 1.1rem;
+  max-width: 600px;
+  opacity: 0.9;
+  margin-bottom: 40px;
+}
+
+/* Container dos Cards Inferiores */
+.impact-cards {
+  display: flex;
+  gap: 20px;
+}
+/* Container que segura a imagem */
 .impact-visual {
   flex: 1;
-  background: rgba(30, 67, 115, 0.2);
-  padding: 40px;
-  border-radius: 20px;
-  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
+.visual-wrapper {
+  width: 100%;
+  max-width: 500px; /* Limita o tamanho para não ficar gigante */
+  
+}
+
+/* Estilização da imagem gerada */
+.main-visual-img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.3)); /* Adiciona um brilho extra ao redor */
+  animation: float 6s ease-in-out infinite; /* Opcional: efeito de flutuação */
+}
+
+/* Efeito opcional de flutuação suave para dar vida ao site */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+/* Lado Direito - Visual */
+.impact-visual {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.visual-wrapper {
+  width: 400px;
+  height: 300px;
+  gap: 10px;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-end;
+  /* 
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0,0,0,0) 100%);
+  border-left: 2px solid var(--accent-cyan);
+
+   */
+}
+
+.bar {
+  flex: 1;
+  background: linear-gradient(to top, var(--accent-cyan), #005f73);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+  border-radius: 4px 4px 0 0;
+}
 .impact-section,
 .impact-section .impact-visual,
 .impact-section .impact-text,
@@ -1263,6 +1366,10 @@ nav a:hover {
 .impact-section .stat-item {
   border: none !important;
   box-shadow: none !important;
+}
+.impact-solutions-section {
+  position: relative;
+  overflow: hidden; /* opcional, evita vazar */
 }
 
 .solutions-section .solutions-wrapper,
@@ -5776,4 +5883,43 @@ h3 {
   font-weight: bold;
   font-size: 0.9rem;
 }
+.main-visual-img {
+  width: 100%;
+  height: auto;
+  /* O segredo para integrar com o fundo do site: */
+  mix-blend-mode: screen; 
+  
+  /* Estilização da borda para parecer o card da foto */
+  border: 2px solid #1e4373;
+  border-radius: 15px;
+  background: rgba(30, 67, 115, 0.1); /* Brilho de fundo suave */
+  
+  filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.4));
+  animation: float 6s ease-in-out infinite;
+}
 
+.visual-wrapper {
+  padding: 10px; /* Espaço para a borda não encostar no desenho */
+}
+.card-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background: rgba(30, 67, 115, 0.05);
+  backdrop-filter: blur(5px);
+  min-width: 180px;
+}
+
+.card-item p {
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.icon-box {
+  color: var(--accent-cyan);
+  font-size: 1.4rem;
+}
