@@ -1263,7 +1263,7 @@ nav a:hover {
 
 /* --- SEÇÃO IMPACTO --- */
 :root {
-  --accent-cyan: #00d4ff;
+  --accent-cyan: #378cbb;
   --bg-dark: #050b1a; /* Azul bem escuro */
   --card-border: #1e4373;
 }
@@ -4146,7 +4146,7 @@ img {
 
 /* Estilizando o span com o azul que definimos antes */
 .solutions-wrapper h1 span {
-  color: #00d4ff;
+  color: #378cbb;
 }
 
 /* Centralizando o divisor */
@@ -4333,7 +4333,7 @@ img {
 .badge-top {
   background: rgba(55, 140, 187, 0.1);
   border: 1px solid rgba(55, 140, 187, 0.4);
-  color: #83d7ff;
+  color: #378cbb;
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 11px;
@@ -4415,7 +4415,7 @@ img {
 }
 
 .case-tag {
-  color: #7dd5ff;
+  color: #378cbb;
   font-size: 10px;
   text-transform: uppercase;
 }
@@ -5455,7 +5455,7 @@ h2 {
 
 /* Título com degradê */
 .title span {
-  color: #0094ff; /* Azul da engrenagem inferior */
+  color: #378cbb; /* Azul da engrenagem inferior */
   text-shadow: 0 0 15px rgba(0, 148, 255, 0.6);
 }
 
@@ -5818,8 +5818,8 @@ h3 {
   left: 15px;
   background: rgba(30, 67, 115, 0.7); /* Fundo semi-transparente para leitura */
   backdrop-filter: blur(4px);
-  border: 1px solid #00e5ff;
-  color: #00e5ff;
+  border: 1px solid #378cbb;
+  color: #378cbb;
   font-size: 10px;
   padding: 4px 12px;
   border-radius: 20px;
@@ -5860,7 +5860,7 @@ h3 {
 
 /* Botão Azul Ciano */
 .glass-action-btn {
-  background-color: #00e5ff;
+  background-color: #378cbb;
   color: #1E4373;
   border: none;
   padding: 12px 15px;
@@ -5878,7 +5878,7 @@ h3 {
 }
 
 .glass-hover-link {
-  color: #00e5ff;
+  color: #378cbb;
   text-decoration: none;
   font-weight: bold;
   font-size: 0.9rem;
