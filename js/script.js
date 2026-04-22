@@ -1852,7 +1852,7 @@ function contactSlide() {
 
       <div class="qr-section">
         <div class="qr-wrapper">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://alomyr.github.io/Apresentra-ao-nova/linknabio.html" alt="QR Code Contato" />
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://alomyr.github.io/Site-Cachina-2026/linknabio.html" alt="QR Code Contato" />
         </div>
         <p class="qr-label">Escaneie para salvar o contato</p>
       </div>
