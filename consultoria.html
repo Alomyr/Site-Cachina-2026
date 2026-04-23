@@ -63,7 +63,7 @@ trigger.addEventListener('click', (e) => {
 
 
 
-  <section class="hero">
+<section class="hero">
     <img src="./icons/Glowing whale in ocean depths.png" class="baleia-kids-background-icon" alt="Ícone" />
 
     <h1>Consultoria e <span>Assessment</span> estruturado</h1>
@@ -72,60 +72,11 @@ trigger.addEventListener('click', (e) => {
     </p>
 
   <style>
-    body {
-      margin: 0;
-      background: #0b1c2c;
-      font-family: Arial;
-      overflow-x: hidden;
-    }
-
-    .hero {
-      padding: 80px 20px;
-      text-align: center;
-      color: white;
-    }
-
-    .swiper {
-      max-width: 1400px;
-      margin: 40px auto;
-      overflow: hidden;
-    }
-
-    .swiper-wrapper {
-      transition-timing-function: linear !important;
-    }
-
-    .swiper-slide {
-      width: 320px !important;
-    }
-
-    .assessment-card {
-      height: 220px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      text-align: center;
-
-      background: rgba(16, 42, 67, 0.6);
-      border: 1px solid rgba(0, 229, 255, 0.2);
-      backdrop-filter: blur(10px);
-
-      padding: 20px;
-      border-radius: 20px;
-      color: white;
-    }
-
-    .card-icon {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
+   
   </style>
 
 </head>
 
-<img src="./icons/Glowing whale in ocean depths.png" class="baleia-kids-background-icon" alt="Ícone" />
 
 
 <section class="hero">
@@ -206,33 +157,56 @@ trigger.addEventListener('click', (e) => {
 </section>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+      document.addEventListener('DOMContentLoaded', function () {
+
     const config = {
-      slidesPerView: 'auto',
-      spaceBetween: 25,
-      loop: true,
-      speed: 6000, // Ajuste para mais lento (8000) ou mais rápido (4000)
-      allowTouchMove: true,
-      autoplay: {
-        delay: 0,
-        disableOnInteraction: false,
-      },
+
+    slidesPerView: 'auto',
+
+    spaceBetween: 25,
+
+    loop: true,
+
+    speed: 6000, // Ajuste para mais lento (8000) ou mais rápido (4000)
+
+    allowTouchMove: true,
+
+    autoplay: {
+
+    delay: 0,
+
+    disableOnInteraction: false,
+
+    },
+
 
     };
 
+
     // Inicializa o primeiro
+
     new Swiper('.assessment-swiper', config);
 
+
     // Inicializa o segundo invertido
+
     new Swiper('.assessment-swiper-reverse', {
-      ...config,
-      autoplay: {
-        delay: 0,
-        disableOnInteraction: false,
-        reverseDirection: true,
-      }
+
+    ...config,
+
+    autoplay: {
+
+    delay: 0,
+
+    disableOnInteraction: false,
+
+    reverseDirection: true,
+
+    }
+
     });
-  });
+
+    }); 
 </script>
 
 

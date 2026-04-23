@@ -131,3 +131,76 @@ body {
   width: 320px !important;
   flex-shrink: 0;
 }
+
+ body {
+      margin: 0;
+      background: #0b1c2c;
+      font-family: Arial;
+      overflow-x: hidden;
+    }
+
+
+    .swiper {
+      max-width: 1600px;
+      margin: 40px auto;
+      overflow: hidden;
+    }
+
+    .swiper-wrapper {
+      transition-timing-function: linear !important;
+    }
+
+    .swiper-slide {
+      width: 320px !important;
+    }
+
+    .assessment-card {
+      /* height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      background: rgba(16, 42, 67, 0.6);
+      border: 1px solid rgba(0, 229, 255, 0.2);
+      backdrop-filter: blur(10px);
+
+      border-radius: 20px;
+      color: white; */
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    /* Responsividade */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .swiper-slide {
+    width: 280px !important; /* Cards levemos menores para mobile/tablet */
+  }
+
+  .assessment-card {
+    height: 200px;
+    padding: 15px;
+  }
+
+  .assessment-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .assessment-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .swiper-slide {
+    width: 240px !important;
+  }
+}
