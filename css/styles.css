@@ -5478,9 +5478,28 @@ h2 {
   .dropdown-trigger::before {
     content: "⚙️";
     font-size: 30px;
+
   }
   
+/* Esconde o texto mobile por padrão */
+.mobile-text {
+  display: none;
+}
 
+/* Regras para Celular */
+@media (max-width: 992px) {
+  .desktop-text {
+    display: none; /* Esconde o nome completo */
+  }
+
+  .mobile-text {
+    display: inline; /* Mostra apenas "GRUPO" */
+  }
+  
+  .dropdown-trigger::before {
+    font-size: 24px; /* Opcional: diminuir o ícone no mobile */
+  }
+}
   /* Esconde a seta original */
   .arrow {
     display: none;
