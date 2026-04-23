@@ -6075,7 +6075,28 @@ h3 {
   font-size: 1.4rem;
 }
 
+.btn-test-link {
+  background: none !important;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
 
+.companys-logo {
+  display: block;
+  width: 100px; /* ajusta como quiser */
+  height: auto;
+}
+.test-area {
+  position: fixed;
+  bottom: 70px;
+  right: 30px;
+  z-index: 9999;
+}
 
-
+@media (max-width: 992px) {
+  .test-area {
+    display: none;
+  }
+}
 
