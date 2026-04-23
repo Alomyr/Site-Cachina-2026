@@ -5493,6 +5493,7 @@ h2 {
   }
 
   .mobile-text {
+    font-size: 16px !important; /* Tamanho do texto visível */
     display: inline; /* Mostra apenas "GRUPO" */
   }
   
