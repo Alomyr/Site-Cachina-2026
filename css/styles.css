@@ -5455,10 +5455,31 @@ h2 {
     content: "📘";
     font-size: 30px;
   }
+  .nav-links a[href*="nos"]::before {
+    content: "👥";
+    font-size: 30px;
+  }
+    .nav-links a[href*="devfacil"]::before {
+    content: "🧑‍💻";
+    font-size: 30px;
+  }
+    .nav-links a[href*="consultoria"]::before {
+    content: "📊";
+    font-size: 30px;
+  }
+    .nav-links a[href*="agente"]::before {
+    content: "🤖";
+    font-size: 30px;
+  }
+  .nav-links a[href*="cloudbox"]::before {
+    content: "☁";
+    font-size: 30px;
+  }
   .dropdown-trigger::before {
     content: "⚙️";
     font-size: 30px;
   }
+  
 
   /* Esconde a seta original */
   .arrow {
