@@ -4317,7 +4317,7 @@ img {
   max-width: 1600px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(13, 91, 143, 0.35);
+  border: 1px solid rgba(55, 140, 187, 1);;
   border-radius: 34px;
   padding: 40px;
   backdrop-filter: blur(10px);
@@ -4349,16 +4349,126 @@ img {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  margin-top: 30px;
+  grid-template-columns: repeat(3, 1fr);/* Container principal - Ajustado para alinhar com o título */
+.stats-grid {
+  display: flex;
+  gap: 20px;
+  padding: 30px 0;
+  justify-content: flex-start;
 }
 
 .stat-item {
-  background: rgba(8, 23, 47, 0.75);
-  padding: 15px;
+  /* Fundo bem escuro para o neon destacar */
+  background: rgba(4, 12, 24, 0.9); 
+  padding: 20px 25px;
+  border-radius: 18px;
+  flex: 1;
+  max-width: 400px;
+  text-align: left; /* Alinhado à esquerda como na imagem */
+  
+  /* BORDA NEON FINA */
+  border: 1px solid rgba(30, 67, 115, 0.95); 
+  
+  /* O SEGREDO: Múltiplas camadas de sombra para o efeito de "brilho de luz" */
+  box-shadow: 
+    0 0 15px rgba(30, 67, 115, 0.95),   /* Brilho externo 1 */
+    0 0 30px rgba(30, 67, 115, 0.95),    /* Aura externa 2 */
+    inset 0 0 12px rgba(30, 67, 115, 0.95); /* Brilho interno na borda */
+    
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+/* Efeito Hover - "Acendendo a lâmpada" */
+.stat-item:hover {
+  transform: translateY(-5px);
+  border-color: rgbaC;
+  background: rgba(30, 67, 115, 0.95);
+  
+  /* Aumenta a intensidade da luz no hover */
+  box-shadow: 
+    0 0 20px rgba(55, 140, 187, 1), 
+    0 0 40px rgba(30, 67, 115, 0.95),
+    0 0 60px rgba(0, 229, 255, 0.1),
+    inset 0 0 15px rgba(30, 67, 115, 0.95);
+}
+
+/* Títulos dentro do Card (O +200, 22+ anos, etc) */
+.stat-item strong {
+  display: block;
+  color: #378cbb;
+  font-size: 1.4rem; /* Maior para dar impacto */
+  font-weight: 900;
+  margin-bottom: 4px;
+  /* Brilho nas letras */
+  text-shadow: 0 0 10px rgba(30, 67, 115, 0.95);
+}
+
+/* Legendas (projetos entregues, etc) */
+.stat-item span {
+  color: #ffffff;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  display: block;
+  opacity: 0.8;
+  font-weight: 300;
+  text-transform: lowercase; /* Estilo moderno da imagem */
+}
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* Container dos itens para garantir que eles tenham espaço */
+.stats-grid {
+  display: flex;
+  gap: 25px;
+  padding: 25px 0;
+}
+
+.stat-item {
+  background: rgba(8, 23, 47, 0.9); /* Um pouco mais escuro ajuda o neon a brilhar */
+  padding: 50px;
   border-radius: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex: 1;
+  text-align: center;
+  
+  /* BORDA COM BRILHO (O segredo do Neon) */
+  border: 1px solid rgba(0, 229, 255, 0.4); 
+  
+  /* SOMBRAS EXTERNAS E INTERNAS */
+  box-shadow: 
+    0 0 10px rgba(0, 229, 255, 0.2), /* Brilho externo suave */
+    inset 0 0 15px rgba(0, 229, 255, 0.1); /* Brilho interno */
+    
+  transition: all 0.4s ease;
+}
+
+/* Efeito ao passar o mouse */
+.stat-item:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 229, 255, 1); /* Borda fica 100% acesa */
+  
+  /* Sombras mais fortes no hover para simular lâmpada acesa */
+  box-shadow: 
+    0 0 20px rgba(0, 229, 255, 0.6), 
+    0 0 40px rgba(0, 229, 255, 0.2);
+}
+
+/* Estilo do Texto para combinar */
+.stat-item strong {
+  display: block;
+  color: #00e5ff; /* Ciano Neon */
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+  /* Brilho nas letras */
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.8);
+}
+
+.stat-item span {
+  color: #ffffff;
+  font-size: 1.1rem;
+  opacity: 0.9;
 }
 
 /* Logos */
@@ -5923,3 +6033,8 @@ h3 {
   color: var(--accent-cyan);
   font-size: 1.4rem;
 }
+
+
+
+
+
