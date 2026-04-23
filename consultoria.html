@@ -1,53 +1,67 @@
 <!doctype html>
 <html lang="pt-br">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Cachina Soluções</title>
+   <link rel="icon" type="image/png" href="./icons/favicon.ico">
   
-     <title>Cachina Soluções</title>
-     <link rel="icon" type="image/png" href="./icons/favicon.ico">
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-  <link rel="stylesheet" href="./css/new_site/consultoria.css">
+  <link rel="stylesheet" href="./css/slides/slide-15.css" />
+  <link rel="stylesheet" href="./css/slides/slide-14.css" />
   <link rel="stylesheet" href="./css/styles.css" />
-  
-  <style>
-    /* GARANTE O EFEITO DE ESTEIRA INFINITA LISO */
-    .assessment-swiper .swiper-wrapper,
-    .assessment-swiper-reverse .swiper-wrapper {
-      transition-timing-function: linear !important;
-    }
-    
-    .assessment-card {
-      min-width: 300px; /* Largura mínima para os cards não esmagarem */
-    }
-  </style>
-</head>
+  <link rel="stylesheet" href="./css/new_site/consultoria.css" />
+
+
 
 <body>
-  <header class="navbar">
-    <div class="nav-container">
-      <div class="logo">
-        <a href="./index.html"> <img src="./icons/cachina-logoo.png" class="company-logo" /></a>
-      </div>
-      <nav class="nav-links">
-        <div class="dropdown">
-          <a href="#" class="dropdown-trigger">SOLUÇÕES <span class="arrow">▼</span></a>
-          <div class="dropdown-content">
-            <a href="./agente.html">Agente de IA Omnicanal</a>
-            <a href="./cloudbox.html">VDI Cloud/CloudBox</a>
-            <a href="./devfacil.html">Devfácil</a>
-            <a href="./consultoria.html">Consultoria</a>
-          </div>
-        </div>
-        <a href="./FAQ.html">FAQ</a>
-        <a href="./playbook.html">PLAYBOOK</a>
-      </nav>
-      <a href="https://typebot.co/cachina-solu-es-agente-ia-diagn-stico-0gu016d" class="cta-btn">FAÇA DIAGNOSTICO</a>
+  <body>
+<header class="navbar">
+  <div class="nav-container">
+
+    <!-- LOGO -->
+    <div class="logo">
+     <a href="./index.html"> <img src="./icons/cachina-logoo.png" class="company-logo" /></a>
     </div>
-  </header>
+
+
+    <!-- LINKS -->
+    <nav class="nav-links">
+      
+      <div class="dropdown">
+        <a href="#" class="dropdown-trigger">
+          SOLUÇÕES <span class="arrow">▼</span>
+        </a>
+        <div class="dropdown-content">
+          <a href="./agente.html">Agente de IA Omnicanal</a>
+          <a href="./cloudbox.html">VDI Cloud/CloudBox</a>
+          <a href="./devfacil.html">Devfácil</a>
+          <a href="./consultoria.html">Consultoria</a>
+        </div>
+      </div>
+
+      <a href="./FAQ.html">FAQ</a>
+      <a href="./playbook.html">PLAYBOOK</a>
+
+    </nav>
+
+    <!-- BOTÃO -->
+    <a href="https://typebot.co/cachina-solu-es-agente-ia-diagn-stico-0gu016d" class="cta-btn" target="_blank">
+      FAÇA DIAGNOSTICO
+    </a>
+
+  </div>
+</header>
+<script>
+
+const trigger = document.querySelector('.dropdown-trigger');
+const dropdown = document.querySelector('.dropdown');
+
+trigger.addEventListener('click', (e) => {
+  e.preventDefault();
+  dropdown.classList.toggle('active');
+});
+
+</script>
+
+
 
   <section class="hero">
     <img src="./icons/Glowing whale in ocean depths.png" class="baleia-kids-background-icon" alt="Ícone" />
@@ -56,8 +70,6 @@
     <p>
       Analisamos os principais pilares que sustentam a operação, segurança e eficiência do seu ambiente tecnológico.
     </p>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
   <style>
     body {
@@ -113,7 +125,8 @@
 
 </head>
 
-<body>
+<img src="./icons/Glowing whale in ocean depths.png" class="baleia-kids-background-icon" alt="Ícone" />
+
 
 <section class="hero">
   <!-- PRIMEIRO -->
@@ -222,8 +235,6 @@
   });
 </script>
 
-</body>
-</html>
 
 
     <div class="buttons">
@@ -239,7 +250,11 @@
       </div>
     </div>
   </section>
-  <div class="footer-fade"></div>
+
+
+
+    <!-- TRANSIÇÃO -->
+    <div class="footer-fade"></div>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -268,11 +283,7 @@
         © 2026 Cachina. Todos os direitos reservados.
       </div>
     </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  </script>
+  </body>
   
-</body>
-
 </html>
+
