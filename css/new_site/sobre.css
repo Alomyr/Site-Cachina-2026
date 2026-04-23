@@ -1,0 +1,93 @@
+/* HERO */
+.about-hero {
+  text-align: center;
+  padding: 100px 20px;
+  /* background: linear-gradient(180deg, #020617, #01030a); */
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+}
+
+.about-hero span {
+  color: var(--accent-cyan);
+}
+
+.about-hero p {
+  margin-top: 20px;
+  color: var(--text-light);
+}
+
+/* SECTION */
+.about-section {
+  padding: 80px 20px;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  color: var(--text-light);
+}
+
+.about-image img {
+  width: 100%;
+}
+
+/* CARDS */
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+  padding: 60px 20px;
+}
+
+.about-card {
+  background: rgba(255,255,255,0.04);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,234,255,0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* DIFERENCIAL */
+.about-diferencial {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.diferencial-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 25px;
+}
+
+.dif-item {
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.03);
+}
+
+/* CTA */
+.about-cta {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.btn-cta {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 12px 25px;
+  background: var(--accent-cyan);
+  color: #000;
+  border-radius: 25px;
+  text-decoration: none;
+}

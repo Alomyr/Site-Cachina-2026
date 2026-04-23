@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cachina Soluções</title>
+  
+  <link rel="icon" type="image/png" href="./icons/favicon.ico">
+  <link rel="stylesheet" href="./css/new_site/sobre.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="nav-container">
+      
+      <div class="logo">
+        <a href="./index.html">
+          <img src="./icons/cachina-logoo.png" alt="Cachina Logo" class="company-logo">
+        </a>
+      </div>
+
+      <nav class="nav-links">
+        <div class="dropdown">
+          <a href="#" class="dropdown-trigger">
+            <span class="mobile-text">GRUPO</span>
+            <span class="desktop-text">CACHINA</span>
+            <span class="arrow">▼</span>
+          </a>
+          <div class="dropdown-content">
+            <a href="./consultoria.html">CONSULTORIA</a>
+            <a href="./devfacil.html">DEVFACIL</a>
+            <a href="./agente.html">AGENTE DE IA OMNICANAL</a>
+            <a href="./cloudbox.html">VDI CLOUD/CLOUDBOX</a>
+            <a href="./playbook.html">PLAYBOOK</a>
+          </div>
+        </div>
+
+        <a href="./FAQ.html">FAQ</a>
+        <a href="./nos.html">SOBRE NÓS</a>
+      </nav>
+
+      <a href="https://typebot.co/cachina-solu-es-agente-ia-diagn-stico-0gu016d" class="cta-btn" target="_blank">
+        FAÇA DIAGNÓSTICO
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-hero">
+      <h1>Sobre a <span>Cachina</span></h1>
+      <p>Transformamos tecnologia em direção estratégica para empresas que querem crescer com controle, eficiência e escala.</p>
+    </section>
+
+    <section class="about-section">
+      <div class="about-container">
+        <div class="about-text">
+          <h2>Nossa História</h2>
+          <p>A Cachina nasceu com um propósito claro: resolver o caos operacional que trava o crescimento das empresas.</p>
+          <p>Ao longo de mais de 20 anos, ajudamos organizações a estruturar sua tecnologia, organizar processos e tomar decisões mais inteligentes.</p>
+          <p>Não entregamos apenas sistemas. Entregamos clareza, direção e evolução contínua.</p>
+        </div>
+        <div class="about-image">
+          <img src="./icons/cachalote saltando.png" alt="Cachalote saltando">
+        </div>
+      </div>
+    </section>
+
+    <section class="about-cards">
+      <div class="about-card">
+        <h3>Missão</h3>
+        <p>Transformar operações através de tecnologia, automação e estratégia aplicada ao negócio.</p>
+      </div>
+      <div class="about-card">
+        <h3>Visão</h3>
+        <p>Ser referência em estruturação tecnológica e crescimento sustentável para empresas.</p>
+      </div>
+      <div class="about-card">
+        <h3>Valores</h3>
+        <p>Eficiência, clareza, execução prática e compromisso com resultados reais.</p>
+      </div>
+    </section>
+
+    <section class="about-diferencial">
+      <h2>O que nos torna diferentes</h2>
+      <div class="diferencial-grid">
+        <div class="dif-item">
+          <h4>Visão Estratégica</h4>
+          <p>Atuamos como parceiro de negócio, não apenas fornecedor técnico.</p>
+        </div>
+        <div class="dif-item">
+          <h4>Execução Prática</h4>
+          <p>Saímos do plano e entregamos soluções que funcionam no dia a dia.</p>
+        </div>
+        <div class="dif-item">
+          <h4>Foco em Resultado</h4>
+          <p>Tudo é construído para gerar impacto real na operação.</p>
+        </div>
+        <div class="dif-item">
+          <h4>Escalabilidade</h4>
+          <p>Preparamos sua empresa para crescer sem perder controle.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-cta">
+      <h2>Pronto para evoluir sua operação?</h2>
+      <a href="#" class="btn-cta">Falar com especialista</a>
+      
+      <div class="wave-divider bottom">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,60 C300,0 1100,120 1440,40 L1440,120 L0,120 Z"></path>
+        </svg>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer-fade"></div>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="logo">
+          <img src="./icons/cachina-logoo.png" class="company-logo" alt="Cachina Logo" />
+        </div>
+        <p>Automação inteligente para negócios.</p>
+      </div>
+
+      <div class="footer-links">
+          <h4>Navegação</h4>
+          <a href="#">Soluções</a>
+          <a href="#">Serviços</a>
+          <a href="#">FAQ</a>
+        </div>
+
+      <div class="footer-contact">
+        <h4>Contato</h4>
+        <p>contato@cachina.com</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 Cachina. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <div class="test-area">
+    <a href="linknabio.html" target="_blank" class="btn-test-link">
+      <img src="./icons/logos/icone_baleia.png" class="companys-logo" alt="Ícone Baleia">
+    </a>
+  </div>
+
+  <script>
+    const trigger = document.querySelector('.dropdown-trigger');
+    const dropdown = document.querySelector('.dropdown');
+
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      dropdown.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
