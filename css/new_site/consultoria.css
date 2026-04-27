@@ -579,6 +579,10 @@ body {
 }
 
 .assessment-details h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.assessment-details h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
